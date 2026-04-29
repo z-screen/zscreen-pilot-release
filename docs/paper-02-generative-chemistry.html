@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper 02 - Generative Chemistry - Z-Screen Pilot Release</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/zafrens-brand.css?v=1777412561480">
+<link rel="stylesheet" href="assets/site.css?v=1777412561480">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap topnav-inner">
+    <a class="topnav-brand" href="index.html">
+      <img src="assets/zafrens-mark-steel.svg" alt="">
+      <span class="divider"></span>
+      <span class="name">Z-Screen</span>
+    </a>
+    <div class="topnav-papers">
+      <a href="platform.html">Platform</a>
+      <a href="paper-01-activeseq.html">01 ActiveSeq</a>
+      <a href="paper-02-generative-chemistry.html" class="active">02 Generative Chem</a>
+      <a href="paper-03-generalization-ladder.html">03 Generalization</a>
+      <a href="paper-04-cross-cell-transfer.html">04 Cross-Cell</a>
+      <a href="paper-05-causal-genchem.html">05 Causal</a>
+    </div>
+  </div>
+</nav>
+
+<header class="paper-hero">
+  <div class="wrap-narrow">
+    <div class="crumb">
+      <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 02
+    </div>
+    <div class="pnum">PAPER 02 - Generative Chemistry</div>
+    <h1>Functional mapping of 'Lego' chemistry yields a learnable design map.</h1>
+    <p class="paper-lede">A screen stops being a catalog of measurements and starts being a design map: chemistry on one axis, transcriptomic phenotype on the other. Building blocks predict held-out compound responses (33% MSE reduction at the strongest case), library tuples land on the transcriptomic neighborhood of known reference drugs, and on shared compounds Z-Screen agrees with the LINCS L1000 public reference at median &rho; = 0.490 with no platform-specific calibration. Every well screened sharpens the next prediction. That is the flywheel.</p>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="hero-figure">
+      <svg viewBox="0 0 800 320" style="width:100%;height:auto;display:block;">
+        <g font-family="JetBrains Mono, monospace" fill="#7eb9e0" font-size="11" letter-spacing="2">
+          <text x="32" y="38">CHEMISTRY → PHENOTYPE - BUILDING-BLOCK MODEL VS BASELINE</text>
+        </g>
+
+        <g transform="translate(60,80)">
+          <line x1="0" y1="180" x2="700" y2="180" stroke="#7eb9e0" stroke-opacity="0.3"/>
+          <g font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.5">
+            <text x="-8" y="184" text-anchor="end">0.0</text>
+            <text x="-8" y="124" text-anchor="end">0.3</text>
+            <text x="-8" y="64" text-anchor="end">0.6</text>
+            <text x="-8" y="4" text-anchor="end">0.9</text>
+          </g>
+
+          <!-- ZEL024 / HEK293 -->
+          <g transform="translate(40,0)">
+            <rect x="0" y="100" width="36" height="80" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="42" y="45" width="36" height="135" fill="#7eb9e0"/>
+            <text x="40" y="200" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL024 / HEK293</text>
+            <text x="40" y="218" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">-33.2% MSE</text>
+          </g>
+          <!-- ZEL031 / THP1 -->
+          <g transform="translate(220,0)">
+            <rect x="0" y="23" width="36" height="157" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="42" y="13" width="36" height="167" fill="#7eb9e0"/>
+            <text x="40" y="200" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL031 / THP1</text>
+            <text x="40" y="218" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">-21.3% MSE</text>
+          </g>
+          <!-- ZEL024 / H1650 -->
+          <g transform="translate(400,0)">
+            <rect x="0" y="124" width="36" height="56" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="42" y="98" width="36" height="82" fill="#7eb9e0"/>
+            <text x="40" y="200" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL024 / H1650</text>
+            <text x="40" y="218" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">positive gain</text>
+          </g>
+          <!-- ZEL031 / A549 -->
+          <g transform="translate(580,0)">
+            <rect x="0" y="80" width="36" height="100" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="42" y="60" width="36" height="120" fill="#7eb9e0"/>
+            <text x="40" y="200" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL031 / A549</text>
+            <text x="40" y="218" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">positive gain</text>
+          </g>
+
+          <!-- Legend -->
+          <g transform="translate(490,250)" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65">
+            <rect x="0" y="-9" width="12" height="12" fill="#fbfaf7" fill-opacity="0.25"/>
+            <text x="18" y="0">CENTROID BASELINE</text>
+            <rect x="160" y="-9" width="12" height="12" fill="#7eb9e0"/>
+            <text x="178" y="0">BUILDING-BLOCK MODEL</text>
+          </g>
+        </g>
+      </svg>
+      <div class="figcaption">Hero figure - Held-out tuple prediction (median cosine) - Building-block models recover transcriptomic responses well above the centroid baseline across multiple library / cell-line systems.</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap-narrow">
+    <div class="tldr">
+      <div class="label">TL;DR</div>
+      <p>Building-block models trained on 615,793 profiles predict held-out compound transcriptomic states with up to 33.2% MSE reduction over centroid baselines. Library tuples mimic internal references and approved drugs. Z-Screen control compounds match LINCS L1000 at median &rho; = 0.490 across 11 of 11 cross-platform pairs, with no platform-specific calibration. The screen stops being a catalog and starts being a design map.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="col-label">Why it matters</div>
+    <div class="col-body">
+      <p>Most screening campaigns end as a ranked list of wells. This one looks more like a <em>design map</em>. Because every Z-Screen compound carries its building-block history (the structured grammar of bb0, bb1, bb2, bb3 positions) alongside a measured cell-state response, the model learns which pieces of chemistry move which biological programs, and uses that to rank chemistry the screen has not yet measured.</p>
+      <p>For a discovery team, the screen stops being a one-time search and becomes durable institutional memory. For a partner, it is a service that keeps getting better against a problem space. For an investor, it is the difference between a contract research business and a compounding learning platform. Every well screened sharpens the predictions for every well after it. That is the flywheel, and these results are the first calibrated evidence that it is real.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="col-label">What we did</div>
+    <div class="col-body">
+      <p>The canonical Z-Screen workspace assembles 615,793 RNA profiles across 12 combinatorial libraries and 4 cell lines (A549, H1650, HEK293, THP1), with 615,721 carrying valid scVI latent coordinates. The data come from a small number of pilot chip runs.</p>
+      <p>Six questions structured the analysis. Are control compounds reproducible enough to support modeling? Do building-block models predict held-out compound responses? Does full chemical structure add signal beyond building-block identity? Do library tuples land near known reference programs after cross-control background calibration? Do building-block effects recur across cell lines? And does imaging contribute in a conservative multimodal benchmark?</p>
+      <p>For external context we sized the dataset against the four landmark phenotypic platforms in this conversation: Tahoe-100M (~95M perturbational scRNA profiles, no chemistry provenance), scGeneScope (the closest public multimodal benchmark, treatment-matched not same-well), LINCS L1000 (the deepest public chemistry-side reference, ~1M compound profiles in 1,000 genes), and Cell Painting / JUMP (the imaging-only standard at multi-million-compound scale). Z-Screen is the only one of these that carries chemistry-by-design provenance on every well. We then ran a cross-platform concordance test against LINCS L1000 directly.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-title-row">
+      <div>
+        <div class="eyebrow">What we found</div>
+        <h2 style="margin-top:12px;max-width:26ch;">Six results that turn a combinatorial library into a learning model.</h2>
+      </div>
+    </div>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="fnum">FINDING 01</div>
+        <h4>The assay floor is strong across all four cell lines.</h4>
+        <p>Median split-half cosine for named controls: 0.993 in A549, 0.991 in H1650, 0.993 in HEK293, 0.968 in THP1. Whatever a model misses, it isn't because the readout is noisy.</p>
+        <div class="stat-callout"><span class="v">0.99+</span><span class="k">Control reproducibility - 3/4 cell lines</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 02</div>
+        <h4>Building-block models predict held-out compounds.</h4>
+        <p>Strongest case: ZEL024 / HEK293 reaches median cosine 0.674 against a 0.397 centroid baseline, a 33.2% reduction in mean squared error. ZEL031 / THP1 reaches 0.833 vs 0.783 (21.3% MSE reduction). The model is learning that particular pieces of chemistry carry recurring transcriptomic programs, which is what enables design-time reasoning about combinations the screen has not yet seen.</p>
+        <div class="stat-callout"><span class="v">-33.2%</span><span class="k">MSE reduction - ZEL024 / HEK293</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 03</div>
+        <h4>Full chemical structure adds signal beyond building-block identity.</h4>
+        <p>In ZEL024 / HEK293, a 256-dim chemistry embedding alone reaches cosine 0.611 (27.8% MSE reduction). Building-block identity alone also reaches 0.611 (27.5%). Combining the two reaches 0.621 with a 29.3% MSE reduction. The two inputs carry independent signal, so the combined representation is what we use to rank unmeasured chemistry.</p>
+        <div class="stat-callout"><span class="v">-29.3%</span><span class="k">MSE - BB + structure combined</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 04</div>
+        <h4>Library tuples mimic known reference drugs.</h4>
+        <p>The cleanest, background-calibrated match comes from ZEL024 / HEK293, where a library tuple lands on the internal reference ZF-104 at cosine 0.901, against a HEK293 99th-percentile cross-control background of 0.931. ZEL031 / THP1 produces upper-tail matches to sorafenib (0.942), MZ1 (0.926), and STC-15 (0.918), in a cell line whose cross-control background is itself higher.</p>
+        <div class="stat-callout"><span class="v">0.901</span><span class="k">Cosine to ZF-104 - ZEL024 / HEK293</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 05</div>
+        <h4>Building-block programs recur across cell lines.</h4>
+        <p>At chemistry-resolved building-block positions, programs partially survive a change in cell context. ZEL024 bb3 between HEK293 and H1650 reaches median cross-cell cosine 0.602 across 83 building blocks, with the strongest at 0.873. ZEL031 bb1 between A549 and THP1 reaches 0.526 (strongest 0.808). Chemistry transfers, which is what you need before you can reuse it across programs.</p>
+        <div class="stat-callout"><span class="v">0.602</span><span class="k">Median cross-cell cosine - ZEL024 bb3</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 06</div>
+        <h4>Z-Screen agrees with the LINCS L1000 public benchmark.</h4>
+        <p>14 of 47 named Z-Screen control compounds are in LINCS L1000. Restricted to the 12,328-gene LINCS-visible universe, with no platform-specific calibration, all 11 (compound, cell-line) pairs with adequate coverage produced positive cross-platform Spearman correlation. Median &rho; = 0.490; 5 compounds reached empirical p &le; 0.048 against an unmatched-compound permutation null. The HEK293 cell-line-pooled comparison separated matched from unmatched compound pairings at one-sided Mann-Whitney p = 0.009.</p>
+        <div class="stat-callout"><span class="v">11 / 11 positive</span><span class="k">Median &rho; = 0.490 vs LINCS L1000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--zf-bone);">
+  <div class="wrap-narrow">
+    <div class="eyebrow">What this enables</div>
+    <h2 style="margin-top:12px;max-width:26ch;">A design map is the layer the rest of the platform's work runs on.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Once the screen is a function from chemistry to phenotype rather than a list of measurements, three things become possible. We can rank unmeasured chemistry before synthesizing it (<a href="paper-03-generalization-ladder.html">paper 03 stress-tests how far that ranking holds</a>). We can project a compound's response into cell types we never directly assayed (<a href="paper-04-cross-cell-transfer.html">paper 04</a>). And we can search the chemistry against genome-wide CRISPR atlases to nominate the genetic program every compound most resembles (<a href="paper-05-causal-genchem.html">paper 05</a>). The agreement with LINCS L1000 is the first external sign that the design map describes biology shared with the rest of the field, not a Z-Screen-specific idiosyncrasy.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow">
+    <div class="eyebrow">Access</div>
+    <h2 style="margin-top:12px;">Preprint, data, and analysis repo.</h2>
+    <p style="margin-top:18px;color:rgba(11,18,32,0.7);max-width:60ch;">Public release. The preprint PDF is hosted here; the canonical workspace and per-paper analysis scripts live on Zenodo with a citable DOI.</p>
+
+    <div class="downloads" style="margin-top:32px;">
+      <a class="dl" href="pdfs/zscreen-paper-02-generative-chemistry.pdf">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3v5h5M5 21V3h9l5 5v13z"/></svg></div>
+        <div class="dl-title">Preprint PDF</div>
+        <div class="dl-meta">Paper 02 - 11 pages</div>
+        <div class="dl-cta">Download</div>
+      </a>
+      <a class="dl" href="https://doi.org/10.5281/zenodo.19872807" target="_blank" rel="noopener">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.6 3.6 3 8 3s8-1.4 8-3V6M4 12v6c0 1.6 3.6 3 8 3s8-1.4 8-3v-6"/></svg></div>
+        <div class="dl-title">Data + scripts on Zenodo</div>
+        <div class="dl-meta">615K profiles - 12 libraries - 4 cell lines</div>
+        <div class="dl-cta">Open the deposit</div>
+      </a>
+      <a class="dl" href="mailto:z-screen@zafrens.com?subject=Paper%2002%20-%20Generative%20Chemistry%20-%20feedback">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l9 7 9-7M3 6v12h18V6"/></svg></div>
+        <div class="dl-title">Talk to the team</div>
+        <div class="dl-meta">Feedback - questions</div>
+        <div class="dl-cta">Email us</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<nav class="paper-nav">
+  <a href="paper-01-activeseq.html" class="prev">
+    <span class="label">← Paper 01</span>
+    <span class="ttl">ActiveSeq</span>
+  </a>
+  <a href="paper-03-generalization-ladder.html" class="next">
+    <span class="label">Paper 03 →</span>
+    <span class="ttl">Generalization Ladder</span>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <div>
+      <span class="zf-lockup" style="font-size:24px;color:var(--zf-steel);">
+        <img src="assets/zafrens-mark-steel.svg" alt="" style="height:28px;width:auto;">
+        <span class="zf-lockup__divider" style="height:18px;"></span>
+        <span class="zf-wordmark" style="font-size:14px;">Z-Screen</span>
+      </span>
+      <div class="meta" style="margin-top:14px;">Z-Screen - Pilot Release - April 2026 - Zafrens, San Diego</div>
+    </div>
+    <div class="meta" style="text-align:right;line-height:2;">
+      <a href="platform.html">About the platform</a><br>
+      <a href="index.html#access">Request access</a><br>
+      <a href="https://zafrens.com" target="_blank" rel="noopener">zafrens.com &rarr;</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

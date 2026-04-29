@@ -1,0 +1,37 @@
+/* Zafrens brand tokens */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+:root {
+  --zf-steel: #165079;
+  --zf-night: #0B1220;
+  --zf-paper: #FBFAF7;
+  --zf-bone:  #F2EEE6;
+
+  --zf-font-wordmark: 'Geist', system-ui, -apple-system, sans-serif;
+  --zf-font-ui:       'Geist', system-ui, -apple-system, sans-serif;
+  --zf-font-mono:     'Geist Mono', ui-monospace, monospace;
+
+  --zf-wordmark-weight:   300;
+  --zf-wordmark-tracking: 0.38em;
+  --zf-wordmark-transform: uppercase;
+}
+
+.zf-wordmark {
+  font-family: var(--zf-font-wordmark);
+  font-weight: var(--zf-wordmark-weight);
+  letter-spacing: var(--zf-wordmark-tracking);
+  text-transform: var(--zf-wordmark-transform);
+  color: var(--zf-steel);
+}
+
+.zf-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25em;
+}
+.zf-lockup__divider {
+  width: 1px;
+  height: 0.6em;
+  background: currentColor;
+  opacity: 0.25;
+}

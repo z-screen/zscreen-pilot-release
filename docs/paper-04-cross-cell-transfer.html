@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper 04 - Cross-Cell Transfer - Z-Screen Pilot Release</title>
+<meta name="description" content="A tissue projection engine: profile a compound once, predict its response in cell types you never directly assayed.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/zafrens-brand.css?v=1777412561480">
+<link rel="stylesheet" href="assets/site.css?v=1777412561480">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap topnav-inner">
+    <a class="topnav-brand" href="index.html">
+      <img src="assets/zafrens-mark-steel.svg" alt="">
+      <span class="divider"></span>
+      <span class="name">Z-Screen</span>
+    </a>
+    <div class="topnav-papers">
+      <a href="platform.html">Platform</a>
+      <a href="paper-01-activeseq.html">01 ActiveSeq</a>
+      <a href="paper-02-generative-chemistry.html">02 Generative Chem</a>
+      <a href="paper-03-generalization-ladder.html">03 Generalization</a>
+      <a href="paper-04-cross-cell-transfer.html" class="active">04 Cross-Cell</a>
+      <a href="paper-05-causal-genchem.html">05 Causal</a>
+    </div>
+  </div>
+</nav>
+
+<header class="paper-hero">
+  <div class="wrap-narrow">
+    <div class="crumb">
+      <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 04
+    </div>
+    <div class="pnum">PAPER 04 - Cross-Cell Transfer</div>
+    <h1>Test in one cell type, predict the response in others.</h1>
+    <p class="paper-lede">Profile a compound once in an accessible source cell type, project its likely transcriptomic response in target cell types you never directly assayed, and use the projection to prioritize follow-up. A first practical tissue projection engine. Grouped chemical programs transfer at cosine 0.66 to 0.86, against an identity baseline of 0.42 to 0.52. The cost curve of running every program in every cell type begins to bend.</p>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="hero-figure">
+      <svg viewBox="0 0 800 360" style="width:100%;height:auto;display:block;">
+        <g font-family="JetBrains Mono, monospace" fill="#7eb9e0" font-size="11" letter-spacing="2">
+          <text x="32" y="38">GROUPED CHEMICAL PROGRAM TRANSFER - LEARNED VS IDENTITY</text>
+        </g>
+
+        <g transform="translate(60,80)">
+          <line x1="0" y1="200" x2="700" y2="200" stroke="#7eb9e0" stroke-opacity="0.3"/>
+          <g font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.5">
+            <text x="-8" y="204" text-anchor="end">0.0</text>
+            <text x="-8" y="138" text-anchor="end">0.3</text>
+            <text x="-8" y="71" text-anchor="end">0.6</text>
+            <text x="-8" y="4" text-anchor="end">0.9</text>
+          </g>
+
+          <!-- Group 1: ZEL024 H1650 -> HEK293 -->
+          <g transform="translate(20,0)">
+            <rect x="0" y="95" width="36" height="105" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="42" y="8" width="36" height="192" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL024</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">H1650 -> HEK293</text>
+            <text x="60" y="2" font-family="JetBrains Mono, monospace" font-size="11" fill="#7eb9e0" text-anchor="middle">0.863</text>
+          </g>
+
+          <!-- Group 2: ZEL024 HEK293 -> H1650 -->
+          <g transform="translate(200,0)">
+            <rect x="0" y="95" width="36" height="105" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="42" y="20" width="36" height="180" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL024</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">HEK293 -> H1650</text>
+            <text x="60" y="14" font-family="JetBrains Mono, monospace" font-size="11" fill="#7eb9e0" text-anchor="middle">0.808</text>
+          </g>
+
+          <!-- Group 3: ZEL031 A549 -> THP1 -->
+          <g transform="translate(380,0)">
+            <rect x="0" y="107" width="36" height="93" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="42" y="41" width="36" height="159" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL031</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">A549 -> THP1</text>
+            <text x="60" y="35" font-family="JetBrains Mono, monospace" font-size="11" fill="#7eb9e0" text-anchor="middle">0.714</text>
+          </g>
+
+          <!-- Group 4: ZEL031 THP1 -> A549 -->
+          <g transform="translate(560,0)">
+            <rect x="0" y="107" width="36" height="93" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="42" y="52" width="36" height="148" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL031</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">THP1 -> A549</text>
+            <text x="60" y="46" font-family="JetBrains Mono, monospace" font-size="11" fill="#7eb9e0" text-anchor="middle">0.664</text>
+          </g>
+
+          <!-- Legend -->
+          <g transform="translate(220,278)" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.75" letter-spacing="1.5">
+            <rect x="0" y="-9" width="12" height="12" fill="#fbfaf7" fill-opacity="0.25"/>
+            <text x="20" y="0">IDENTITY (DIRECT REUSE OF SOURCE)</text>
+            <rect x="270" y="-9" width="12" height="12" fill="#7eb9e0"/>
+            <text x="290" y="0">LEARNED RIDGE TRANSFER</text>
+          </g>
+        </g>
+      </svg>
+      <div class="figcaption">Hero figure - Support-weighted cosine for grouped building-block program transfer at chemistry-resolved aggregation levels (BB-pair for ZEL024, single position bb0 for ZEL031). Learned transfer wins on every direction tested.</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap-narrow">
+    <div class="tldr">
+      <div class="label">TL;DR</div>
+      <p>Direct reuse of a source-cell signature in a target cell type is inadequate (0.146 cosine in ZEL024 HEK293 to H1650). Learned ridge transfer doubles to triples that. The strongest current unit is the grouped chemical program: at chemistry-resolved aggregation, support-weighted cosine reaches 0.66 to 0.86 across four cell-pair directions, against an identity baseline of 0.42 to 0.52. That matches how early discovery decisions get made, at the level of chemical series, not isolated compounds.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="col-label">Why it matters</div>
+    <div class="col-body">
+      <p>A major share of preclinical cost goes to running the same compound, panel, or library in every cell type of practical interest. Cell-intrinsic pharmacology rarely transfers cleanly across tissues, so one reference cell line is usually not enough. Running ten cell lines for every campaign is what teams do when they have to.</p>
+      <p>This is the layer that begins to break that constraint. Profile a compound in one source cell type. Project its likely transcriptional response in target cell types you never measured. Use the projections to prioritize follow-up work, flag counter-screen liabilities, and decide where to spend wet-lab time. The claim is narrow on purpose: cross-cell transfer models cell-intrinsic transcriptional response. It does not substitute for pharmacokinetics, tissue architecture, or organism-level toxicology. It is upstream decision support, where even partial accuracy pays.</p>
+      <p>For a partner, the immediate read is operational: a small paired landmark atlas plus one source measurement begins to do useful work for every additional cell type of clinical interest. For an investor, the read is the cost curve. Instead of running every program through every cell type, the screen begins to project. The economics of preclinical efficacy start to bend in the same direction the platform's design has been pointing for years.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="col-label">What we did</div>
+    <div class="col-body">
+      <p>We measured the same combinatorial libraries across multiple cell lines in the canonical Z-Screen workspace, then asked how well a learned source-to-target transfer map could project a transcriptomic response into a target cell type held out at evaluation. The benchmark runs at two levels.</p>
+      <p>At the molecule level, we used the cell-pair systems with sufficient shared SMILES coverage: ZEL024 between HEK293 and H1650 (6,299 shared molecules) and ZEL031 between A549 and THP1 (3,561 shared molecules). Each molecule was represented by the mean of its 32-dimensional scVI latent coordinates within a given library and cell line. We compared direct reuse of the source-cell signature (identity baseline) against learned source-to-target ridge regression and PLS transfer maps.</p>
+      <p>At the grouped-program level, we restricted reporting to chemistry-resolved aggregations: BB-pair (bb0+bb1) signatures for the dense 4-position ZEL024 library, where each pair signature averages roughly 150 distinct tuples; and single-position bb0 signatures for the 2-position ZEL031 library, where each centroid still leaves the other position to vary across roughly 70 distinct partner chemistries. We did not report single-position averages for libraries with three or more substantive positions, because each centroid in those libraries averages over hundreds to thousands of distinct chemistries and any reported transfer cosine would be a measurement of library-wide rather than chemistry-specific behavior.</p>
+      <p>Centered-response cosine is the primary metric. Centering removes the constant baseline shift that exists between two cell lines regardless of any perturbation, so the number reflects perturbational response rather than bulk offset.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-title-row">
+      <div>
+        <div class="eyebrow">What we found</div>
+        <h2 style="margin-top:12px;max-width:24ch;">Five results that bend the cost curve of preclinical efficacy.</h2>
+      </div>
+    </div>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="fnum">FINDING 01</div>
+        <h4>Grouped chemical programs are the strongest unit of cross-cell transfer.</h4>
+        <p>At chemistry-resolved aggregation, learned transfer reaches support-weighted cosine 0.863 for ZEL024 H1650 to HEK293 (84 shared BB-pairs, identity 0.471), 0.808 for the reverse direction, 0.714 for ZEL031 A549 to THP1 at single-position bb0 (129 shared groups, identity 0.419), and 0.664 for the reverse. Four directions, all in the 0.66 to 0.86 range, against identity baselines of 0.42 to 0.52.</p>
+        <div class="stat-callout"><span class="v">0.863</span><span class="k">Best support-weighted cosine - ZEL024</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 02</div>
+        <h4>Direct reuse fails. Learned maps recover molecule-specific information.</h4>
+        <p>Even at the molecule level, identity is inadequate: 0.146 centered cosine in ZEL024 (HEK293 to H1650) and 0.094 in ZEL031 (A549 to THP1). Ridge transfer roughly doubles to triples that: 0.279 (HEK293 to H1650), 0.371 (H1650 to HEK293), 0.242 (A549 to THP1). Cross-cell projection is a prediction problem, not an artifact of bulk offset.</p>
+        <div class="stat-callout"><span class="v">2.5x identity</span><span class="k">Ridge vs identity, ZEL024 H1650 to HEK293</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 03</div>
+        <h4>Performance saturates with paired landmark coverage.</h4>
+        <p>Transfer accuracy rises quickly with shared training compounds and saturates within the available range. Useful accuracy shows up at around 5,000 paired molecules in the dense ZEL024 system, and continues to improve with scale. A small paired landmark atlas is enough to start projecting. The next investment widens coverage rather than tuning the model further.</p>
+        <div class="stat-callout"><span class="v">~5K pairs</span><span class="k">Where transfer becomes useful</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 04</div>
+        <h4>Cross-library projection defines the next dataset.</h4>
+        <p>Training a transfer map on one library and testing on another in the same cell-pair direction was positive in some sparse settings (ZEL024 to ZEL028-2, HEK293 to H1650 lifted weighted cosine from 0.033 to 0.059) and weak or asymmetric in others. Sparse libraries are credible transfer targets in the current data, but unreliable transfer teachers. A small amount of additional collection in the sparse libraries would close this rung.</p>
+        <div class="stat-callout"><span class="v">Asymmetric</span><span class="k">Dense to sparse &gt; sparse to dense</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 05</div>
+        <h4>Gene-level decoder turns latent transfer into ranked hypotheses.</h4>
+        <p>An exploratory gene-level decoder, composed with the learned latent transfer, partially recovers held-out gene-rank structure. The strongest direction (ZEL024 H1650 to HEK293) reaches per-compound gene-rank Spearman 0.182 and top-50 absolute-delta overlap 0.139, against 0.021 and 0.083 when the source latent is passed directly through the target decoder. We treat this as a route to ranked gene lists from transferred latents. Encouraging, but not yet a primary endpoint.</p>
+        <div class="stat-callout"><span class="v">&rho; = 0.182</span><span class="k">Best gene-rank Spearman</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--zf-bone);">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Why this is different from the public references</div>
+    <h2 style="margin-top:12px;max-width:26ch;">L1000 and Tahoe-100M can compare. Only Z-Screen can compose.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">LINCS L1000 and Tahoe-100M are valuable for comparing the response of a single compound across cell lines. Neither carries combinatorial-chemistry provenance. A hit is one profiled compound, with no internal structure to decompose. Z-Screen runs combinatorial libraries with full building-block provenance across multiple cell lines in the same canonical workspace. That is what makes chemistry-resolved grouped-program transfer possible at all. Without it, you can describe cross-cell behavior. You cannot compose it. With it, the cross-cell projection feeds directly into <a href="paper-05-causal-genchem.html">paper 05's CRISPR mapping</a> in cell types where direct K562 or THP1 reference comparisons are impossible.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow">
+    <div class="eyebrow">Access</div>
+    <h2 style="margin-top:12px;">Preprint, data, and analysis repo.</h2>
+    <p style="margin-top:18px;color:rgba(11,18,32,0.7);max-width:60ch;">Public release. The transfer maps, paired-landmark splits, and grouped-program benchmarks ship with the data bundle on Zenodo.</p>
+
+    <div class="downloads" style="margin-top:32px;">
+      <a class="dl" href="pdfs/zscreen-paper-04-cross-cell-transfer.pdf">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3v5h5M5 21V3h9l5 5v13z"/></svg></div>
+        <div class="dl-title">Preprint PDF</div>
+        <div class="dl-meta">Paper 04</div>
+        <div class="dl-cta">Download</div>
+      </a>
+      <a class="dl" href="https://doi.org/10.5281/zenodo.19872807" target="_blank" rel="noopener">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.6 3.6 3 8 3s8-1.4 8-3V6M4 12v6c0 1.6 3.6 3 8 3s8-1.4 8-3v-6"/></svg></div>
+        <div class="dl-title">Transfer maps on Zenodo</div>
+        <div class="dl-meta">Molecule + grouped-program tables</div>
+        <div class="dl-cta">Open the deposit</div>
+      </a>
+      <a class="dl" href="mailto:z-screen@zafrens.com?subject=Paper%2004%20-%20Cross-Cell%20Transfer%20-%20feedback">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l9 7 9-7M3 6v12h18V6"/></svg></div>
+        <div class="dl-title">Talk to the team</div>
+        <div class="dl-meta">Feedback - questions</div>
+        <div class="dl-cta">Email us</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<nav class="paper-nav">
+  <a href="paper-03-generalization-ladder.html" class="prev">
+    <span class="label">&larr; Paper 03</span>
+    <span class="ttl">Generalization Ladder</span>
+  </a>
+  <a href="paper-05-causal-genchem.html" class="next">
+    <span class="label">Paper 05 &rarr;</span>
+    <span class="ttl">Causal Genetics</span>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <div>
+      <span class="zf-lockup" style="font-size:24px;color:var(--zf-steel);">
+        <img src="assets/zafrens-mark-steel.svg" alt="" style="height:28px;width:auto;">
+        <span class="zf-lockup__divider" style="height:18px;"></span>
+        <span class="zf-wordmark" style="font-size:14px;">Z-Screen</span>
+      </span>
+      <div class="meta" style="margin-top:14px;">Z-Screen - Pilot Release - April 2026 - Zafrens, San Diego</div>
+    </div>
+    <div class="meta" style="text-align:right;line-height:2;">
+      <a href="platform.html">About the platform</a><br>
+      <a href="index.html#access">Request access</a><br>
+      <a href="https://zafrens.com" target="_blank" rel="noopener">zafrens.com &rarr;</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

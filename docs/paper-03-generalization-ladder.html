@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper 03 - Generalization Ladder - Z-Screen Pilot Release</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/zafrens-brand.css?v=1777412561480">
+<link rel="stylesheet" href="assets/site.css?v=1777412561480">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap topnav-inner">
+    <a class="topnav-brand" href="index.html">
+      <img src="assets/zafrens-mark-steel.svg" alt="">
+      <span class="divider"></span>
+      <span class="name">Z-Screen</span>
+    </a>
+    <div class="topnav-papers">
+      <a href="platform.html">Platform</a>
+      <a href="paper-01-activeseq.html">01 ActiveSeq</a>
+      <a href="paper-02-generative-chemistry.html">02 Generative Chem</a>
+      <a href="paper-03-generalization-ladder.html" class="active">03 Generalization</a>
+      <a href="paper-04-cross-cell-transfer.html">04 Cross-Cell</a>
+      <a href="paper-05-causal-genchem.html">05 Causal</a>
+    </div>
+  </div>
+</nav>
+
+<header class="paper-hero">
+  <div class="wrap-narrow">
+    <div class="crumb">
+      <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 03
+    </div>
+    <div class="pnum">PAPER 03 - Generalization Ladder</div>
+    <h1>Predictions hold up on genuinely new chemistry, not just close copies.</h1>
+    <p class="paper-lede">ML claims in drug discovery often hide retrieval. A five-rung ladder separates interpolation from real extrapolation, with a chemistry-embedding nearest-neighbor baseline at every rung. Under strict multi-axis holdout, where every substantive building block in the test compound is unseen during training, Z-Screen still beats retrieval on 90% of compounds at a +0.168 cosine margin. The model is learning chemistry, not memorizing it.</p>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="hero-figure">
+      <svg viewBox="0 0 800 380" style="width:100%;height:auto;display:block;">
+        <g font-family="JetBrains Mono, monospace" fill="#7eb9e0" font-size="11" letter-spacing="2">
+          <text x="32" y="38">THE LADDER - MODEL VS NEAREST-NEIGHBOR RETRIEVAL - ZEL031 / THP1</text>
+        </g>
+
+        <g transform="translate(60,80)">
+          <line x1="0" y1="200" x2="700" y2="200" stroke="#7eb9e0" stroke-opacity="0.3"/>
+          <g font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.5">
+            <text x="-8" y="204" text-anchor="end">0.0</text>
+            <text x="-8" y="138" text-anchor="end">0.3</text>
+            <text x="-8" y="71" text-anchor="end">0.6</text>
+            <text x="-8" y="4" text-anchor="end">0.9</text>
+          </g>
+
+          <!-- L1 -->
+          <g transform="translate(20,0)">
+            <rect x="0" y="34" width="34" height="166" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="40" y="11" width="34" height="189" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">L1</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">UNSEEN TUPLE</text>
+          </g>
+          <!-- L2 -->
+          <g transform="translate(160,0)">
+            <rect x="0" y="56" width="34" height="144" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="40" y="27" width="34" height="173" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">L2</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">BB HOLDOUT</text>
+          </g>
+          <!-- L3 -->
+          <g transform="translate(300,0)">
+            <rect x="0" y="67" width="34" height="133" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="40" y="30" width="34" height="170" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">L3</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">MULTI-AXIS</text>
+            <rect x="-10" y="-12" width="100" height="240" fill="none" stroke="#7eb9e0" stroke-opacity="0.4" stroke-dasharray="3 3"/>
+            <text x="38" y="-18" font-family="JetBrains Mono, monospace" font-size="10" fill="#7eb9e0" text-anchor="middle">+0.168 - 90% wins</text>
+          </g>
+          <!-- L4 -->
+          <g transform="translate(440,0)">
+            <rect x="0" y="93" width="34" height="107" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="40" y="62" width="34" height="138" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">L4</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">NEIGHBORHOOD</text>
+          </g>
+          <!-- L5 -->
+          <g transform="translate(580,0)">
+            <rect x="0" y="179" width="34" height="21" fill="#fbfaf7" fill-opacity="0.25"/>
+            <rect x="40" y="166" width="34" height="34" fill="#7eb9e0"/>
+            <text x="38" y="220" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">L5</text>
+            <text x="38" y="236" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">CROSS-LIB</text>
+            <text x="38" y="158" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.55" text-anchor="middle">next experiment</text>
+          </g>
+
+          <g transform="translate(440,278)" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.75" letter-spacing="1.5">
+            <rect x="0" y="-9" width="12" height="12" fill="#fbfaf7" fill-opacity="0.25"/>
+            <text x="20" y="0">RETRIEVAL</text>
+            <rect x="130" y="-9" width="12" height="12" fill="#7eb9e0"/>
+            <text x="150" y="0">MODEL</text>
+          </g>
+        </g>
+      </svg>
+      <div class="figcaption">Hero figure - Median cosine across the ladder. L3 (strict multi-axis holdout) is the cleanest evidence of genuine extrapolation in the dataset.</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap-narrow">
+    <div class="tldr">
+      <div class="label">TL;DR</div>
+      <p>Under strict multi-axis chemistry holdout in ZEL031 / THP1, the model retains 0.765 cosine to held-out transcriptomic states, beats chemistry-embedding nearest-neighbor retrieval by 0.168, and wins on 90% of test compounds. Single-position holdouts confirm the same regime at 89-91% per-compound win rate. The hardest rung (cross-library scaffold-family transfer) becomes the next experiment to run, not a ceiling on the platform.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="col-label">Why it matters</div>
+    <div class="col-body">
+      <p>Most ML claims in drug discovery conflate different notions of generalization. Predicting an unseen combination of <em>familiar</em> chemical pieces is a different problem from predicting a compound built from <em>unseen</em> pieces. Both differ from predicting a new scaffold family entirely. The recent BELKA literature on DNA-encoded libraries was the first careful demonstration that ligand-only models trained on DEL binary binder labels weaken sharply once chemistry moves away from training, and most splits in the ML literature since have been unable to distinguish real generalization from nearest-neighbor retrieval.</p>
+      <p>This paper imposes the distinction explicitly on dense phenotypic data. Five rungs of difficulty. A chemistry-embedding nearest-neighbor retrieval baseline at every rung. And a separate verdict on each rung: does the platform extrapolate, does it interpolate well, or does it need more data. The rungs that matter come back positive. The honest negative on the hardest rung becomes a defined next experiment, not a hidden caveat.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="col-label">What we did</div>
+    <div class="col-body">
+      <p>We built a five-level evaluation ladder. <strong>L1</strong> holds out unseen tuples within a shared building-block vocabulary. <strong>L2</strong> holds out a subset of building-block identities at one position. <strong>L3</strong> holds out identities at every substantive position simultaneously, so every building block in the test compound is unseen during training. <strong>L4</strong> holds out chemical-neighborhood clusters within a library, seeded by greedy farthest-point sampling so the test sets are diverse rather than locally similar. <strong>L5</strong> trains on one library family and tests on another in the same cell line.</p>
+      <p>Every rung uses the same toolkit. A 256-dim per-compound chemistry embedding (a fixed-seed Gaussian random projection of 2048-bit ECFP4 fingerprints, irreversible without the projection matrix). Ridge regression at &alpha; = 10. A train-mean baseline. And the one that matters: a <strong>chemistry-embedding nearest-neighbor retrieval</strong> baseline at every rung. Without it, a nominally hard split can be silently solved by copying the closest measured analog.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-title-row">
+      <div>
+        <div class="eyebrow">What we found</div>
+        <h2 style="margin-top:12px;max-width:24ch;">The ladder separates the easy claim from the hard one.</h2>
+      </div>
+    </div>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="fnum">FINDING 01</div>
+        <h4>Strict multi-axis holdout: real extrapolation in ZEL031 / THP1.</h4>
+        <p>Under L3, every substantive building-block axis is unseen during training. The model retains 0.765 cosine against 0.597 for retrieval (a +0.168 delta). It wins on 90% of test compounds, and all 10 random draws are positive under paired bootstrap. Median nearest-training cosine in the public chemistry-embedding space sits at 0.642, so the chemistry is well separated from the training set. Retrieval cannot account for the gain.</p>
+        <div class="stat-callout"><span class="v">+0.168</span><span class="k">Cosine over retrieval - L3</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 02</div>
+        <h4>Single-position holdouts confirm the same regime.</h4>
+        <p>L2 in the same system: bb0 holdout reaches 0.783 cosine vs 0.632 retrieval (+0.151) on 728 test compounds at win rate 89%. bb1 holdout reaches 0.790 vs 0.644 (+0.146) on 729 test compounds at win rate 91%. All 10 random draws positive under paired bootstrap intervals at both positions.</p>
+        <div class="stat-callout"><span class="v">89 - 91%</span><span class="k">Per-compound win rate - L2</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 03</div>
+        <h4>ZEL024 / HEK293 is matrix completion in a saturated grid.</h4>
+        <p>Median nearest-training cosine on this library's holdouts sits at 0.881 to 0.988 in the chemistry-embedding space. Many "held-out" compounds still have near-duplicate cousins in the training set. The ladder catches that: ZEL024 / HEK293 delivers high-quality matrix completion inside a 13,769-of-13,944 saturated combinatorial grid. Useful for prioritizing chemistry within a design space, but not extrapolation, and we report it that way.</p>
+        <div class="stat-callout"><span class="v">13,769 / 13,944</span><span class="k">Observed tuples - saturated grid</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 04</div>
+        <h4>Chemical-neighborhood holdout still beats retrieval.</h4>
+        <p>L4 holds chemistry at arm's length while staying inside one reaction grammar. The clustering is seeded by greedy farthest-point sampling, so the test sets are diverse rather than locally similar. The model carries +0.236 cosine over retrieval in ZEL024 and +0.155 in ZEL031, on average cluster sizes of 2,754 and 711 compounds.</p>
+        <div class="stat-callout"><span class="v">+0.236</span><span class="k">L4 model gain - ZEL024</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">FINDING 05</div>
+        <h4>Cross-library scaffold transfer becomes the next experiment.</h4>
+        <p>L5 is weak on retrospective data (best absolute cosine 0.194, best gain over retrieval +0.096 in the H1650 ZEL024 to ZEL028-2 transfer). The ladder is meant to surface this honestly, not to reframe the benchmark to hide it. A single prospective same-cell scaffold-hop chip run (~1,000 wells) with parity coverage and a pre-registered model would settle the cross-library question.</p>
+        <div class="stat-callout"><span class="v">~1,000 wells</span><span class="k">One chip - settles L5</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--zf-bone);">
+  <div class="wrap-narrow">
+    <div class="eyebrow">What this enables</div>
+    <h2 style="margin-top:12px;max-width:26ch;">A model that survives held-out chemistry is the only kind worth trusting.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A discovery team only gets value out of a chemistry-to-phenotype model when the model still helps after the chemistry changes. The ladder defined here is the cleanest current benchmark we know of for that question on dense phenotypic data, and it produces two complementary verdicts depending on the library: ZEL024 / HEK293 delivers high-quality matrix completion within a saturated combinatorial grid (useful for prioritizing chemistry inside an explored design space), while ZEL031 / THP1 delivers genuine out-of-vocabulary extrapolation. The honest call on the hardest rung also defines a single chip run that would convert L5 from retrospective ambiguity to a definitive prospective answer. The ladder ships alongside the preprint as a reusable benchmark.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow">
+    <div class="eyebrow">Access</div>
+    <h2 style="margin-top:12px;">Preprint, data, and analysis repo.</h2>
+    <p style="margin-top:18px;color:rgba(11,18,32,0.7);max-width:60ch;">Public release. The L1 to L5 splits, baselines, and benchmark code ship with the data bundle on Zenodo. The ladder is intended as a reusable benchmark; we welcome submissions that beat it.</p>
+
+    <div class="downloads" style="margin-top:32px;">
+      <a class="dl" href="pdfs/zscreen-paper-03-generalization-ladder.pdf">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3v5h5M5 21V3h9l5 5v13z"/></svg></div>
+        <div class="dl-title">Preprint PDF</div>
+        <div class="dl-meta">Paper 03 - 10 pages</div>
+        <div class="dl-cta">Download</div>
+      </a>
+      <a class="dl" href="https://doi.org/10.5281/zenodo.19872807" target="_blank" rel="noopener">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.6 3.6 3 8 3s8-1.4 8-3V6M4 12v6c0 1.6 3.6 3 8 3s8-1.4 8-3v-6"/></svg></div>
+        <div class="dl-title">Splits + benchmarks on Zenodo</div>
+        <div class="dl-meta">L1 to L5 splits - reusable benchmark</div>
+        <div class="dl-cta">Open the deposit</div>
+      </a>
+      <a class="dl" href="mailto:z-screen@zafrens.com?subject=Paper%2003%20-%20Generalization%20-%20feedback">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l9 7 9-7M3 6v12h18V6"/></svg></div>
+        <div class="dl-title">Talk to the team</div>
+        <div class="dl-meta">Feedback - questions</div>
+        <div class="dl-cta">Email us</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<nav class="paper-nav">
+  <a href="paper-02-generative-chemistry.html" class="prev">
+    <span class="label">← Paper 02</span>
+    <span class="ttl">Generative Chemistry</span>
+  </a>
+  <a href="paper-04-cross-cell-transfer.html" class="next">
+    <span class="label">Paper 04 →</span>
+    <span class="ttl">Cross-Cell Transfer</span>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <div>
+      <span class="zf-lockup" style="font-size:24px;color:var(--zf-steel);">
+        <img src="assets/zafrens-mark-steel.svg" alt="" style="height:28px;width:auto;">
+        <span class="zf-lockup__divider" style="height:18px;"></span>
+        <span class="zf-wordmark" style="font-size:14px;">Z-Screen</span>
+      </span>
+      <div class="meta" style="margin-top:14px;">Z-Screen - Pilot Release - April 2026 - Zafrens, San Diego</div>
+    </div>
+    <div class="meta" style="text-align:right;line-height:2;">
+      <a href="platform.html">About the platform</a><br>
+      <a href="index.html#access">Request access</a><br>
+      <a href="https://zafrens.com" target="_blank" rel="noopener">zafrens.com &rarr;</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

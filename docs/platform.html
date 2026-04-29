@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platform - Z-Screen Pilot Release - Zafrens</title>
+<meta name="description" content="What Z-Screen is, what Zafrens uses it for, and where this preprint release fits in the company's strategy.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/zafrens-brand.css?v=1777412561480">
+<link rel="stylesheet" href="assets/site.css?v=1777412561480">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap topnav-inner">
+    <a class="topnav-brand" href="index.html">
+      <img src="assets/zafrens-mark-steel.svg" alt="">
+      <span class="divider"></span>
+      <span class="name">Z-Screen</span>
+    </a>
+    <div class="topnav-papers">
+      <a href="platform.html" class="active">Platform</a>
+      <a href="paper-01-activeseq.html">01 ActiveSeq</a>
+      <a href="paper-02-generative-chemistry.html">02 Generative Chem</a>
+      <a href="paper-03-generalization-ladder.html">03 Generalization</a>
+      <a href="paper-04-cross-cell-transfer.html">04 Cross-Cell</a>
+      <a href="paper-05-causal-genchem.html">05 Causal</a>
+    </div>
+  </div>
+</nav>
+
+<header class="paper-hero">
+  <div class="wrap-narrow">
+    <div class="crumb">
+      <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Platform
+    </div>
+    <div class="pnum">ABOUT</div>
+    <h1>The platform behind these preprints.</h1>
+    <p class="paper-lede">Most discovery platforms model drugs because synthesis and screening are expensive. Z-Screen runs the experiments instead. It is a 50,000-well microfluidic chip with a built-in mRNA sequencing workflow that profiles one-bead-one-compound combinatorial libraries by paired imaging and transcriptomics. It is engineered to make drug discovery 500 times more efficient by replacing weeks of robotics, plate transfers, and serial assays with a single chip run. The five preprints in this release are the formal scientific case for that claim, on a small fraction of the platform's full capacity.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap two-col">
+    <div class="col-label">What Z-Screen does</div>
+    <div class="col-body">
+      <p><strong style="font-weight:600;">A chip, not a robotics line.</strong> Z-Screen is a proprietary microfluidic chip with 50,000 to 200,000 wells per device, each holding 5 to 10 cells and a single library bead carrying one compound. There are no 96-well plates, no liquid handlers, no pipetting steps after the initial 10-minute load. The chip is the assay.</p>
+      <p><strong style="font-weight:600;">Same-well multimodal readout.</strong> An integrated optical pass images every well; the mRNA sequencer reads the transcriptome of every well from the same physical micro-well. For every compound you get an image (what happened) and an RNA profile (why), paired at the level of the same multicellular colony. That same-well pairing is the property no public phenotypic platform currently offers at scale. Paper 01 evaluates it directly.</p>
+      <p><strong style="font-weight:600;">Combinatorial chemistry by design.</strong> Each library is built from a structured grammar of building blocks (typically 2 to 4 positions of diversity), so every compound carries full chemistry provenance back to its constituent pieces. That is what makes the screen <em>compositional</em> rather than a flat catalog. Papers 02 and 03 use that compositional structure to predict compounds that were unseen by the models.</p>
+      <p><strong style="font-weight:600;">Decentralized scale.</strong> One operator, one chip, one week. 500,000 compounds screened per week per user. ~3 million new molecules synthesized per month. ~2 billion useful datapoints per chip run. Because the chip is the throughput unit, scale is achieved by running more chips in more places, vs. expanding a central robotics lab. Z-Screen capacity is trivially extensible, which is why this is a pilot dataset even when it beats LINCs chemistry data 10-fold already.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--zf-bone);">
+  <div class="wrap">
+    <div class="section-title-row">
+      <div>
+        <div class="eyebrow">Platform comparison</div>
+        <h2 style="margin-top:12px;max-width:24ch;">What sits in the same conversation, and how Z-Screen is different.</h2>
+      </div>
+      <div class="section-aside">
+        <p>The phenotypic-screening landscape has matured into three camps: imaging-only platforms (Cell Painting, Recursion, Insitro, the Broad's JUMP), single-cell perturbational sequencing (Perturb-seq, Tahoe-100M, scPerturb), and chemistry-side reference catalogs (Connectivity Map, LINCS L1000). Each leads on one axis. None pair imaging with transcriptomics in the same well, at scale, with combinatorial-chemistry provenance. Like Lego's, we can engineer combinations of chemical substructures to match desired biological ends</p>
+      </div>
+    </div>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="fnum">IMAGING ONLY</div>
+        <h4>Cell Painting / Recursion / Insitro / JUMP</h4>
+        <p>The throughput leaders. Multi-million-compound runs with deep morphological readouts. The gap is biological depth: a small set of fluorescent stains and the features extractable from them. Mechanism still requires follow-up. Z-Screen does imaging too, in the same well, with full transcriptomics on top.</p>
+      </div>
+      <div class="finding">
+        <div class="fnum">SINGLE-CELL PERTURB</div>
+        <h4>Perturb-seq / Tahoe-100M / scPerturb</h4>
+        <p>The cell-state depth leaders. Genome-scale CRISPR perturbation atlases and increasingly large compound atlases. The gap is chemistry resolution: one profile per compound, no internal structure. Cannot decompose a hit into the pieces that drove it. Z-Screen reads transcriptomics on every compound and carries combinatorial chemistry as first-class data.</p>
+      </div>
+      <div class="finding">
+        <div class="fnum">CONNECTIVITY MAP / LINCS L1000</div>
+        <h4>Compound &harr; gene-program search</h4>
+        <p>The deepest public chemistry-side reference. ~20K compound profiles in a 1,000-gene transcriptional space, bulk readout. The standard for compound similarity search; not a design tool. Paper 02 in this release benchmarks Z-Screen control-compound signatures directly against L1000 with no platform-specific calibration: 11 of 11 cross-platform comparisons positive, median &rho; = 0.490.</p>
+      </div>
+      <div class="finding">
+        <div class="fnum">DEL / BELKA</div>
+        <h4>DNA-encoded library ML</h4>
+        <p>A binary binder readout against an immobilized target. The recent BELKA literature established that ligand-only models trained on DEL labels weaken sharply under genuinely held-out chemistry. Paper 03 shows that dense phenotypic readouts behave differently: under strict multi-axis chemistry holdout, Z-Screen still beats nearest-neighbor retrieval on 90% of compounds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="col-label">What Zafrens does with it</div>
+    <div class="col-body">
+      <p>Zafrens is a modality-agnostic drug discovery platform company built around Z-Screen. The same chip runs small molecules, peptides, macrocycles, PROTACs, ASOs and siRNA delivery, bispecific T-cell engagers, CAR-T libraries, ADC linker/payload optimization, and patient-cell co-cultures. Z-Screen is the layer underneath all of those, and it is in active use across multiple therapeutic programs.</p>
+      <p>Many of the predictions highlighted in the preprints have been validated and are already Zafrens pipeline programs. Choosing to focus on the expansive pipeline, Zafrens is now making Z-Screen available as a data generation engine for interested parties.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--zf-bone);">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Why this release</div>
+    <h2 style="margin-top:12px;max-width:26ch;">A pilot is the right time to lay out the operating thesis.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A platform claim has to land in writing eventually. Five preprints, one canonical dataset, every claim reproducible from the analysis repo, was the format that lets the work be evaluated on its merits rather than on a pitch deck. The pilot is small by intent. Each preprint is sized to answer one foundational question:</p>
+    <ul style="margin-top:24px;font-size:17px;line-height:1.75;color:rgba(11,18,32,0.78);max-width:62ch;list-style:none;padding-left:0;">
+      <li style="padding-left:24px;text-indent:-24px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">01</span>Can we measure what a compound does and read why, from the same well, at scale?</li>
+      <li style="padding-left:24px;text-indent:-24px;margin-top:10px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">02</span>Does combinatorial chemistry yield a learnable design map, not a static catalog?</li>
+      <li style="padding-left:24px;text-indent:-24px;margin-top:10px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">03</span>Does the model generalize to new chemistry, or is it memorizing the training set?</li>
+      <li style="padding-left:24px;text-indent:-24px;margin-top:10px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">04</span>Does the response transfer across cell types we never directly assayed?</li>
+      <li style="padding-left:24px;text-indent:-24px;margin-top:10px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">05</span>Does the screen point at mechanism, automatically, for compounds whose target is unknown?</li>
+    </ul>
+    <p style="margin-top:32px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">All five answers are positive on pilot data, with statistical calibration, public-reference cross-checks, and reproducible code. The next chip run scales a signal already visible. It does not test whether the signal exists.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow">
+    <div class="eyebrow">Pilot release - April 2026</div>
+    <h2 style="margin-top:12px;max-width:24ch;">Read the preprints. Talk to the team.</h2>
+    <p class="lede" style="margin-top:24px;max-width:60ch;">This release is fully public. Each paper is roughly 10 to 21 pages and stands on its own. The recommended reading order is 01 &rarr; 02 &rarr; 03 &rarr; 04 &rarr; 05; the 05 preprint is the strongest standalone for readers focused on chemical-genetic mapping. Dataset and reproduction scripts are deposited on Zenodo with a citable DOI.</p>
+
+    <div class="downloads" style="margin-top:48px;">
+      <a class="dl" href="index.html">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M3 6h18M3 12h18M3 18h18"/></svg></div>
+        <div class="dl-title">Start with the overview</div>
+        <div class="dl-meta">All five preprints summarized</div>
+        <div class="dl-cta">Open the index</div>
+      </a>
+      <a class="dl" href="pdfs/zscreen-pilot-release-bundle.pdf">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3v5h5M5 21V3h9l5 5v13z"/></svg></div>
+        <div class="dl-title">All five preprints</div>
+        <div class="dl-meta">Bundled PDFs - ~80 pages</div>
+        <div class="dl-cta">Download</div>
+      </a>
+      <a class="dl" href="mailto:z-screen@zafrens.com?subject=Z-Screen%20Pilot%20Release%20-%20conversation">
+        <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l9 7 9-7M3 6v12h18V6"/></svg></div>
+        <div class="dl-title">Talk to us</div>
+        <div class="dl-meta">Researchers - partners - investors</div>
+        <div class="dl-cta">Email the team</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<nav class="paper-nav">
+  <a href="index.html" class="prev">
+    <span class="label">&larr; Overview</span>
+    <span class="ttl">All five preprints</span>
+  </a>
+  <a href="paper-01-activeseq.html" class="next">
+    <span class="label">Paper 01 &rarr;</span>
+    <span class="ttl">ActiveSeq</span>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <div>
+      <span class="zf-lockup" style="font-size:24px;color:var(--zf-steel);">
+        <img src="assets/zafrens-mark-steel.svg" alt="" style="height:28px;width:auto;">
+        <span class="zf-lockup__divider" style="height:18px;"></span>
+        <span class="zf-wordmark" style="font-size:14px;">Z-Screen</span>
+      </span>
+      <div class="meta" style="margin-top:14px;">Z-Screen - Pilot Release - April 2026 - Zafrens, San Diego</div>
+    </div>
+    <div class="meta" style="text-align:right;line-height:2;">
+      <a href="index.html#access">Request access</a><br>
+      <a href="https://zafrens.com" target="_blank" rel="noopener">zafrens.com &rarr;</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
