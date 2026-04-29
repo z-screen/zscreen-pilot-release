@@ -930,3 +930,94 @@ section + section { border-top: 1px solid rgba(11,18,32,0.06); }
 /* Anchor underline on hover for inline links */
 .col-body a, .lede a, .tldr a { text-decoration: underline; text-decoration-color: rgba(22,80,121,0.4); text-underline-offset: 3px; }
 .col-body a:hover, .lede a:hover, .tldr a:hover { text-decoration-color: var(--zf-steel); }
+
+/* ============================================================
+   Hero CTA buttons + metadata strip (paper detail pages)
+   Promoted from v2 prototype after sign-off.
+   ============================================================ */
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--zf-steel);
+  color: var(--zf-paper);
+  padding: 14px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--zf-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--zf-steel);
+  box-shadow: 0 1px 2px rgba(11,18,32,0.06), 0 4px 10px -4px rgba(22,80,121,0.25);
+}
+.btn-primary:hover {
+  background: var(--zf-night);
+  border-color: var(--zf-night);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(11,18,32,0.08), 0 12px 22px -8px rgba(11,18,32,0.3);
+}
+.btn-primary svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn-secondary {
+  color: var(--zf-steel);
+  text-decoration: none;
+  font-family: var(--zf-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 14px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s, transform 0.2s;
+}
+.btn-secondary:hover {
+  color: var(--zf-night);
+  transform: translateX(2px);
+}
+
+.hero-meta {
+  font-family: var(--zf-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(11,18,32,0.5);
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(11,18,32,0.08);
+}
+.hero-meta .dot { margin: 0 10px; opacity: 0.4; }
+
+@media (min-width: 1280px) {
+  .hero-actions { margin-top: 40px; gap: 18px; }
+  .btn-primary { padding: 16px 28px; font-size: 13px; }
+  .btn-secondary { padding: 16px 10px; font-size: 13px; }
+  .hero-meta { font-size: 12px; margin-top: 28px; padding-top: 22px; }
+}
+@media (max-width: 480px) {
+  .hero-actions { gap: 10px; }
+  .btn-primary { padding: 12px 18px; font-size: 11px; gap: 8px; }
+  .btn-secondary { padding: 12px 4px; font-size: 11px; }
+  .btn-primary svg { width: 14px; height: 14px; }
+}
