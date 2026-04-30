@@ -35,8 +35,8 @@
       <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 05
     </div>
     <div class="pnum">PAPER 05 - Causal Reasoning</div>
-    <h1>Every compound nominates its likely target, automatically.</h1>
-    <p class="paper-lede">Target deconvolution is the most expensive bottleneck in phenotypic discovery. We turn it into a search problem. 8,599 chemical sub-structures are scanned against 8,603 genome-wide CRISPR knockouts, with permutation-null calibration on every match. 1,276 chemistries return a calibrated CRISPR-like mechanism hypothesis at q &le; 0.05 across 1,714 distinct programs. The framework recovers BRD4 from a known BRD4 PROTAC, surfaces a coherent V-ATPase program for an SOS1 inhibitor, and maps chemical substructure combinations to CRISPR combinations. A second library (ZEL028-2) independently re-surfaces ATP6V1A in HEK293, converging on the V-ATPase mechanism BAY-293 surfaced in A549 through completely unrelated chemistry: cross-system biological coherence is the strongest internal validation of the map.</p>
+    <h1>From anonymous hit to testable mechanism hypothesis.</h1>
+    <p class="paper-lede">Phenotypic screens can find interesting compounds before anyone knows what they do. The painful part comes next: figuring out the biology. This paper compares each compound's RNA fingerprint with public CRISPR fingerprints, turning a hit into a ranked list of genetic programs it resembles. The result is not automatic target proof; it is a much faster starting point for mechanism work.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-05-causal-reasoning.pdf">
@@ -67,7 +67,7 @@
           <g transform="translate(0,16)">
             <rect x="0" y="0" width="600" height="22" fill="#7eb9e0"/>
             <text x="-8" y="16" font-family="JetBrains Mono, monospace" font-size="11" fill="#fbfaf7" fill-opacity="0.85" text-anchor="end">ZEL024 tuples &rarr; EFR3A</text>
-            <text x="612" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#7eb9e0">z = 14.0</text>
+            <text x="612" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#7eb9e0">strong match</text>
             <text x="-8" y="32" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.5" text-anchor="end">REACHED BY 7 DISTINCT CHEMISTRIES</text>
           </g>
 
@@ -75,15 +75,15 @@
           <g transform="translate(0,72)">
             <rect x="0" y="0" width="663" height="22" fill="#f4a261"/>
             <text x="-8" y="16" font-family="JetBrains Mono, monospace" font-size="11" fill="#fbfaf7" fill-opacity="0.85" text-anchor="end">ZEL028-2 / HEK293 tuple &rarr; ATP6V1A</text>
-            <text x="675" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#f4a261">z = 15.47</text>
-            <text x="-8" y="32" font-family="JetBrains Mono, monospace" font-size="9" fill="#f4a261" fill-opacity="0.85" text-anchor="end">CROSS-SYSTEM V-ATPase REDISCOVERY - FDR-CONTROLLED q = 0.001</text>
+            <text x="675" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#f4a261">strong match</text>
+            <text x="-8" y="32" font-family="JetBrains Mono, monospace" font-size="9" fill="#f4a261" fill-opacity="0.85" text-anchor="end">INDEPENDENT V-ATPase REDISCOVERY</text>
           </g>
 
           <!-- Hit 3: BAY-293 -> ZW10 / V-ATPase (DISCOVERY) -->
           <g transform="translate(0,128)">
             <rect x="0" y="0" width="508" height="22" fill="#f4a261"/>
             <text x="-8" y="16" font-family="JetBrains Mono, monospace" font-size="11" fill="#fbfaf7" fill-opacity="0.85" text-anchor="end">BAY-293 (A549) &rarr; ZW10 / V-ATPase</text>
-            <text x="520" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#f4a261">z = 11.86</text>
+            <text x="520" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#f4a261">strong match</text>
             <text x="-8" y="32" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.5" text-anchor="end">DISCOVERY - q = 0.003</text>
           </g>
 
@@ -91,7 +91,7 @@
           <g transform="translate(0,184)">
             <rect x="0" y="0" width="293" height="22" fill="#7eb9e0"/>
             <text x="-8" y="16" font-family="JetBrains Mono, monospace" font-size="11" fill="#fbfaf7" fill-opacity="0.85" text-anchor="end">MZ1 (matched THP1) &rarr; BRD4</text>
-            <text x="305" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#7eb9e0">z = 6.84</text>
+            <text x="305" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#7eb9e0">top match</text>
             <text x="-8" y="32" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.5" text-anchor="end">POSITIVE CONTROL - q = 0.015</text>
           </g>
 
@@ -99,15 +99,15 @@
           <g transform="translate(0,240)">
             <rect x="0" y="0" width="131" height="22" fill="#fbfaf7" fill-opacity="0.6"/>
             <text x="-8" y="16" font-family="JetBrains Mono, monospace" font-size="11" fill="#fbfaf7" fill-opacity="0.85" text-anchor="end">STC-15 (matched THP1) &rarr; IRF1</text>
-            <text x="143" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#fbfaf7" fill-opacity="0.85">z = 3.06</text>
+            <text x="143" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#fbfaf7" fill-opacity="0.85">pathway match</text>
             <text x="-8" y="32" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.5" text-anchor="end">DOWNSTREAM PROXY - q = 0.045</text>
           </g>
 
-          <text x="0" y="308" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45">FROM A SINGLE 8,599 &times; 8,603 SCAN: 1,276 CHEMISTRIES &times; 1,714 DISTINCT CRISPR PROGRAMS PASS q &le; 0.05</text>
+          <text x="0" y="308" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45">HEADLINE SCAN: 1,276 CHEMISTRIES LINKED TO 1,714 DISTINCT CRISPR PROGRAMS</text>
           <text x="0" y="324" font-family="JetBrains Mono, monospace" font-size="9" fill="#f4a261" fill-opacity="0.85">ORANGE: TWO INDEPENDENT V-ATPase HITS - BAY-293 IN A549, ZEL028-2 TUPLE IN HEK293 - DIFFERENT LIBRARIES, SAME BIOLOGY</text>
         </g>
       </svg>
-      <div class="figcaption">Hero figure - Calibrated chemistry-to-CRISPR hits across the headline ZEL024 / HEK293 scan, two matched-cell THP1 anchors, the BAY-293 V-ATPase discovery in A549, and the cross-system rediscovery of ATP6V1A from a ZEL028-2 / HEK293 tuple processed through a hierarchical FDR-controlled evidence model. Two completely separate chemistries triangulate the same V-ATPase mechanism.</div>
+      <div class="figcaption">Hero figure - Compound RNA fingerprints can be searched against CRISPR perturbation states to produce calibrated mechanism hypotheses.</div>
     </div>
   </div>
 </header>
@@ -116,7 +116,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>Phenotypic screens find drugs without knowing the target, then spend months figuring out what the drug actually does. This paper turns that into a search problem at chemistry resolution. The headline scan (8,599 chemistry tuples by 8,603 Replogle K562 knockouts, ~74M chemistry-by-CRISPR pair scores, permutation-null calibrated) returns 1,276 calibrated tuples covering 1,714 distinct CRISPR programs. The framework recovers BRD4 from MZ1 (a known BRD4 PROTAC), surfaces a V-ATPase program for the SOS1 inhibitor BAY-293 (q = 0.003, top hit z = 11.86), and tracks combinatorial logic across all 131 Norman CRISPRa doubles. Run on a second combinatorial library (ZEL028-2) at three resolutions and filtered through a hierarchical FDR-controlled evidence model, the framework produces a two-candidate high-confidence shortlist: HEK293 ATP6V1A (z = 15.47) and A549 FKBP9 (z = 11.87). HEK293 ATP6V1A independently re-surfaces the V-ATPase mechanism BAY-293 surfaced in A549, through entirely unrelated chemistry. Cross-system biological coherence, on a calibrated leaderboard.</p>
+      <p>Every compound produces an RNA fingerprint. Public CRISPR atlases provide fingerprints for what happens when genes are perturbed. Paper 05 puts those two dictionaries in the same search frame. In the headline scan, 1,276 chemical tuples received calibrated CRISPR-like hypotheses. Known controls behaved sensibly, and two unrelated paths converged on V-ATPase biology.</p>
     </div>
   </div>
 </section>
@@ -125,8 +125,8 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>Target deconvolution (answering "what is this compound doing?") is the most expensive bottleneck in phenotypic drug discovery. Affinity pull-downs, photoaffinity labeling, and thermal shift assays are slow, biased toward abundant binders, and consume months and millions per program. The Connectivity Map and LINCS L1000 program established the chemistry-side framework for searching this space, but L1000 records one profile per compound. It cannot decompose a hit into the structural pieces that drove the response.</p>
-      <p>Genetic perturbation atlases are reference dictionaries. Each entry describes the transcriptional state that results from removing or activating a gene. If a chemical perturbation produces a state that matches a particular genetic entry, that entry becomes a mechanism hypothesis, automatically, for every screened compound. This paper shows the dictionary works at chemistry resolution. Z-Screen reads the transcriptional fingerprint of an individual combinatorial tuple and points to the genetic perturbation it most resembles, with calibrated false-discovery control. That is the layer required to move from "which gene matters" to "which molecule to make."</p>
+      <p>Phenotypic discovery is powerful because it can find compounds from function, even when the target is unknown. But that strength creates the next bottleneck: after a hit appears, teams can spend months asking what the compound is doing.</p>
+      <p>CRISPR atlases are like dictionaries of cell states. Each entry says what the cell looks like when a gene is removed or activated. If a compound creates a similar RNA state, that genetic entry becomes a mechanism hypothesis. Z-Screen makes this especially useful because the hypothesis is attached to a specific combinatorial molecule and its building-block recipe.</p>
     </div>
   </div>
 </section>
@@ -135,9 +135,9 @@
   <div class="wrap two-col">
     <div class="col-label">What we did</div>
     <div class="col-body">
-      <p>We compared Z-Screen rank signatures, built at the level of individual combinatorial tuples where coverage allows, against three CRISPR reference atlases: <strong>8,603 genome-wide CRISPR-KO signatures</strong> from Replogle K562, <strong>236 CRISPRa signatures</strong> (105 single + 131 paired) from Norman K562, and <strong>78 THP1 CRISPR perturbations</strong> from scPerturb (Papalexi / Satija ECCITE-seq plus Wessels combinatorial CRISPR-Cas13).</p>
-      <p>The headline scan compared 8,599 distinct ZEL024 / HEK293 chemistry tuples (4-position bb0/bb1/bb2/bb3 combinations) against the 8,603 Replogle K562 perturbations: roughly 74 million chemistry-by-CRISPR pair scores. Each comparison used direction-aware rank overlap on the top 250 up- and top 250 down-regulated genes. The top 10,000 rows by net mimic overlap were calibrated against permutation-null gene sets matched in size to each CRISPR signature, with 1,000 random draws per row, converted to Benjamini-Hochberg q-values.</p>
-      <p>We then asked five questions: does chemistry resolution matter (does single-BB averaging recover the same CRISPR matches as full tuple resolution)? Does the framework recover documented targets in matched-cell positive controls? Does the leaderboard concentrate on coherent biology rather than recurrent hubs? Do unannotated chemistries surface plausible mechanism hypotheses beyond primary pharmacology? And does chemistry-resolved tuple signal track the same combinatorial structure the Norman CRISPR-activation atlas was built to express?</p>
+      <p>We converted Z-Screen compound responses and public CRISPR perturbations into comparable ranked gene signatures. Then we asked which CRISPR state each compound most resembled.</p>
+      <p>The headline scan compared 8,599 ZEL024 / HEK293 chemistry tuples with 8,603 Replogle K562 CRISPR knockout signatures, then calibrated the top matches against matched random gene sets. Additional checks used Norman CRISPR-activation doubles and matched THP1 CRISPR controls.</p>
+      <p>The questions were practical: does full-molecule resolution matter, do known controls recover known biology, does the leaderboard avoid being dominated by generic hubs, do unannotated compounds produce plausible hypotheses, and does the chemistry follow the logic of genetic combinations?</p>
     </div>
   </div>
 </section>
@@ -147,64 +147,64 @@
     <div class="section-title-row">
       <div>
         <div class="eyebrow">What we found</div>
-        <h2 style="margin-top:12px;max-width:26ch;">Nine lines of evidence. One conclusion: combinatorial chemistry is searchable over the genome.</h2>
+        <h2 style="margin-top:12px;max-width:26ch;">Nine lines of evidence for a chemical-genetic search map.</h2>
       </div>
     </div>
 
     <div class="findings">
       <div class="finding">
         <div class="fnum">FINDING 01</div>
-        <h4>The headline scan returns 1,276 chemistries, 1,714 CRISPR programs, q &le; 0.05.</h4>
-        <p>From the 8,599 ZEL024 / HEK293 tuples by 8,603 Replogle K562 KOs scan (~74 million chemistry-by-CRISPR pair scores), the calibrated top 10,000 rows are dominated by hits at q &le; 0.05 across 1,276 distinct chemical tuples and 1,714 distinct CRISPR programs. The biology concentrates: DNA replication (MCM2, SLBP, CHAF1B), mitochondrial function (MRPL3, COX17, ATP5F1A), trafficking and nonsense-mediated decay (EFR3A, DDOST, SMG5).</p>
-        <div class="stat-callout"><span class="v">1,276 / 1,714</span><span class="k">Chemistries / CRISPR programs at q &le; 0.05</span></div>
+        <h4>The headline scan produces a broad calibrated hypothesis table.</h4>
+        <p>The ZEL024 / HEK293 scan linked 1,276 distinct chemical tuples to 1,714 distinct CRISPR programs at the calibrated threshold. The matches concentrated in interpretable biology, including DNA replication, mitochondrial function, trafficking, and RNA surveillance.</p>
+        <div class="stat-callout"><span class="v">1,276 / 1,714</span><span class="k">Chemistries / CRISPR programs</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 02</div>
-        <h4>Matched-cell positive control: MZ1 recovers BRD4.</h4>
-        <p>MZ1 is a small-molecule PROTAC that selectively degrades BRD4. Scanned against the matched-cell THP1 CRISPR panel, Z-Screen recovers BRD4 as the top calibrated CRISPR-like signature (net z = 6.84, empirical q = 0.015). Subsequent neighbors fall in the BRD4-adjacent transcription-elongation and chromatin co-regulator programs (mediator, FACT, EP300, SMARCD1). Coherent biology, not coincidental overlap.</p>
-        <div class="stat-callout"><span class="v">z = 6.84</span><span class="k">MZ1 to BRD4 KO - matched cell</span></div>
+        <h4>A known BRD4 degrader points back to BRD4.</h4>
+        <p>MZ1 is designed to degrade BRD4. Against a matched THP1 CRISPR panel, BRD4 returned as the top calibrated match, with neighboring programs that fit BRD4 biology.</p>
+        <div class="stat-callout"><span class="v">BRD4</span><span class="k">Top matched-cell hit for MZ1</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 03</div>
-        <h4>Discovery: BAY-293 surfaces a V-ATPase / trafficking program.</h4>
-        <p>BAY-293 is an SOS1 inhibitor profiled in A549. The top 12 calibrated Replogle matches all sit at empirical q = 0.003, with net z between 9.5 and 11.9. They concentrate on the V-ATPase complex (ATP6V1A, ATP6V1H, ATP6V1B2, ATP6V1C1, ATP6V1E1) and adjacent vesicular-trafficking machinery (ZW10, SACM1L, TMED2, ZNHIT1, CLTC). Top hit ZW10 reaches z = 11.86. Not a hypothesis a target-based search would have produced.</p>
-        <div class="stat-callout"><span class="v">z = 11.86</span><span class="k">BAY-293 to ZW10 - q = 0.003</span></div>
+        <h4>BAY-293 reveals biology beyond its primary annotation.</h4>
+        <p>BAY-293 is known as an SOS1 inhibitor, but its RNA state pointed to a coherent V-ATPase and vesicle-trafficking neighborhood. That is the kind of secondary biology a phenotypic platform should be able to surface.</p>
+        <div class="stat-callout"><span class="v">V-ATPase</span><span class="k">BAY-293 discovery signal</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 04</div>
-        <h4>Chemistry follows CRISPR combinatorial logic - now across 12 panels in 3 cell lines.</h4>
-        <p>For all 131 paired CRISPR-activation perturbations in the Norman atlas, ZEL024 / HEK293 tuple-vs-double match scores correlate positively with the sum of tuple-vs-single match scores. Median Spearman &rho; = 0.353, every double significant at p &le; 0.05. For 98.5% of doubles, the best Z-Screen tuple's score against the double exceeded its score against either constituent single. The same combinatorial logic test was rerun on a second library (ZEL028-2) across HEK293, A549, and H1650 at three different chemistry resolutions: 12 panels total. Result: 90.8 to 100% of doubles significant per panel, median &rho; between 0.325 and 0.371, and best-double-above-both-singles in 86.3 to 98.5% of cases. The chemistry tracks the same combinatorial structure the Norman atlas was built to express - in three cell lines, two libraries, and three chemistry resolutions. L1000, a one-profile-per-compound reference, cannot produce that result.</p>
+        <h4>Chemical signatures follow genetic-combination logic.</h4>
+        <p>The Norman CRISPR atlas contains paired gene perturbations. Z-Screen tuple scores tracked the expected relationship between doubles and their two singles, and the pattern reproduced in a second library across three cell lines. That argues the map is reading structured biology, not just noise.</p>
         <div class="stat-callout"><span class="v">12 / 12</span><span class="k">ZEL028-2 panels reproduce - 90.8 to 100% of Norman doubles significant</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 05</div>
-        <h4>Hubs flagged, not laundered: 1,236 / 1,664 still pass after stripping.</h4>
-        <p>Broadly responsive CRISPR knockouts can match many transcriptional states by being broadly responsive themselves. A benchmark that does not control for that property will look stronger than it is. We reran the calibrated table after dropping the 50 most-recurrent CRISPR programs. The diversity holds: 1,236 distinct chemistry tuples and 1,664 distinct CRISPR programs still pass q &le; 0.05. The headline is not driven by a small handful of recurrent hubs.</p>
-        <div class="stat-callout"><span class="v">1,236 / 1,664</span><span class="k">After hub-strip - q &le; 0.05</span></div>
+        <h4>Generic CRISPR hubs are flagged, not hidden.</h4>
+        <p>Some CRISPR perturbations match many states because they are broadly responsive. After removing the 50 most recurrent programs, the table still contained broad chemistry and CRISPR diversity, so the headline was not driven by a few generic hubs.</p>
+        <div class="stat-callout"><span class="v">1,236 / 1,664</span><span class="k">After removing common hubs</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 06</div>
-        <h4>Documented targets recover at genome-wide scale, with informative failures.</h4>
-        <p>Among 29 Z-Screen compounds with a documented primary target represented in the Replogle K562 panel, 12 had their target ranked in the top 15% of the cross-cell genome-wide ranking. Derazantinib hit FGFR1 at rank 145 of 8,839 (~1.6%); STC-15 hit METTL3 at ~9% in A549. The failures are mechanistically informative: cobimetinib's MAP2K2 ranked at 4,694 (allosteric MEK inhibition does not always produce a knockout-like transcriptional consequence), and GSK126's EZH2 was anti-correlated rather than mimicking (consistent with the long half-life of EZH2 protein under enzymatic inhibition).</p>
+        <h4>Known targets recover when biology makes them visible.</h4>
+        <p>Documented targets were enriched in genome-wide rankings, but not universally recovered. The misses are informative: a drug can act through a target without producing a knockout-like RNA state in that cell context.</p>
         <div class="stat-callout"><span class="v">12 / 29</span><span class="k">Documented targets in top 15%</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 07</div>
-        <h4>A hierarchical FDR-controlled evidence model produces a two-candidate shortlist.</h4>
-        <p>The framework was rerun on a second library (ZEL028-2) in three cell lines (HEK293, A549, H1650) at three chemistry resolutions in parallel: full tuple, variable triple (bb1+bb3+bb4), and three variable pair subsets (bb1+bb3, bb1+bb4, bb3+bb4) at &gt;=10 wells. The variable-pair Replogle scans were permutation-calibrated with the same size-matched null as the headline ZEL024 scan, so subset support is FDR-controlled rather than rank-overlap only. A composite mechanism-support score then asked, for every calibrated full-tuple call: does the same CRISPR perturbation reappear at calibrated q &le; 0.05 in independent variable-pair subsets? Of 2,151 calibrated full-tuple rows, exactly two non-hub candidates pass the strictest tier: HEK293 ATP6V1A (full-tuple z = 15.47, q = 0.001; bb3+bb4 pair calibrated z = 7.94, q = 0.001) and A549 FKBP9 (full-tuple z = 11.87, q = 0.001; bb1+bb4 pair calibrated z = 8.96, q = 0.001). 11 additional non-hub candidates carry uncalibrated subset top-50 support and form a broader investigation queue. The leaderboard is no longer just calibrated, it is corroborated.</p>
-        <div class="stat-callout"><span class="v">2 + 11</span><span class="k">FDR-controlled shortlist + broader investigation queue</span></div>
+        <h4>A second library produces a stricter shortlist.</h4>
+        <p>ZEL028-2 had shallower per-tuple coverage, so the analysis used independent chemistry subsets as supporting evidence. Two non-hub candidates passed the strictest corroborated tier: HEK293 ATP6V1A and A549 FKBP9, with a broader follow-up queue behind them.</p>
+        <div class="stat-callout"><span class="v">2 + 11</span><span class="k">Strict shortlist + broader queue</span></div>
       </div>
       <div class="finding" style="grid-column: 1 / -1;">
         <div class="fnum">FINDING 08</div>
-        <h4>Cross-system biological coherence: ATP6V1A independently re-surfaces V-ATPase.</h4>
-        <p>This is the strongest internal validation in the dataset. BAY-293 in A549 surfaced the V-ATPase complex (ATP6V1A, ATP6V1H, ATP6V1B2, ATP6V1C1, ATP6V1E1) and adjacent vesicular trafficking as a calibrated discovery program (Finding 03). Separately, an entirely unrelated chemistry from the ZEL028-2 library, in a different cell line (HEK293), processed through the hierarchical FDR-controlled evidence model (Finding 07), independently produces ATP6V1A as the top calibrated CRISPR call - and is corroborated by an independent variable-pair subset signature at the same FDR-controlled threshold. Two libraries with no shared building-block vocabulary, two cell lines, two completely separate analytical paths, the same V-ATPase mechanism. That is biological replication a single-library benchmark cannot produce, and it is the kind of cross-system convergence a discovery team can act on directly: the chemistry-resolved tuple identifies which 4-piece molecule a chemist should make to interrogate the mechanism orthogonally.</p>
+        <h4>Two unrelated paths converge on V-ATPase biology.</h4>
+        <p>This is the strongest internal validation signal. BAY-293 in A549 pointed to V-ATPase and trafficking biology. Separately, an unrelated ZEL028-2 tuple in HEK293 surfaced ATP6V1A with subset support. Different chemistry, different cell context, same biological neighborhood.</p>
         <div class="stat-callout"><span class="v">2 PATHS</span><span class="k">BAY-293 / A549 + ZEL028-2 / HEK293 - one V-ATPase mechanism</span></div>
       </div>
       <div class="finding" style="grid-column: 1 / -1;">
         <div class="fnum">FINDING 09</div>
-        <h4>The headline replicates on a second combinatorial library, three cell lines.</h4>
-        <p>Independent of the FDR-controlled shortlist, the calibrated full-tuple ZEL028-2 scan returns a top-10,000 table covering 943 chemistry tuples and 285 distinct CRISPR programs at q &le; 0.05 in HEK293. The strongest match reaches net z = 24.7 (vs 20.5 in A549 and 18.6 in H1650). The biology themes that surfaced in ZEL024 / HEK293 reappear: RNA processing (DICER1, DROSHA, the EXOSC exosome family, CNOT3, SMG5) and mitochondrial translation (MRPL family, GFM1, IARS2). 15 CRISPR programs appear in the top-50 deduplicated hits across all three ZEL028-2 cell lines. Per-tuple coverage in ZEL028-2 is shallower than in ZEL024 (median 2 vs 13 cells per tuple), so the full-tuple results read as a chemistry-resolved leaderboard, which is exactly why the hierarchical mechanism-support model in Finding 07 was built. Same scan, different chemical grammar, three cell lines, same biology, same calibration.</p>
-        <div class="stat-callout"><span class="v">943 / 285</span><span class="k">ZEL028-2 / HEK293 - q &le; 0.05 - 15 programs recur across 3 cell lines</span></div>
+        <h4>The scan works again in a second chemical grammar.</h4>
+        <p>ZEL028-2 reproduced several biology themes from the headline library across three cell lines, including RNA-processing and mitochondrial-translation programs. Because tuple coverage was shallower, these results are treated as a ranked chemistry-resolved leaderboard rather than finished mechanism calls.</p>
+        <div class="stat-callout"><span class="v">943 / 285</span><span class="k">Second-library chemistry / programs</span></div>
       </div>
     </div>
   </div>
@@ -213,8 +213,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">What this enables</div>
-    <h2 style="margin-top:12px;max-width:26ch;">A chemical search engine over genetic perturbation space.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Query a CRISPR target. Return a ranked, calibrated list of chemistry that pushes cells toward the same transcriptional state, with full per-position building-block provenance for every hit. That is the deliverable, and it is a different object from a similarity score against a single compound database. For a discovery team starting from a functional-genomics screen, the framework converts genetic-state nominations into chemistry to make. For a phenotypic team holding an unannotated hit, it generates a calibrated mechanism hypothesis at compound resolution. Combined with <a href="paper-04-cross-cell-transfer.html">paper 04's cross-cell transfer</a>, the mapping reaches into cell types where direct K562 or THP1 reference comparisons are not yet possible. The headline scan reproduces on a second combinatorial library across three cell lines, with the same calibration, surfacing the same biology themes. And under a hierarchical FDR-controlled evidence model the second library independently re-surfaces ATP6V1A in HEK293, converging on the V-ATPase mechanism BAY-293 surfaced in A549 through completely unrelated chemistry: cross-system biological coherence on a calibrated leaderboard. The chemistry-to-CRISPR map is real, repeatable, and now demonstrably triangulating biology across libraries.</p>
+    <h2 style="margin-top:12px;max-width:26ch;">A search engine from genetic state to chemistry.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">For a team starting from functional genomics, the long-term promise is direct: query a desired genetic state and return chemistry that pushes cells toward a similar RNA program. For a team starting from a phenotypic hit, the promise runs the other way: ask which genetic perturbations the hit most resembles. The pilot does not make target validation disappear, but it can move mechanism work from a blank page to a ranked, calibrated, chemistry-resolved hypothesis list.</p>
   </div>
 </section>
 
@@ -222,7 +222,7 @@
   <div class="wrap-narrow">
     <div class="eyebrow">Access</div>
     <h2 style="margin-top:12px;">Preprint, data, and analysis repo.</h2>
-    <p style="margin-top:18px;color:rgba(11,18,32,0.7);max-width:60ch;">Public release. The calibrated chemistry-to-CRISPR match table, permutation-null code, and full reproduction pipeline ship with the data bundle on Zenodo. Reproduction time on a laptop: ~35 to 40 minutes for the headline ZEL024 / HEK293 scan.</p>
+    <p style="margin-top:18px;color:rgba(11,18,32,0.7);max-width:60ch;">Public release. The chemistry-to-CRISPR match table and full reproduction pipeline ship with the data bundle on Zenodo. Reproduction time on a laptop is roughly 35 to 40 minutes for the headline ZEL024 / HEK293 scan.</p>
 
     <div class="downloads" style="margin-top:32px;">
       <a class="dl" href="pdfs/zscreen-paper-05-causal-reasoning.pdf">
@@ -234,7 +234,7 @@
       <a class="dl" href="https://zenodo.org/records/19889498" target="_blank" rel="noopener">
         <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.6 3.6 3 8 3s8-1.4 8-3V6M4 12v6c0 1.6 3.6 3 8 3s8-1.4 8-3v-6"/></svg></div>
         <div class="dl-title">Match table on Zenodo</div>
-        <div class="dl-meta">20K calibrated pairs - q-values</div>
+        <div class="dl-meta">20K calibrated match pairs</div>
         <div class="dl-cta">Open the deposit</div>
       </a>
       <a class="dl" href="mailto:z-screen@zafrens.com?subject=Paper%2005%20-%20Causal%20Reasoning%20-%20feedback">

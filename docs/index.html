@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Z-Screen Pilot Release - Zafrens</title>
-<meta name="description" content="Five preprints from the Z-Screen pilot. A reusable map from chemistry to biology.">
+<meta name="description" content="Five preprints showing how Z-Screen turns a small pilot into a reusable map of what new molecules do to cells.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/zafrens-brand.css?v=1777800000000">
@@ -33,14 +33,14 @@
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Z-Screen - Pilot Release - April 2026</div>
-    <h1>A reusable map from chemistry to biology, built from pilot-scale data.</h1>
-    <p class="lede">Five preprints from a pilot dataset. (1) We pair imaging with transcriptomics inside the same microwell, (2,3) predict the cell-state response of unseen compounds, (4) project that response into cell types we never directly assayed, and (5) return a calibrated genetic mechanism hypothesis for every screened compound. All of it from a tiny fraction of the platform's capacity.</p>
+    <h1>A small pilot that points to a much bigger way to discover drugs.</h1>
+    <p class="lede">Z-Screen makes many new molecules, puts each one in front of living cells, and reads out what happened. These five preprints show the first version of the full loop: measure the response, learn which parts of the chemistry matter, predict new molecules, estimate how they may behave in other cell types, and connect each hit to a likely genetic pathway.</p>
 
     <div class="stat-strip" style="margin-top:64px;">
-      <div class="stat"><span class="stat-num">615,793</span><span class="stat-key">mRNA-seq profiles - 12 libraries - 4 cell lines</span></div>
-      <div class="stat"><span class="stat-num">142,187</span><span class="stat-key">Novel compounds synthesized and profiled</span></div>
-      <div class="stat"><span class="stat-num">1,276</span><span class="stat-key">Chemistries with calibrated CRISPR match (q &le; 0.05)</span></div>
-      <div class="stat"><span class="stat-num">5</span><span class="stat-key">Preprints - one platform, one canonical dataset</span></div>
+      <div class="stat"><span class="stat-num">615,793</span><span class="stat-key">Cell-response profiles from the pilot</span></div>
+      <div class="stat"><span class="stat-num">142,187</span><span class="stat-key">New compounds made and profiled</span></div>
+      <div class="stat"><span class="stat-num">1,276</span><span class="stat-key">Compounds linked to CRISPR-like biology</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-key">Preprints from one connected dataset</span></div>
     </div>
   </div>
 </header>
@@ -49,8 +49,8 @@
   <div class="wrap two-col">
     <div class="col-label">About this release</div>
     <div class="col-body">
-      <p>Z-Screen is a 50,000-well experimental format with a built-in mRNA sequencing workflow. Z-Screen profiles one-bead-one-compound combinatorial libraries by paired imaging and transcriptomics, at five to ten cells per well. Most discovery platforms make drugs OR profile them. Z-Screen does both, on the same platform, in the same week.</p>
-      <p>This release is the first formal scientific case for what the platform can do at pilot scale. Five preprints, one canonical dataset, every claim reproducible end-to-end from the code in the public analysis bundle. The dataset and reproduction scripts are deposited on Zenodo with a citable DOI; this is the pre-bioRxiv pilot release. <a href="platform.html">More on the platform &rarr;</a></p>
+      <p>Most drug-discovery platforms force a tradeoff. You can screen a lot of compounds, or you can deeply understand a few. Z-Screen is built to do both in the same experiment. Each tiny well holds a small group of cells and one bead carrying one compound. The chip images the cells, reads their RNA, and keeps the chemistry attached to the biology.</p>
+      <p>This release is the first scientific case for that loop. It is still a pilot, but the signal is already broad enough to show why scale matters: every new well can make the map more useful for the next molecule. The data and reproduction scripts are public on Zenodo, and the papers are being shared before formal bioRxiv submission so the work can be challenged and improved. <a href="platform.html">More on the platform &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -60,10 +60,10 @@
     <div class="section-title-row">
       <div>
         <div class="eyebrow">The five preprints</div>
-        <h2 style="margin-top:12px;max-width:22ch;">Each preprint answers one question discovery teams already ask.</h2>
+        <h2 style="margin-top:12px;max-width:22ch;">Each preprint answers a simple discovery question.</h2>
       </div>
       <div class="section-aside" style="align-self:flex-start;padding-top:46px;">
-        <p>Five drug-cell interaction questions: <em>can we measure it?</em> <em>can we predict it?</em> <em>does it generalize?</em> <em>does it transfer?</em> <em>does it explain mechanism?</em> Each paper stands on its own; together they describe a drug discovery paradigm for the AI era.</p>
+        <p>The papers are organized like a discovery team's checklist: can we measure what a molecule did, can we learn from that measurement, can the learning survive new chemistry, can it transfer across cell types, and can it point us toward mechanism?</p>
       </div>
     </div>
 
@@ -71,8 +71,8 @@
     <a class="paper-card" href="paper-01-activeseq.html">
       <div class="card-body">
         <div class="card-num">PAPER 01 - ActiveSeq</div>
-        <div class="card-title">We see what a compound does and understand why, at the same time.</div>
-        <div class="card-summary">Imaging plus transcriptomics in the same microwell across 20,222 wells. Same-well fusion improves recall on all 35 control compounds. Normalized for task difficulty, the pilot matches the strongest public multimodal benchmark at an order of magnitude fewer cells.</div>
+        <div class="card-title">One well gives both the picture and the molecular readout.</div>
+        <div class="card-summary">The same tiny well is imaged and sequenced. That means a hit is not just "cells looked different"; it also comes with an RNA fingerprint that helps explain the response. In the control panel, combining image and RNA worked better than either readout alone.</div>
         <div class="card-cta">Read the non-technical summary</div>
       </div>
     </a>
@@ -80,8 +80,8 @@
     <a class="paper-card" href="paper-02-generative-chemistry.html">
       <div class="card-body">
         <div class="card-num">PAPER 02 - Generative Chemistry</div>
-        <div class="card-title">Mapping chemical sub-structures to biology predicts the cell-state response of unseen compounds.</div>
-        <div class="card-summary">615,793 profiles across 12 libraries and 4 cell lines. Building-block models cut held-out prediction error by up to 33%. With zero platform-specific calibration, Z-Screen signatures agree with the LINCS L1000 public reference at median &rho; = 0.490.</div>
+        <div class="card-title">The screen becomes a design map, not just a list of hits.</div>
+        <div class="card-summary">Because every compound is built from known chemical pieces, Z-Screen can learn which pieces move which cell programs. In the best-sampled systems, that was enough to predict the RNA response of compounds the model had not seen.</div>
         <div class="card-cta">Read the non-technical summary</div>
       </div>
     </a>
@@ -89,8 +89,8 @@
     <a class="paper-card" href="paper-03-generalization-ladder.html">
       <div class="card-body">
         <div class="card-num">PAPER 03 - Generalization Ladder</div>
-        <div class="card-title">Predictions hold up on new chemistry, not just close copies.</div>
-        <div class="card-summary">A five-rung benchmark separates interpolation from extrapolation. Under strict multi-axis holdout, the model beats chemistry-embedding nearest-neighbor retrieval on 90% of compounds at a +0.168 cosine margin. This tells us the model is learning chemistry from the biology it perturbed, not memorizing features.</div>
+        <div class="card-title">We ask whether the model is learning or just copying.</div>
+        <div class="card-summary">The paper uses a ladder of harder tests. In one system, the model still helped when the test compounds were built from chemical pieces withheld during training. In another, it clearly behaved more like gap-filling inside a dense library. That honesty matters.</div>
         <div class="card-cta">Read the non-technical summary</div>
       </div>
     </a>
@@ -98,8 +98,8 @@
     <a class="paper-card" href="paper-04-cross-cell-transfer.html">
       <div class="card-body">
         <div class="card-num">PAPER 04 - Cross-Cell Transfer</div>
-        <div class="card-title">Test in one cell type, predict the response in others.</div>
-        <div class="card-summary">A first practical tissue projection engine. By learning across landmark perturbations, chemical programs transfer across paired cell lines at cosine 0.66 to 0.86, against an identity baseline of 0.42 to 0.52. In-silico clinical trials become possible when learned effects on an accessible cell type can be projected to complex tissues.</div>
+        <div class="card-title">Measure once, then estimate where else to look.</div>
+        <div class="card-summary">Running every compound in every cell type is expensive. This paper shows a first version of cross-cell projection: use paired data to learn how a chemical program in one cell type is likely to appear in another, then prioritize the wet-lab follow-up.</div>
         <div class="card-cta">Read the non-technical summary</div>
       </div>
     </a>
@@ -107,8 +107,8 @@
     <a class="paper-card" href="paper-05-causal-genchem.html">
       <div class="card-body">
         <div class="card-num">PAPER 05 - Causal Reasoning</div>
-        <div class="card-title">Every compound nominates its likely genetic target, automatically.</div>
-        <div class="card-summary">8,599 chemistries scanned against 8,603 genome-wide CRISPR knockouts. 1,276 chemistries return a calibrated mechanism hypothesis (q &le; 0.05) across 1,714 distinct CRISPR programs. A second combinatorial library, processed through a hierarchical FDR-controlled evidence model, independently re-surfaces ATP6V1A in HEK293 - the same V-ATPase mechanism a separate compound (BAY-293) surfaced in a different cell line. Cross-system biological coherence on a calibrated leaderboard.</div>
+        <div class="card-title">A hit can come with a mechanism hypothesis on day one.</div>
+        <div class="card-summary">The RNA fingerprint of each compound is compared with public CRISPR atlases. That does not prove the target, but it turns an anonymous phenotypic hit into a ranked, testable hypothesis. One highlight: two unrelated paths converged on V-ATPase biology.</div>
         <div class="card-cta">Read the non-technical summary</div>
       </div>
     </a>
@@ -121,10 +121,10 @@
     <div class="section-title-row">
       <div>
         <div class="eyebrow">Independent validation</div>
-        <h2 style="margin-top:12px;max-width:22ch;">Four signals from outside the pilot's own framing.</h2>
+        <h2 style="margin-top:12px;max-width:22ch;">Signals that the map is seeing real biology.</h2>
       </div>
       <div class="section-aside">
-        <p>The hardest question for any new platform is whether the signal is real. We answer it with four checks that the platform did not get to define. A public reference atlas. Internal combinatorial logic the framework can't fake. A matched-cell positive control with a known answer. And an emergent discovery whose internal coherence rules out chance.</p>
+        <p>The important question is whether this is just a clever analysis of one dataset. The release includes several checks: agreement with a public reference, a known positive control, chemistry that follows the logic of CRISPR combinations, and an independent rediscovery of the same biological pathway.</p>
       </div>
     </div>
 
@@ -132,8 +132,8 @@
       <a class="paper-card" href="paper-02-generative-chemistry.html">
         <div class="card-body">
           <div class="card-num">EXTERNAL REFERENCE</div>
-          <div class="card-title">Z-Screen agrees with LINCS L1000.</div>
-          <div class="card-summary">Of 47 named Z-Screen control compounds, 14 are present in the LINCS L1000 public reference. Restricted to the 12,328-gene LINCS-visible universe with no platform-specific calibration, all 11 (compound, cell-line) pairs with adequate coverage produced positive Spearman correlation. Median &rho; = 0.490; 5 compounds reach empirical p &le; 0.048 against an unmatched-compound permutation null.</div>
+          <div class="card-title">Z-Screen agrees with an outside RNA reference.</div>
+          <div class="card-summary">For compounds that also appear in LINCS L1000, the Z-Screen RNA signatures point in the same direction. The overlap is not huge, but every adequately covered matched comparison was positive without platform-specific tuning.</div>
           <div class="card-cta">See the cross-platform test</div>
         </div>
       </a>
@@ -141,8 +141,8 @@
       <a class="paper-card" href="paper-05-causal-genchem.html">
         <div class="card-body">
           <div class="card-num">INTERNAL LOGIC</div>
-          <div class="card-title">Chemistry follows CRISPR combinatorial structure - across 12 panels.</div>
-          <div class="card-summary">For all 131 paired CRISPR-activation perturbations in the Norman atlas, ZEL024 / HEK293 tuple-vs-double match scores correlate positively with the sum of tuple-vs-single match scores (median Spearman &rho; = 0.353; every double significant at p &le; 0.05). The same test reproduces independently across 12 ZEL028-2 panels in three cell lines (HEK293, A549, H1650) at three chemistry resolutions: 90.8 to 100% of doubles significant per panel. Two libraries, three cell lines, same combinatorial logic.</div>
+          <div class="card-title">The chemistry follows genetic logic.</div>
+          <div class="card-summary">A CRISPR double perturbation should look related to the two single perturbations that compose it. Z-Screen chemical signatures followed that pattern across the Norman CRISPR atlas and reproduced it in a second library across three cell lines.</div>
           <div class="card-cta">See the combinatorial test</div>
         </div>
       </a>
@@ -150,8 +150,8 @@
       <a class="paper-card" href="paper-05-causal-genchem.html">
         <div class="card-body">
           <div class="card-num">POSITIVE CONTROL</div>
-          <div class="card-title">Same-cell control: MZ1 recovers BRD4.</div>
-          <div class="card-summary">MZ1 is a small-molecule PROTAC that degrades BRD4. Scanned against the matched-cell THP1 CRISPR panel, Z-Screen recovers BRD4 as the top calibrated match out of all available perturbations. Net z = 6.84, empirical q = 0.015.</div>
+          <div class="card-title">A known BRD4 drug points back to BRD4.</div>
+          <div class="card-summary">MZ1 is designed to degrade BRD4. When its Z-Screen signature was compared against a matched THP1 CRISPR panel, BRD4 came back as the top calibrated match. That is the kind of anchor this framework needs.</div>
           <div class="card-cta">See the positive control</div>
         </div>
       </a>
@@ -159,8 +159,8 @@
       <a class="paper-card" href="paper-05-causal-genchem.html">
         <div class="card-body">
           <div class="card-num">DISCOVERY EXAMPLE</div>
-          <div class="card-title">Two libraries, two cell lines, one V-ATPase mechanism.</div>
-          <div class="card-summary">BAY-293 (SOS1 inhibitor, A549) surfaces a V-ATPase / vesicular-trafficking program at q = 0.003, with nine components above net z = 10 (top hit ZW10, z = 11.86). Independently, an unrelated ZEL028-2 chemistry tuple in HEK293 - filtered through a hierarchical FDR-controlled evidence model - re-surfaces ATP6V1A (z = 15.47, calibrated subset z = 7.94, q = 0.001). Two completely separate paths converging on the same biology: the strongest internal validation in the dataset.</div>
+          <div class="card-title">Two separate paths point to V-ATPase biology.</div>
+          <div class="card-summary">BAY-293 produced a V-ATPase and vesicle-trafficking signature in A549. Separately, an unrelated ZEL028-2 chemistry in HEK293 surfaced ATP6V1A with independent subset support. Different chemistry, different cell context, same biological neighborhood.</div>
           <div class="card-cta">See the cross-system rediscovery</div>
         </div>
       </a>
@@ -171,25 +171,25 @@
 <section class="scope">
   <div class="wrap">
     <div class="eyebrow" style="color:#7eb9e0">Pilot scope</div>
-    <h2 style="margin-top:14px;max-width:22ch;">Everything above came from a seed-scale pilot.</h2>
-    <p class="lede" style="margin-top:24px;max-width:60ch;">Z-Screen is engineered to synthesize and screen <strong style="color:var(--zf-paper);font-weight:500">1M+ compounds per campaign</strong>, decentralized, with no central robotics. Every metric in these preprints (reproducibility, prediction accuracy, generalization, target recovery) comes from a small fraction of that capacity. The next investment scales an industry-defining signal that is already visible.</p>
+    <h2 style="margin-top:14px;max-width:22ch;">This is what showed up before scale.</h2>
+    <p class="lede" style="margin-top:24px;max-width:60ch;">The pilot is small relative to what the platform is built to run. That is the point. If a limited campaign can already produce reproducible cell responses, usable predictions, cross-cell transfer, and CRISPR-linked hypotheses, the natural next question is what happens when the same loop runs at full campaign scale.</p>
 
     <div class="scope-grid">
       <div class="scope-cell">
         <div class="scope-num">Today</div>
-        <div class="scope-key">Pilot - ~615K profiles - 12 libraries - 4 cell lines</div>
+        <div class="scope-key">Pilot dataset across 12 libraries and 4 cell lines</div>
       </div>
       <div class="scope-cell">
         <div class="scope-num">1M+</div>
-        <div class="scope-key">Compounds per run - platform target</div>
+        <div class="scope-key">Compounds per campaign - platform target</div>
       </div>
       <div class="scope-cell">
         <div class="scope-num">Multimodal</div>
-        <div class="scope-key">Image + RNA at 50,000-well density</div>
+        <div class="scope-key">Image plus RNA from the same microwell</div>
       </div>
       <div class="scope-cell">
         <div class="scope-num">Reusable</div>
-        <div class="scope-key">Every well sharpens the next prediction</div>
+        <div class="scope-key">Every new profile can improve the map</div>
       </div>
     </div>
   </div>
@@ -198,8 +198,8 @@
 <section id="access">
   <div class="wrap-narrow">
     <div class="eyebrow">Pilot release - April 2026</div>
-    <h2 style="margin-top:12px;max-width:24ch;">Read the science. Talk to the team.</h2>
-    <p class="lede" style="margin-top:24px;max-width:60ch;">These are draft manuscripts, posted publicly so we can collect feedback ahead of formal bioRxiv submission. The PDFs and website live on this repository; the 615K-profile dataset and per-paper analysis bundle are deposited on Zenodo with a citable DOI. Read it, run it, push back on what looks wrong. Final versions will incorporate revisions before bioRxiv posting.</p>
+    <h2 style="margin-top:12px;max-width:24ch;">Read the papers. Pressure-test the claims.</h2>
+    <p class="lede" style="margin-top:24px;max-width:60ch;">These are draft manuscripts shared ahead of formal bioRxiv submission. The full dataset and analysis bundle are public so readers can inspect the evidence, reproduce the numbers, and tell us where the story should be sharper before final posting.</p>
 
     <div class="downloads" style="margin-top:48px;">
       <a class="dl" href="pdfs/zscreen-pilot-release-bundle.pdf">
@@ -211,7 +211,7 @@
       <a class="dl" href="https://zenodo.org/records/19889498" target="_blank" rel="noopener">
         <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.6 3.6 3 8 3s8-1.4 8-3V6M4 12v6c0 1.6 3.6 3 8 3s8-1.4 8-3v-6"/></svg></div>
         <div class="dl-title">Canonical dataset on Zenodo</div>
-        <div class="dl-meta">615K profiles - latents - reproduction scripts</div>
+        <div class="dl-meta">615K profiles - analysis scripts</div>
         <div class="dl-cta">Open the deposit</div>
       </a>
       <a class="dl" href="mailto:z-screen@zafrens.com?subject=Z-Screen%20Pilot%20Release%20-%20feedback">

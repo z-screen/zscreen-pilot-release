@@ -35,8 +35,8 @@
       <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 03
     </div>
     <div class="pnum">PAPER 03 - Generalization Ladder</div>
-    <h1>Predictions hold up on genuinely new chemistry, not just close copies.</h1>
-    <p class="paper-lede">ML claims in drug discovery often hide retrieval. A five-rung ladder separates interpolation from real extrapolation, with a chemistry-embedding nearest-neighbor baseline at every rung. Under strict multi-axis holdout, where every substantive building block in the test compound is unseen during training, Z-Screen still beats retrieval on 90% of compounds at a +0.168 cosine margin. The model is learning chemistry, not memorizing it.</p>
+    <h1>How do we know the model is not just copying close cousins?</h1>
+    <p class="paper-lede">Drug-discovery ML can look impressive when the test molecules are very similar to training molecules. This paper builds a ladder of harder tests to separate useful prediction from near-neighbor lookup. The result is deliberately bounded: one system shows real held-chemistry extrapolation, another shows valuable gap-filling inside a dense library, and the hardest scaffold-hop test becomes the next experiment.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-03-generalization-ladder.pdf">
@@ -116,7 +116,7 @@
           </g>
         </g>
       </svg>
-      <div class="figcaption">Hero figure - Median cosine across the ladder. L3 (strict multi-axis holdout) is the cleanest evidence of genuine extrapolation in the dataset.</div>
+      <div class="figcaption">Hero figure - The ladder separates easy gap-filling from harder held-chemistry prediction.</div>
     </div>
   </div>
 </header>
@@ -125,7 +125,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>Under strict multi-axis chemistry holdout in ZEL031 / THP1, the model retains 0.765 cosine to held-out transcriptomic states, beats chemistry-embedding nearest-neighbor retrieval by 0.168, and wins on 90% of test compounds. Single-position holdouts confirm the same regime at 89-91% per-compound win rate. The hardest rung (cross-library scaffold-family transfer) becomes the next experiment to run, not a ceiling on the platform.</p>
+      <p>The paper asks a hard but simple question: when chemistry changes, does the model still help? In ZEL031 / THP1, it beat nearest-neighbor retrieval when key chemical building blocks were held out. In ZEL024 / HEK293, it mainly filled gaps inside a very dense library. The hardest cross-library scaffold shift is not solved yet; it is now clearly defined.</p>
     </div>
   </div>
 </section>
@@ -134,8 +134,8 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>Most ML claims in drug discovery conflate different notions of generalization. Predicting an unseen combination of <em>familiar</em> chemical pieces is a different problem from predicting a compound built from <em>unseen</em> pieces. Both differ from predicting a new scaffold family entirely. The recent BELKA literature on DNA-encoded libraries was the first careful demonstration that ligand-only models trained on DEL binary binder labels weaken sharply once chemistry moves away from training, and most splits in the ML literature since have been unable to distinguish real generalization from nearest-neighbor retrieval.</p>
-      <p>This paper imposes the distinction explicitly on dense phenotypic data. Five rungs of difficulty. A chemistry-embedding nearest-neighbor retrieval baseline at every rung. And a separate verdict on each rung: does the platform extrapolate, does it interpolate well, or does it need more data. The rungs that matter come back positive. The honest negative on the hardest rung becomes a defined next experiment, not a hidden caveat.</p>
+      <p>Investors hear a lot of claims that models can predict chemistry. The missing question is usually what kind of new chemistry. A new combination of familiar parts is not the same as a molecule built from parts the model has never seen. A new scaffold family is harder still.</p>
+      <p>This paper makes that distinction explicit. Every rung of the ladder has a simple nearest-neighbor baseline: what if we just copied the most similar measured molecule? A model only earns credit when it beats that baseline.</p>
     </div>
   </div>
 </section>
@@ -144,8 +144,8 @@
   <div class="wrap two-col">
     <div class="col-label">What we did</div>
     <div class="col-body">
-      <p>We built a five-level evaluation ladder. <strong>L1</strong> holds out unseen tuples within a shared building-block vocabulary. <strong>L2</strong> holds out a subset of building-block identities at one position. <strong>L3</strong> holds out identities at every substantive position simultaneously, so every building block in the test compound is unseen during training. <strong>L4</strong> holds out chemical-neighborhood clusters within a library, seeded by greedy farthest-point sampling so the test sets are diverse rather than locally similar. <strong>L5</strong> trains on one library family and tests on another in the same cell line.</p>
-      <p>Every rung uses the same toolkit. A 256-dim per-compound chemistry embedding (a fixed-seed Gaussian random projection of 2048-bit ECFP4 fingerprints, irreversible without the projection matrix). Ridge regression at &alpha; = 10. A train-mean baseline. And the one that matters: a <strong>chemistry-embedding nearest-neighbor retrieval</strong> baseline at every rung. Without it, a nominally hard split can be silently solved by copying the closest measured analog.</p>
+      <p>We built five tests. The easiest holds out new combinations of familiar building blocks. Harder rungs hold out individual building blocks, then multiple building-block positions, then whole chemical neighborhoods. The hardest asks whether a model trained on one library family can transfer to another in the same cell line.</p>
+      <p>At every rung, the model is compared with a nearest-neighbor baseline that copies the measured response of the closest training compound. That baseline is the guardrail against accidental hype.</p>
     </div>
   </div>
 </section>
@@ -155,40 +155,40 @@
     <div class="section-title-row">
       <div>
         <div class="eyebrow">What we found</div>
-        <h2 style="margin-top:12px;max-width:24ch;">The ladder separates the easy claim from the hard one.</h2>
+        <h2 style="margin-top:12px;max-width:24ch;">The ladder separates useful claims from inflated ones.</h2>
       </div>
     </div>
 
     <div class="findings">
       <div class="finding">
         <div class="fnum">FINDING 01</div>
-        <h4>Strict multi-axis holdout: real extrapolation in ZEL031 / THP1.</h4>
-        <p>Under L3, every substantive building-block axis is unseen during training. The model retains 0.765 cosine against 0.597 for retrieval (a +0.168 delta). It wins on 90% of test compounds, and all 10 random draws are positive under paired bootstrap. Median nearest-training cosine in the public chemistry-embedding space sits at 0.642, so the chemistry is well separated from the training set. Retrieval cannot account for the gain.</p>
-        <div class="stat-callout"><span class="v">+0.168</span><span class="k">Cosine over retrieval - L3</span></div>
+        <h4>One system shows prediction beyond close-copy lookup.</h4>
+        <p>In ZEL031 / THP1, the model still helped when the held-out compounds used building-block identities withheld during training. It beat the nearest-neighbor baseline on most test compounds, which is the cleanest extrapolation result in the pilot.</p>
+        <div class="stat-callout"><span class="v">+0.168</span><span class="k">Model advantage over lookup</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 02</div>
-        <h4>Single-position holdouts confirm the same regime.</h4>
-        <p>L2 in the same system: bb0 holdout reaches 0.783 cosine vs 0.632 retrieval (+0.151) on 728 test compounds at win rate 89%. bb1 holdout reaches 0.790 vs 0.644 (+0.146) on 729 test compounds at win rate 91%. All 10 random draws positive under paired bootstrap intervals at both positions.</p>
-        <div class="stat-callout"><span class="v">89 - 91%</span><span class="k">Per-compound win rate - L2</span></div>
+        <h4>Simpler holdouts tell the same story.</h4>
+        <p>When one building-block position was held out at a time, the same system continued to beat retrieval. That consistency makes the stricter result more credible.</p>
+        <div class="stat-callout"><span class="v">89 - 91%</span><span class="k">Compounds where model beat lookup</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 03</div>
-        <h4>ZEL024 / HEK293 is matrix completion in a saturated grid.</h4>
-        <p>Median nearest-training cosine on this library's holdouts sits at 0.881 to 0.988 in the chemistry-embedding space. Many "held-out" compounds still have near-duplicate cousins in the training set. The ladder catches that: ZEL024 / HEK293 delivers high-quality matrix completion inside a 13,769-of-13,944 saturated combinatorial grid. Useful for prioritizing chemistry within a design space, but not extrapolation, and we report it that way.</p>
+        <h4>A dense library gives a different, still useful answer.</h4>
+        <p>ZEL024 / HEK293 is so densely sampled that many held-out compounds still have very close analogs in the training set. That makes it excellent for filling gaps inside an explored design space, but it should not be marketed as the same kind of extrapolation.</p>
         <div class="stat-callout"><span class="v">13,769 / 13,944</span><span class="k">Observed tuples - saturated grid</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 04</div>
-        <h4>Chemical-neighborhood holdout still beats retrieval.</h4>
-        <p>L4 holds chemistry at arm's length while staying inside one reaction grammar. The clustering is seeded by greedy farthest-point sampling, so the test sets are diverse rather than locally similar. The model carries +0.236 cosine over retrieval in ZEL024 and +0.155 in ZEL031, on average cluster sizes of 2,754 and 711 compounds.</p>
-        <div class="stat-callout"><span class="v">+0.236</span><span class="k">L4 model gain - ZEL024</span></div>
+        <h4>Holding out chemical neighborhoods is supportive.</h4>
+        <p>When entire chemical neighborhoods were held out within a library, the model still beat retrieval in the main systems. That supports the idea that the model is learning signal beyond local analog copying.</p>
+        <div class="stat-callout"><span class="v">+0.236</span><span class="k">Neighborhood-holdout gain</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 05</div>
-        <h4>Cross-library scaffold transfer becomes the next experiment.</h4>
-        <p>L5 is weak on retrospective data (best absolute cosine 0.194, best gain over retrieval +0.096 in the H1650 ZEL024 to ZEL028-2 transfer). The ladder is meant to surface this honestly, not to reframe the benchmark to hide it. A single prospective same-cell scaffold-hop chip run (~1,000 wells) with parity coverage and a pre-registered model would settle the cross-library question.</p>
-        <div class="stat-callout"><span class="v">~1,000 wells</span><span class="k">One chip - settles L5</span></div>
+        <h4>The hardest scaffold-hop question is not solved yet.</h4>
+        <p>Cross-library scaffold-family transfer was weak retrospectively. That is not a failure of the story; it is a useful boundary. The paper defines a clean prospective chip run that can answer this hardest question directly.</p>
+        <div class="stat-callout"><span class="v">~1,000 wells</span><span class="k">Prospective scaffold-hop test</span></div>
       </div>
     </div>
   </div>
@@ -197,8 +197,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">What this enables</div>
-    <h2 style="margin-top:12px;max-width:26ch;">A model that survives held-out chemistry is the only kind worth trusting.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A discovery team only gets value out of a chemistry-to-phenotype model when the model still helps after the chemistry changes. The ladder defined here is the cleanest current benchmark we know of for that question on dense phenotypic data, and it produces two complementary verdicts depending on the library: ZEL024 / HEK293 delivers high-quality matrix completion within a saturated combinatorial grid (useful for prioritizing chemistry inside an explored design space), while ZEL031 / THP1 delivers genuine out-of-vocabulary extrapolation. The honest call on the hardest rung also defines a single chip run that would convert L5 from retrospective ambiguity to a definitive prospective answer. The ladder ships alongside the preprint as a reusable benchmark.</p>
+    <h2 style="margin-top:12px;max-width:26ch;">Trust comes from knowing the boundary.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A chemistry-to-phenotype model is valuable only if it helps when the next chemistry is different. This ladder shows where the current pilot already helps, where it is mainly doing useful gap-filling, and where the next experiment must be run. That makes the platform story more credible, not less: the benchmark tells the next chip exactly what to prove.</p>
   </div>
 </section>
 

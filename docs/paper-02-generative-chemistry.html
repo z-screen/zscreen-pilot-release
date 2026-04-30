@@ -35,8 +35,8 @@
       <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 02
     </div>
     <div class="pnum">PAPER 02 - Generative Chemistry</div>
-    <h1>Functional mapping of 'Lego' chemistry yields a learnable design map.</h1>
-    <p class="paper-lede">A screen stops being a catalog of measurements and starts being a design map: chemistry on one axis, transcriptomic phenotype on the other. Building blocks predict held-out compound responses (33% MSE reduction at the strongest case), library tuples land on the transcriptomic neighborhood of known reference drugs, and on shared compounds Z-Screen agrees with the LINCS L1000 public reference at median &rho; = 0.490 with no platform-specific calibration. Every well screened sharpens the next prediction. That is the flywheel.</p>
+    <h1>A screen that learns from every molecule it tests.</h1>
+    <p class="paper-lede">Most screens end as a spreadsheet of hits and misses. Z-Screen can leave behind something more useful: a map connecting chemical building blocks to the cell states they produce. In the best-sampled pilot systems, that map predicted responses for held-out compounds and agreed with an outside public RNA reference where the same compounds overlapped.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-02-generative-chemistry.pdf">
@@ -74,14 +74,14 @@
             <rect x="0" y="100" width="36" height="80" fill="#fbfaf7" fill-opacity="0.25"/>
             <rect x="42" y="45" width="36" height="135" fill="#7eb9e0"/>
             <text x="40" y="200" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL024 / HEK293</text>
-            <text x="40" y="218" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">-33.2% MSE</text>
+            <text x="40" y="218" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">33% less error</text>
           </g>
           <!-- ZEL031 / THP1 -->
           <g transform="translate(220,0)">
             <rect x="0" y="23" width="36" height="157" fill="#fbfaf7" fill-opacity="0.25"/>
             <rect x="42" y="13" width="36" height="167" fill="#7eb9e0"/>
             <text x="40" y="200" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbfaf7" fill-opacity="0.65" text-anchor="middle">ZEL031 / THP1</text>
-            <text x="40" y="218" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">-21.3% MSE</text>
+            <text x="40" y="218" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45" text-anchor="middle">21% less error</text>
           </g>
           <!-- ZEL024 / H1650 -->
           <g transform="translate(400,0)">
@@ -107,7 +107,7 @@
           </g>
         </g>
       </svg>
-      <div class="figcaption">Hero figure - Held-out tuple prediction (median cosine) - Building-block models recover transcriptomic responses well above the centroid baseline across multiple library / cell-line systems.</div>
+      <div class="figcaption">Hero figure - Building-block models predicted held-out RNA responses better than simple baselines in the strongest systems.</div>
     </div>
   </div>
 </header>
@@ -116,7 +116,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>Building-block models trained on 615,793 profiles predict held-out compound transcriptomic states with up to 33.2% MSE reduction over centroid baselines. Library tuples mimic internal references and approved drugs. Z-Screen control compounds match LINCS L1000 at median &rho; = 0.490 across 11 of 11 cross-platform pairs, with no platform-specific calibration. The screen stops being a catalog and starts being a design map.</p>
+      <p>Because Z-Screen knows the recipe for every compound, the dataset can ask which chemical pieces move which cell programs. In the strongest pilot case, the model predicted held-out RNA states substantially better than a simple baseline. That turns a screen from a static list into a reusable design map.</p>
     </div>
   </div>
 </section>
@@ -125,8 +125,8 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>Most screening campaigns end as a ranked list of wells. This one looks more like a <em>design map</em>. Because every Z-Screen compound carries its building-block history (the structured grammar of bb0, bb1, bb2, bb3 positions) alongside a measured cell-state response, the model learns which pieces of chemistry move which biological programs, and uses that to rank chemistry the screen has not yet measured.</p>
-      <p>For a discovery team, the screen stops being a one-time search and becomes durable institutional memory. For a partner, it is a service that keeps getting better against a problem space. For an investor, it is the difference between a contract research business and a compounding learning platform. Every well screened sharpens the predictions for every well after it. That is the flywheel, and these results are the first calibrated evidence that it is real.</p>
+      <p>A normal screen can tell you which wells looked interesting. It often cannot tell you why one chemical series worked, which pieces of the molecule mattered, or what to make next.</p>
+      <p>Z-Screen keeps the chemistry recipe attached to the RNA response. That means the data can become memory: the system can learn that certain building blocks tend to push cells toward certain states, then use that lesson to prioritize compounds that have not yet been tested. That is the platform value in this paper.</p>
     </div>
   </div>
 </section>
@@ -135,9 +135,9 @@
   <div class="wrap two-col">
     <div class="col-label">What we did</div>
     <div class="col-body">
-      <p>The canonical Z-Screen workspace assembles 615,793 RNA profiles across 12 combinatorial libraries and 4 cell lines (A549, H1650, HEK293, THP1), with 615,721 carrying valid scVI latent coordinates. The data come from a small number of pilot chip runs.</p>
-      <p>Six questions structured the analysis. Are control compounds reproducible enough to support modeling? Do building-block models predict held-out compound responses? Does full chemical structure add signal beyond building-block identity? Do library tuples land near known reference programs after cross-control background calibration? Do building-block effects recur across cell lines? And does imaging contribute in a conservative multimodal benchmark?</p>
-      <p>For external context we sized the dataset against the four landmark phenotypic platforms in this conversation: Tahoe-100M (~95M perturbational scRNA profiles, no chemistry provenance), scGeneScope (the closest public multimodal benchmark, treatment-matched not same-well), LINCS L1000 (the deepest public chemistry-side reference, ~1M compound profiles in 1,000 genes), and Cell Painting / JUMP (the imaging-only standard at multi-million-compound scale). Z-Screen is the only one of these that carries chemistry-by-design provenance on every well. We then ran a cross-platform concordance test against LINCS L1000 directly.</p>
+      <p>We analyzed 615,793 RNA profiles across 12 combinatorial libraries and 4 cell lines. Each profile was linked to the compound's building-block identity, so the model could learn from the structure of the chemistry rather than treating every molecule as an isolated label.</p>
+      <p>The analysis asked whether the RNA signal was reproducible, whether building blocks predicted held-out compound responses, whether full chemical structure added extra information, whether new tuples landed near known reference drugs, whether programs recurred across cell lines, and whether imaging added a secondary signal.</p>
+      <p>We also compared overlapping control compounds with LINCS L1000, the major public transcriptional reference. That check is important because it asks whether Z-Screen is seeing biology the broader field can recognize.</p>
     </div>
   </div>
 </section>
@@ -147,46 +147,46 @@
     <div class="section-title-row">
       <div>
         <div class="eyebrow">What we found</div>
-        <h2 style="margin-top:12px;max-width:26ch;">Six results that turn a combinatorial library into a learning model.</h2>
+        <h2 style="margin-top:12px;max-width:26ch;">Six results that turn a screen into a learning model.</h2>
       </div>
     </div>
 
     <div class="findings">
       <div class="finding">
         <div class="fnum">FINDING 01</div>
-        <h4>The assay floor is strong across all four cell lines.</h4>
-        <p>Median split-half cosine for named controls: 0.993 in A549, 0.991 in H1650, 0.993 in HEK293, 0.968 in THP1. Whatever a model misses, it isn't because the readout is noisy.</p>
+        <h4>The readout is stable enough to model.</h4>
+        <p>Named controls reproduced strongly across all four cell lines. That establishes the floor: when a model misses, the first explanation is not simply that the RNA readout is too noisy.</p>
         <div class="stat-callout"><span class="v">0.99+</span><span class="k">Control reproducibility - 3/4 cell lines</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 02</div>
-        <h4>Building-block models predict held-out compounds.</h4>
-        <p>Strongest case: ZEL024 / HEK293 reaches median cosine 0.674 against a 0.397 centroid baseline, a 33.2% reduction in mean squared error. ZEL031 / THP1 reaches 0.833 vs 0.783 (21.3% MSE reduction). The model is learning that particular pieces of chemistry carry recurring transcriptomic programs, which is what enables design-time reasoning about combinations the screen has not yet seen.</p>
-        <div class="stat-callout"><span class="v">-33.2%</span><span class="k">MSE reduction - ZEL024 / HEK293</span></div>
+        <h4>The chemical recipe predicts biology.</h4>
+        <p>In the strongest systems, building-block models predicted held-out compound RNA states better than simple baselines. The practical message is that the model can learn which chemical pieces carry recurring biological programs.</p>
+        <div class="stat-callout"><span class="v">-33.2%</span><span class="k">Prediction error reduction</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 03</div>
-        <h4>Full chemical structure adds signal beyond building-block identity.</h4>
-        <p>In ZEL024 / HEK293, a 256-dim chemistry embedding alone reaches cosine 0.611 (27.8% MSE reduction). Building-block identity alone also reaches 0.611 (27.5%). Combining the two reaches 0.621 with a 29.3% MSE reduction. The two inputs carry independent signal, so the combined representation is what we use to rank unmeasured chemistry.</p>
-        <div class="stat-callout"><span class="v">-29.3%</span><span class="k">MSE - BB + structure combined</span></div>
+        <h4>Full structure can add extra signal.</h4>
+        <p>Building-block identity was the most reliable coordinate. In the best-sampled setting, adding full chemical-structure information improved the model further, suggesting a path from library grammar toward broader chemical reasoning as coverage grows.</p>
+        <div class="stat-callout"><span class="v">-29.3%</span><span class="k">Error with recipe + structure</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 04</div>
-        <h4>Library tuples mimic known reference drugs.</h4>
-        <p>The cleanest, background-calibrated match comes from ZEL024 / HEK293, where a library tuple lands on the internal reference ZF-104 at cosine 0.901, against a HEK293 99th-percentile cross-control background of 0.931. ZEL031 / THP1 produces upper-tail matches to sorafenib (0.942), MZ1 (0.926), and STC-15 (0.918), in a cell line whose cross-control background is itself higher.</p>
+        <h4>New library compounds land near recognizable drug states.</h4>
+        <p>Some library tuples produced RNA neighborhoods near known reference compounds. These are not mechanism claims by themselves, but they are exactly the kind of candidate neighborhoods a discovery team can triage and test.</p>
         <div class="stat-callout"><span class="v">0.901</span><span class="k">Cosine to ZF-104 - ZEL024 / HEK293</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 05</div>
-        <h4>Building-block programs recur across cell lines.</h4>
-        <p>At chemistry-resolved building-block positions, programs partially survive a change in cell context. ZEL024 bb3 between HEK293 and H1650 reaches median cross-cell cosine 0.602 across 83 building blocks, with the strongest at 0.873. ZEL031 bb1 between A549 and THP1 reaches 0.526 (strongest 0.808). Chemistry transfers, which is what you need before you can reuse it across programs.</p>
-        <div class="stat-callout"><span class="v">0.602</span><span class="k">Median cross-cell cosine - ZEL024 bb3</span></div>
+        <h4>Some chemical programs survive a change in cell type.</h4>
+        <p>At chemistry-resolved positions, several building-block programs pointed in similar directions across paired cell lines. The transfer is not perfect, but it is enough to justify asking how far chemical programs can be reused.</p>
+        <div class="stat-callout"><span class="v">0.602</span><span class="k">Cross-cell agreement signal</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 06</div>
-        <h4>Z-Screen agrees with the LINCS L1000 public benchmark.</h4>
-        <p>14 of 47 named Z-Screen control compounds are in LINCS L1000. Restricted to the 12,328-gene LINCS-visible universe, with no platform-specific calibration, all 11 (compound, cell-line) pairs with adequate coverage produced positive cross-platform Spearman correlation. Median &rho; = 0.490; 5 compounds reached empirical p &le; 0.048 against an unmatched-compound permutation null. The HEK293 cell-line-pooled comparison separated matched from unmatched compound pairings at one-sided Mann-Whitney p = 0.009.</p>
-        <div class="stat-callout"><span class="v">11 / 11 positive</span><span class="k">Median &rho; = 0.490 vs LINCS L1000</span></div>
+        <h4>An outside reference sees the same direction.</h4>
+        <p>For overlapping compounds, Z-Screen RNA signatures agreed with LINCS L1000 without Z-Screen-specific calibration. The overlap is limited, but it is an important sanity check that the pilot is capturing recognizable transcriptional biology.</p>
+        <div class="stat-callout"><span class="v">11 / 11 positive</span><span class="k">Matched LINCS comparisons</span></div>
       </div>
     </div>
   </div>
@@ -195,8 +195,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">What this enables</div>
-    <h2 style="margin-top:12px;max-width:26ch;">A design map is the layer the rest of the platform's work runs on.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Once the screen is a function from chemistry to phenotype rather than a list of measurements, three things become possible. We can rank unmeasured chemistry before synthesizing it (<a href="paper-03-generalization-ladder.html">paper 03 stress-tests how far that ranking holds</a>). We can project a compound's response into cell types we never directly assayed (<a href="paper-04-cross-cell-transfer.html">paper 04</a>). And we can search the chemistry against genome-wide CRISPR atlases to nominate the genetic program every compound most resembles (<a href="paper-05-causal-genchem.html">paper 05</a>). The agreement with LINCS L1000 is the first external sign that the design map describes biology shared with the rest of the field, not a Z-Screen-specific idiosyncrasy.</p>
+    <h2 style="margin-top:12px;max-width:26ch;">A design map is the platform's compounding layer.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Once a screen learns a relationship between chemistry and cell state, each campaign can inform the next one. That map is what Paper 03 stress-tests on harder chemistry, what Paper 04 uses to project responses across cell types, and what Paper 05 connects to CRISPR atlases. The long-term value is not one ranked list; it is a reusable memory of how chemistry moves biology.</p>
   </div>
 </section>
 

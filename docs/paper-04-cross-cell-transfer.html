@@ -36,8 +36,8 @@
       <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 04
     </div>
     <div class="pnum">PAPER 04 - Cross-Cell Transfer</div>
-    <h1>Test in one cell type, predict the response in others.</h1>
-    <p class="paper-lede">Profile a compound once in an accessible source cell type, project its likely transcriptomic response in target cell types you never directly assayed, and use the projection to prioritize follow-up. A first practical tissue projection engine. Grouped chemical programs transfer at cosine 0.66 to 0.86, against an identity baseline of 0.42 to 0.52. The cost curve of running every program in every cell type begins to bend.</p>
+    <h1>Measure in one cell type, then decide where else to spend the experiment.</h1>
+    <p class="paper-lede">Drug teams often have to run the same chemistry in many cell types to find the biology that matters. This paper shows a first practical way to reduce that burden: learn how chemical response programs move between paired cell types, then use that map to prioritize which target-cell experiments are worth running next.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-04-cross-cell-transfer.pdf">
@@ -115,7 +115,7 @@
           </g>
         </g>
       </svg>
-      <div class="figcaption">Hero figure - Support-weighted cosine for grouped building-block program transfer at chemistry-resolved aggregation levels (BB-pair for ZEL024, single position bb0 for ZEL031). Learned transfer wins on every direction tested.</div>
+      <div class="figcaption">Hero figure - Learned transfer beat direct reuse across the chemistry-resolved cell-pair directions tested.</div>
     </div>
   </div>
 </header>
@@ -124,7 +124,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>Direct reuse of a source-cell signature in a target cell type is inadequate (0.146 cosine in ZEL024 HEK293 to H1650). Learned ridge transfer doubles to triples that. The strongest current unit is the grouped chemical program: at chemistry-resolved aggregation, support-weighted cosine reaches 0.66 to 0.86 across four cell-pair directions, against an identity baseline of 0.42 to 0.52. That matches how early discovery decisions get made, at the level of chemical series, not isolated compounds.</p>
+      <p>Simply reusing a compound's source-cell signature in another cell type is not good enough. A learned transfer map does better. The strongest current unit is the chemical program, not the isolated molecule, which matches how early discovery teams often make decisions: by chemical series.</p>
     </div>
   </div>
 </section>
@@ -133,9 +133,9 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>A major share of preclinical cost goes to running the same compound, panel, or library in every cell type of practical interest. Cell-intrinsic pharmacology rarely transfers cleanly across tissues, so one reference cell line is usually not enough. Running ten cell lines for every campaign is what teams do when they have to.</p>
-      <p>This is the layer that begins to break that constraint. Profile a compound in one source cell type. Project its likely transcriptional response in target cell types you never measured. Use the projections to prioritize follow-up work, flag counter-screen liabilities, and decide where to spend wet-lab time. The claim is narrow on purpose: cross-cell transfer models cell-intrinsic transcriptional response. It does not substitute for pharmacokinetics, tissue architecture, or organism-level toxicology. It is upstream decision support, where even partial accuracy pays.</p>
-      <p>For a partner, the immediate read is operational: a small paired landmark atlas plus one source measurement begins to do useful work for every additional cell type of clinical interest. For an investor, the read is the cost curve. Instead of running every program through every cell type, the screen begins to project. The economics of preclinical efficacy start to bend in the same direction the platform's design has been pointing for years.</p>
+      <p>A lot of preclinical cost comes from repeating the same experiment in every cell type that might matter. Skipping the wrong cell type can miss efficacy, toxicity, or selectivity. Running all of them is expensive.</p>
+      <p>This paper shows a way to start bending that curve. If Z-Screen has paired examples across two cell types, it can learn a map from one response space to the other. A new source-cell measurement can then help prioritize target-cell follow-up. The claim is intentionally narrow: this is about cell-intrinsic RNA response, not whole-body pharmacology or toxicology.</p>
+      <p>Even with that boundary, the operational value is clear. A small paired landmark atlas can make every future source-cell measurement more useful for the next cell type of interest.</p>
     </div>
   </div>
 </section>
@@ -144,10 +144,9 @@
   <div class="wrap two-col">
     <div class="col-label">What we did</div>
     <div class="col-body">
-      <p>We measured the same combinatorial libraries across multiple cell lines in the canonical Z-Screen workspace, then asked how well a learned source-to-target transfer map could project a transcriptomic response into a target cell type held out at evaluation. The benchmark runs at two levels.</p>
-      <p>At the molecule level, we used the cell-pair systems with sufficient shared SMILES coverage: ZEL024 between HEK293 and H1650 (6,299 shared molecules) and ZEL031 between A549 and THP1 (3,561 shared molecules). Each molecule was represented by the mean of its 32-dimensional scVI latent coordinates within a given library and cell line. We compared direct reuse of the source-cell signature (identity baseline) against learned source-to-target ridge regression and PLS transfer maps.</p>
-      <p>At the grouped-program level, we restricted reporting to chemistry-resolved aggregations: BB-pair (bb0+bb1) signatures for the dense 4-position ZEL024 library, where each pair signature averages roughly 150 distinct tuples; and single-position bb0 signatures for the 2-position ZEL031 library, where each centroid still leaves the other position to vary across roughly 70 distinct partner chemistries. We did not report single-position averages for libraries with three or more substantive positions, because each centroid in those libraries averages over hundreds to thousands of distinct chemistries and any reported transfer cosine would be a measurement of library-wide rather than chemistry-specific behavior.</p>
-      <p>Centered-response cosine is the primary metric. Centering removes the constant baseline shift that exists between two cell lines regardless of any perturbation, so the number reflects perturbational response rather than bulk offset.</p>
+      <p>We used Z-Screen libraries that had enough shared chemistry across paired cell lines to make the test fair. The clean molecule-level comparisons were ZEL024 between HEK293 and H1650, and ZEL031 between A549 and THP1.</p>
+      <p>We tested two levels. First, can a learned map project individual molecule responses better than simply reusing the source-cell response? Second, do grouped chemical programs transfer more cleanly when the groups still preserve chemical meaning?</p>
+      <p>The paper is careful about aggregation. Broad averages can look strong while no longer representing specific chemistry. The headline grouped results therefore use chemistry-resolved groups, not overly broad single-building-block averages.</p>
     </div>
   </div>
 </section>
@@ -157,40 +156,40 @@
     <div class="section-title-row">
       <div>
         <div class="eyebrow">What we found</div>
-        <h2 style="margin-top:12px;max-width:24ch;">Five results that bend the cost curve of preclinical efficacy.</h2>
+        <h2 style="margin-top:12px;max-width:24ch;">Five results that make cross-cell projection practical.</h2>
       </div>
     </div>
 
     <div class="findings">
       <div class="finding">
         <div class="fnum">FINDING 01</div>
-        <h4>Grouped chemical programs are the strongest unit of cross-cell transfer.</h4>
-        <p>At chemistry-resolved aggregation, learned transfer reaches support-weighted cosine 0.863 for ZEL024 H1650 to HEK293 (84 shared BB-pairs, identity 0.471), 0.808 for the reverse direction, 0.714 for ZEL031 A549 to THP1 at single-position bb0 (129 shared groups, identity 0.419), and 0.664 for the reverse. Four directions, all in the 0.66 to 0.86 range, against identity baselines of 0.42 to 0.52.</p>
-        <div class="stat-callout"><span class="v">0.863</span><span class="k">Best support-weighted cosine - ZEL024</span></div>
+        <h4>Chemical programs transfer better than isolated molecules.</h4>
+        <p>When molecules were grouped in chemically meaningful ways, learned transfer was much stronger than direct reuse. That is important because early discovery decisions often happen at the chemical-series level.</p>
+        <div class="stat-callout"><span class="v">0.863</span><span class="k">Best transfer score</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 02</div>
-        <h4>Direct reuse fails. Learned maps recover molecule-specific information.</h4>
-        <p>Even at the molecule level, identity is inadequate: 0.146 centered cosine in ZEL024 (HEK293 to H1650) and 0.094 in ZEL031 (A549 to THP1). Ridge transfer roughly doubles to triples that: 0.279 (HEK293 to H1650), 0.371 (H1650 to HEK293), 0.242 (A549 to THP1). Cross-cell projection is a prediction problem, not an artifact of bulk offset.</p>
+        <h4>Direct reuse is the wrong baseline.</h4>
+        <p>A compound's response in one cell type cannot just be copied into another. Learned maps recovered more target-cell information, showing that cross-cell projection is a real prediction problem.</p>
         <div class="stat-callout"><span class="v">2.5x identity</span><span class="k">Ridge vs identity, ZEL024 H1650 to HEK293</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 03</div>
-        <h4>Performance saturates with paired landmark coverage.</h4>
-        <p>Transfer accuracy rises quickly with shared training compounds and saturates within the available range. Useful accuracy shows up at around 5,000 paired molecules in the dense ZEL024 system, and continues to improve with scale. A small paired landmark atlas is enough to start projecting. The next investment widens coverage rather than tuning the model further.</p>
+        <h4>Paired examples buy transfer.</h4>
+        <p>Accuracy improved as more shared compounds were available for training. That points to a straightforward scaling path: broaden paired landmark coverage so more cell-type projections become useful.</p>
         <div class="stat-callout"><span class="v">~5K pairs</span><span class="k">Where transfer becomes useful</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 04</div>
-        <h4>Cross-library projection defines the next dataset.</h4>
-        <p>Training a transfer map on one library and testing on another in the same cell-pair direction was positive in some sparse settings (ZEL024 to ZEL028-2, HEK293 to H1650 lifted weighted cosine from 0.033 to 0.059) and weak or asymmetric in others. Sparse libraries are credible transfer targets in the current data, but unreliable transfer teachers. A small amount of additional collection in the sparse libraries would close this rung.</p>
+        <h4>Cross-library transfer is promising but not settled.</h4>
+        <p>Some library-to-library projections were positive, while others were weak or asymmetric. The current data say this is worth designing prospectively, not that it is already solved.</p>
         <div class="stat-callout"><span class="v">Asymmetric</span><span class="k">Dense to sparse &gt; sparse to dense</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 05</div>
-        <h4>Gene-level decoder turns latent transfer into ranked hypotheses.</h4>
-        <p>An exploratory gene-level decoder, composed with the learned latent transfer, partially recovers held-out gene-rank structure. The strongest direction (ZEL024 H1650 to HEK293) reaches per-compound gene-rank Spearman 0.182 and top-50 absolute-delta overlap 0.139, against 0.021 and 0.083 when the source latent is passed directly through the target decoder. We treat this as a route to ranked gene lists from transferred latents. Encouraging, but not yet a primary endpoint.</p>
-        <div class="stat-callout"><span class="v">&rho; = 0.182</span><span class="k">Best gene-rank Spearman</span></div>
+        <h4>Transferred responses can suggest genes to inspect.</h4>
+        <p>An exploratory gene-level decoder partially recovered target-cell gene-rank structure. This is not yet the main endpoint, but it shows how cross-cell transfer could eventually produce ranked gene and pathway hypotheses.</p>
+        <div class="stat-callout"><span class="v">&rho; = 0.182</span><span class="k">Best gene-rank signal</span></div>
       </div>
     </div>
   </div>
@@ -199,8 +198,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">Why this is different from the public references</div>
-    <h2 style="margin-top:12px;max-width:26ch;">L1000 and Tahoe-100M can compare. Only Z-Screen can compose.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">LINCS L1000 and Tahoe-100M are valuable for comparing the response of a single compound across cell lines. Neither carries combinatorial-chemistry provenance. A hit is one profiled compound, with no internal structure to decompose. Z-Screen runs combinatorial libraries with full building-block provenance across multiple cell lines in the same canonical workspace. That is what makes chemistry-resolved grouped-program transfer possible at all. Without it, you can describe cross-cell behavior. You cannot compose it. With it, the cross-cell projection feeds directly into <a href="paper-05-causal-genchem.html">paper 05's CRISPR mapping</a> in cell types where direct K562 or THP1 reference comparisons are impossible.</p>
+    <h2 style="margin-top:12px;max-width:26ch;">The difference is chemical structure, not just cell coverage.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Public atlases such as LINCS L1000 and Tahoe-100M are valuable references for comparing compounds across cell lines. Z-Screen adds a different asset: combinatorial chemistry provenance. Because every response is tied back to chemical building blocks, the platform can transfer not only individual compound signatures but also chemistry-linked programs. That is the bridge to Paper 05, where those programs are mapped against CRISPR perturbation states.</p>
   </div>
 </section>
 
