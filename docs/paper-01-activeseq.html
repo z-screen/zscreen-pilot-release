@@ -20,7 +20,6 @@
       <span class="name">Z-Screen</span>
     </a>
     <div class="topnav-papers">
-      <a href="platform.html">Platform</a>
       <a href="paper-01-activeseq.html" class="active">01 ActiveSeq</a>
       <a href="paper-02-generative-chemistry.html">02 Generative Chem</a>
       <a href="paper-03-generalization-ladder.html">03 Generalization</a>
@@ -37,7 +36,7 @@
     </div>
     <div class="pnum">PAPER 01 - ActiveSeq</div>
     <h1>One well shows what changed, and helps explain why.</h1>
-    <p class="paper-lede">Drug screens usually give you either an image of what happened to cells or a molecular readout of which biology moved. ActiveSeq takes both from the same microwell. In this pilot the combined readout classified compounds better than either view on its own, across every member of the 35-compound control panel.</p>
+    <p class="paper-lede">Drug screens usually give either an image of what happened to cells or a molecular readout of which biology moved. ActiveSeq captures both from the same microwell. In this pilot the combined readout classified compounds better than either view on its own, across every member of the 35-compound control panel.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-01-activeseq.pdf">
@@ -131,7 +130,7 @@
     <div class="col-label">Why it matters</div>
     <div class="col-body">
       <p>In early discovery, the fastest screens often leave teams asking what a hit actually means. Imaging scales well, but morphology alone is hard to translate into biology. RNA is more explanatory, but running it deeply across large libraries is usually too expensive.</p>
-      <p>ActiveSeq pairs the two readouts in a single well. A Z-Screen hit comes with an image of the cell response and an RNA fingerprint from the same small colony of cells. That does not remove every follow-up experiment, but it makes the first one much better targeted.</p>
+      <p>ActiveSeq pairs the two readouts in a single well. A Z-Screen hit comes with an image of the cell response and an RNA fingerprint from the same small colony of cells. That does not remove every follow-up experiment, but it makes the first look at a program remarkable rich.</p>
     </div>
   </div>
 </section>
@@ -142,7 +141,7 @@
     <div class="col-body">
       <p>We analyzed two HEK293 pilot runs covering 20,222 matched wells. A 35-compound control panel tested whether the readout could recover known compound identity, and dummy-bead wells served as a built-in stress test on the assay chemistry.</p>
       <p>For each well we compared the image signal, the RNA signal, and the combined signal, and asked four practical questions. Does the assay flag bad wells. Are the readouts reproducible. Do image and RNA organize the panel in related ways. Does combining them actually help on held-out wells.</p>
-      <p>We also put the result next to scGeneScope, a public treatment-matched imaging-plus-RNA benchmark. The experimental designs are different enough that this is a context comparison, not a head-to-head.</p>
+      <p>We also compared the results to scGeneScope, a public treatment-matched imaging-plus-RNA benchmark on 28 control compounds. The experimental designs are different enough that this is not a head-to-head comparison - sGenescope profiled ~600,000 droplets, this dataset is from ~20,000 microwells - but ActiveSeq holds up pretty well even at an order of magnitude lower sampling.</p>
     </div>
   </div>
 </section>
@@ -184,7 +183,7 @@
       <div class="finding">
         <div class="fnum">FINDING 05</div>
         <h4>The public benchmark puts the effect in context.</h4>
-        <p>scGeneScope is larger and built differently, so this is not a head-to-head. After adjusting for task difficulty, the pilot's multimodal effect sits in the same broad range as that public reference. That is enough to justify continued scale-up.</p>
+        <p>scGeneScope is larger and built differently, so this is not a head-to-head omparison. After adjusting for task difficulty, the pilot's multimodal effect sits in the same range as this public reference.</p>
         <div class="stat-callout"><span class="v">21.3x chance</span><span class="k">Best run - vs 18.0x scGeneScope</span></div>
       </div>
     </div>
@@ -195,7 +194,7 @@
   <div class="wrap-narrow">
     <div class="eyebrow">What this enables</div>
     <h2 style="margin-top:12px;max-width:26ch;">A better first look at every hit.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">ActiveSeq changes the first question after a screen. Teams stop asking only which wells looked different and start asking what the cells looked like and which molecular programs moved with them. The pilot does not prove every future same-well use case. It does show that the readout is reproducible, that the two views add information, and that the workflow is worth scaling.</p>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">ActiveSeq changes the first question after a screen. Teams stop asking only which wells looked different and start asking what the cells looked like and which molecular programs moved with them. The pilot demonstrates that this is feasible, reproducible, that the two views add orthogonal information.</p>
   </div>
 </section>
 
