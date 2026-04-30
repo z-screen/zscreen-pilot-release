@@ -36,8 +36,8 @@
       <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 04
     </div>
     <div class="pnum">PAPER 04 - Cross-Cell Transfer</div>
-    <h1>Measure in one cell type, then decide where else to spend the experiment.</h1>
-    <p class="paper-lede">Drug teams often have to run the same chemistry in many cell types to find the biology that matters. This paper shows a first practical way to reduce that burden: learn how chemical response programs move between paired cell types, then use that map to prioritize which target-cell experiments are worth running next.</p>
+    <h1>Measure in one cell type, then choose where to spend the next experiment.</h1>
+    <p class="paper-lede">Drug teams routinely re-run the same chemistry across many cell types to find the biology that matters. This paper is a first attempt to cut down that work: learn how chemical response programs move between paired cell types, then use that map to prioritize the next target-cell experiment.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-04-cross-cell-transfer.pdf">
@@ -124,7 +124,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>Simply reusing a compound's source-cell signature in another cell type is not good enough. A learned transfer map does better. The strongest current unit is the chemical program, not the isolated molecule, which matches how early discovery teams often make decisions: by chemical series.</p>
+      <p>Just reusing a compound's source-cell signature in another cell type is not good enough. A learned transfer map does better. The unit that travels best is the chemical program, not the isolated molecule, which lines up with how early discovery teams already make decisions: at the level of a chemical series.</p>
     </div>
   </div>
 </section>
@@ -133,9 +133,9 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>A lot of preclinical cost comes from repeating the same experiment in every cell type that might matter. Skipping the wrong cell type can miss efficacy, toxicity, or selectivity. Running all of them is expensive.</p>
-      <p>This paper shows a way to start bending that curve. If Z-Screen has paired examples across two cell types, it can learn a map from one response space to the other. A new source-cell measurement can then help prioritize target-cell follow-up. The claim is intentionally narrow: this is about cell-intrinsic RNA response, not whole-body pharmacology or toxicology.</p>
-      <p>Even with that boundary, the operational value is clear. A small paired landmark atlas can make every future source-cell measurement more useful for the next cell type of interest.</p>
+      <p>A lot of preclinical cost comes from running the same experiment again in every cell type that might matter. Skipping the wrong one can miss efficacy, toxicity, or selectivity. Running all of them is expensive.</p>
+      <p>This paper starts to bend that curve. With paired examples across two cell types, Z-Screen can learn a map from one response space to the other, and a new source-cell measurement can help prioritize target-cell follow-up. We are careful about the scope: this is the cell-intrinsic RNA response, not whole-body pharmacology or toxicology.</p>
+      <p>Even within that scope, the implication for ops is real. A small paired landmark atlas can make every future source-cell measurement more useful for whatever the next cell type of interest is.</p>
     </div>
   </div>
 </section>
@@ -144,9 +144,9 @@
   <div class="wrap two-col">
     <div class="col-label">What we did</div>
     <div class="col-body">
-      <p>We used Z-Screen libraries that had enough shared chemistry across paired cell lines to make the test fair. The clean molecule-level comparisons were ZEL024 between HEK293 and H1650, and ZEL031 between A549 and THP1.</p>
-      <p>We tested two levels. First, can a learned map project individual molecule responses better than simply reusing the source-cell response? Second, do grouped chemical programs transfer more cleanly when the groups still preserve chemical meaning?</p>
-      <p>The paper is careful about aggregation. Broad averages can look strong while no longer representing specific chemistry. The headline grouped results therefore use chemistry-resolved groups, not overly broad single-building-block averages.</p>
+      <p>We used Z-Screen libraries with enough shared chemistry across paired cell lines to make the comparison fair. The clean molecule-level comparisons were ZEL024 between HEK293 and H1650, and ZEL031 between A549 and THP1.</p>
+      <p>We tested two levels. Can a learned map project individual molecule responses better than simply reusing the source-cell response. And do grouped chemical programs transfer more cleanly when the groups still preserve chemical meaning.</p>
+      <p>Aggregation can be misleading. Broad averages can look strong while losing the chemistry the groups were supposed to represent. The headline grouped results therefore use chemistry-resolved groups, not single-building-block averages that pool too much.</p>
     </div>
   </div>
 </section>
@@ -164,31 +164,31 @@
       <div class="finding">
         <div class="fnum">FINDING 01</div>
         <h4>Chemical programs transfer better than isolated molecules.</h4>
-        <p>When molecules were grouped in chemically meaningful ways, learned transfer was much stronger than direct reuse. That is important because early discovery decisions often happen at the chemical-series level.</p>
+        <p>When molecules were grouped along meaningful chemical axes, learned transfer was much stronger than direct reuse. Early discovery decisions are usually made at the chemical-series level, so this is the more useful unit anyway.</p>
         <div class="stat-callout"><span class="v">0.863</span><span class="k">Best transfer score</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 02</div>
         <h4>Direct reuse is the wrong baseline.</h4>
-        <p>A compound's response in one cell type cannot just be copied into another. Learned maps recovered more target-cell information, showing that cross-cell projection is a real prediction problem.</p>
+        <p>A compound's source-cell response cannot just be carried over into another cell type. Learned maps recovered more target-cell information than identity reuse, so cross-cell projection is a real prediction problem and not a relabeling exercise.</p>
         <div class="stat-callout"><span class="v">2.5x identity</span><span class="k">Ridge vs identity, ZEL024 H1650 to HEK293</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 03</div>
-        <h4>Paired examples buy transfer.</h4>
-        <p>Accuracy improved as more shared compounds were available for training. That points to a straightforward scaling path: broaden paired landmark coverage so more cell-type projections become useful.</p>
+        <h4>More paired examples buy more transfer.</h4>
+        <p>Accuracy climbed steadily as more shared compounds were available for training. The scaling path is straightforward: broaden paired landmark coverage and more cell-type projections become useful.</p>
         <div class="stat-callout"><span class="v">~5K pairs</span><span class="k">Where transfer becomes useful</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 04</div>
         <h4>Cross-library transfer is promising but not settled.</h4>
-        <p>Some library-to-library projections were positive, while others were weak or asymmetric. The current data say this is worth designing prospectively, not that it is already solved.</p>
+        <p>Some library-to-library projections came back positive, others were weak or asymmetric. The current data tell us this is worth designing prospectively, not that it is already solved.</p>
         <div class="stat-callout"><span class="v">Asymmetric</span><span class="k">Dense to sparse &gt; sparse to dense</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 05</div>
-        <h4>Transferred responses can suggest genes to inspect.</h4>
-        <p>An exploratory gene-level decoder partially recovered target-cell gene-rank structure. This is not yet the main endpoint, but it shows how cross-cell transfer could eventually produce ranked gene and pathway hypotheses.</p>
+        <h4>Transferred responses can flag genes worth inspecting.</h4>
+        <p>An exploratory gene-level decoder partially recovered target-cell gene-rank structure. We treat this as a secondary readout for now. It points toward producing ranked gene and pathway hypotheses from transferred responses as the paired-landmark atlas grows.</p>
         <div class="stat-callout"><span class="v">&rho; = 0.182</span><span class="k">Best gene-rank signal</span></div>
       </div>
     </div>
@@ -198,8 +198,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">Why this is different from the public references</div>
-    <h2 style="margin-top:12px;max-width:26ch;">The difference is chemical structure, not just cell coverage.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Public atlases such as LINCS L1000 and Tahoe-100M are valuable references for comparing compounds across cell lines. Z-Screen adds a different asset: combinatorial chemistry provenance. Because every response is tied back to chemical building blocks, the platform can transfer not only individual compound signatures but also chemistry-linked programs. That is the bridge to Paper 05, where those programs are mapped against CRISPR perturbation states.</p>
+    <h2 style="margin-top:12px;max-width:26ch;">What Z-Screen adds is chemistry provenance.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Public atlases such as LINCS L1000 and Tahoe-100M are valuable references for comparing compounds across cell lines. Z-Screen brings combinatorial chemistry provenance to the same comparison: every response is tied back to specific building blocks, so the platform can transfer chemistry-linked programs alongside individual compound signatures. Paper 05 picks those programs up and matches them against CRISPR perturbation states.</p>
   </div>
 </section>
 

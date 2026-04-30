@@ -36,8 +36,8 @@
       <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 01
     </div>
     <div class="pnum">PAPER 01 - ActiveSeq</div>
-    <h1>One well can show what changed and why it changed.</h1>
-    <p class="paper-lede">Drug screens often give you either a picture of what happened to cells or a molecular readout of which biology moved. ActiveSeq asks for both from the same tiny well. In this pilot, combining the image and RNA views made compound classification better across the control panel, which is the first step toward hits that arrive with biological context instead of mystery.</p>
+    <h1>One well shows what changed, and helps explain why.</h1>
+    <p class="paper-lede">Drug screens usually give you either an image of what happened to cells or a molecular readout of which biology moved. ActiveSeq takes both from the same microwell. In this pilot the combined readout classified compounds better than either view on its own, across every member of the 35-compound control panel.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-01-activeseq.pdf">
@@ -121,7 +121,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>ActiveSeq reads an image and an RNA profile from the same microwell. On 35 control compounds, image plus RNA classified held-out wells better than RNA alone or image alone. The important point is practical: a Z-Screen hit can carry both visible phenotype and molecular context from the start.</p>
+      <p>ActiveSeq reads an image and an RNA profile from the same microwell. Across 35 control compounds, image plus RNA classified held-out wells better than RNA alone or image alone. The practical implication: a Z-Screen hit arrives with both a phenotype and a molecular fingerprint, instead of the phenotype alone.</p>
     </div>
   </div>
 </section>
@@ -130,8 +130,8 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>In early discovery, the fastest screens often leave teams asking what a hit actually means. Imaging can scale, but morphology alone can be hard to translate into biology. RNA is more explanatory, but it is usually too expensive to run deeply across large compound libraries.</p>
-      <p>ActiveSeq puts the two readouts together. A Z-Screen hit can come with an image of the cell response and an RNA fingerprint from the same small colony of cells. That does not remove every follow-up experiment, but it gives teams a much better starting point.</p>
+      <p>In early discovery, the fastest screens often leave teams asking what a hit actually means. Imaging scales well, but morphology alone is hard to translate into biology. RNA is more explanatory, but running it deeply across large libraries is usually too expensive.</p>
+      <p>ActiveSeq pairs the two readouts in a single well. A Z-Screen hit comes with an image of the cell response and an RNA fingerprint from the same small colony of cells. That does not remove every follow-up experiment, but it makes the first one much better targeted.</p>
     </div>
   </div>
 </section>
@@ -140,9 +140,9 @@
   <div class="wrap two-col">
     <div class="col-label">What we did</div>
     <div class="col-body">
-      <p>We analyzed two HEK293 pilot runs with 20,222 matched wells. A 35-compound control panel tested whether the readout could recover known compound identity. Dummy-bead wells acted as a built-in stress test for assay chemistry.</p>
-      <p>For each well, we compared the image signal, the RNA signal, and the combined signal. The questions were straightforward: does the assay catch bad wells, are the readouts reproducible, do image and RNA organize compounds in related ways, and does combining them help on held-out wells?</p>
-      <p>We also placed the result next to scGeneScope, a public treatment-matched imaging plus RNA benchmark. That comparison is for scale and context, not a direct win/loss claim, because the experimental designs are different.</p>
+      <p>We analyzed two HEK293 pilot runs covering 20,222 matched wells. A 35-compound control panel tested whether the readout could recover known compound identity, and dummy-bead wells served as a built-in stress test on the assay chemistry.</p>
+      <p>For each well we compared the image signal, the RNA signal, and the combined signal, and asked four practical questions. Does the assay flag bad wells. Are the readouts reproducible. Do image and RNA organize the panel in related ways. Does combining them actually help on held-out wells.</p>
+      <p>We also put the result next to scGeneScope, a public treatment-matched imaging-plus-RNA benchmark. The experimental designs are different enough that this is a context comparison, not a head-to-head.</p>
     </div>
   </div>
 </section>
@@ -160,31 +160,31 @@
       <div class="finding">
         <div class="fnum">FINDING 01</div>
         <h4>Bad wells are visible.</h4>
-        <p>The dummy-bead wells, which should not behave like real compound wells, showed the expected collapse in RNA yield. That matters operationally because failed chemistry does not have to quietly enter the biology model.</p>
+        <p>Dummy-bead wells should not behave like real compound wells, and they did not. RNA yield collapsed exactly where it should have, so failed chemistry does not get to slip silently into the biology model.</p>
         <div class="stat-callout"><span class="v">5,167 &rarr; 342</span><span class="k">Median UMIs - ACT010</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 02</div>
         <h4>The same compounds look like themselves again.</h4>
-        <p>When the wells were split into pseudo-replicates, both RNA and image features recovered compound identity far above chance. The signal also transferred across the two pilot runs, which is the basic reliability bar for a screening readout.</p>
+        <p>Splitting wells into pseudo-replicates, both RNA and image features recovered compound identity far above chance. The signal also held across the two pilot runs, which is the basic reliability bar for a screening readout.</p>
         <div class="stat-callout"><span class="v">85.7% / 100%</span><span class="k">Cross-run top-1 / top-3 - image</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 03</div>
         <h4>The two readouts agree, but they are not copies.</h4>
-        <p>Image and RNA organized the compound panel in related ways. That is exactly what you want: enough agreement to trust the biology, enough difference that combining them can add information.</p>
+        <p>Image and RNA organized the compound panel in related ways: enough overlap to trust the biology, enough difference that combining them adds information.</p>
         <div class="stat-callout"><span class="v">&rho; = 0.718</span><span class="k">Image &harr; RNA agreement</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 04</div>
-        <h4>Putting image and RNA together helps.</h4>
-        <p>On held-out wells, the combined readout beat image alone and RNA alone. The gain was broad across the control panel, not driven by a few easy compounds.</p>
+        <h4>Combining image and RNA helps.</h4>
+        <p>On held-out wells the combined readout beat image alone and RNA alone. The gain was distributed across the panel, not driven by a handful of easy compounds.</p>
         <div class="stat-callout"><span class="v">35 / 35</span><span class="k">Compounds improved by fusion</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 05</div>
         <h4>The public benchmark puts the effect in context.</h4>
-        <p>scGeneScope is larger and built differently, so this is not a direct contest. After adjusting for task difficulty, the pilot's multimodal effect sits in the same broad range as that public reference, which supports continued scale-up.</p>
+        <p>scGeneScope is larger and built differently, so this is not a head-to-head. After adjusting for task difficulty, the pilot's multimodal effect sits in the same broad range as that public reference. That is enough to justify continued scale-up.</p>
         <div class="stat-callout"><span class="v">21.3x chance</span><span class="k">Best run - vs 18.0x scGeneScope</span></div>
       </div>
     </div>
@@ -195,7 +195,7 @@
   <div class="wrap-narrow">
     <div class="eyebrow">What this enables</div>
     <h2 style="margin-top:12px;max-width:26ch;">A better first look at every hit.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">For a discovery team, ActiveSeq changes the first question after a screen. Instead of asking only "which wells looked interesting?", the team can ask "what did the cells look like, and which molecular programs moved?" The pilot does not prove every future same-well use case, but it shows the readout is reproducible, additive, and interpretable enough to justify scaling the matched image-plus-RNA workflow.</p>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">ActiveSeq changes the first question after a screen. Teams stop asking only which wells looked different and start asking what the cells looked like and which molecular programs moved with them. The pilot does not prove every future same-well use case. It does show that the readout is reproducible, that the two views add information, and that the workflow is worth scaling.</p>
   </div>
 </section>
 

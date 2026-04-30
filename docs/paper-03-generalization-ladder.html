@@ -36,7 +36,7 @@
     </div>
     <div class="pnum">PAPER 03 - Generalization Ladder</div>
     <h1>How do we know the model is not just copying close cousins?</h1>
-    <p class="paper-lede">Drug-discovery ML can look impressive when the test molecules are very similar to training molecules. This paper builds a ladder of harder tests to separate useful prediction from near-neighbor lookup. The result is deliberately bounded: one system shows real held-chemistry extrapolation, another shows valuable gap-filling inside a dense library, and the hardest scaffold-hop test becomes the next experiment.</p>
+    <p class="paper-lede">Drug-discovery ML can look impressive when the test molecules sit close to the training set. This paper sets up a ladder of progressively harder tests so we can separate real prediction from near-neighbor lookup. The honest answer is mixed. One pilot system shows held-chemistry extrapolation. Another mostly fills gaps inside a dense library. The hardest scaffold-hop test is open and now precisely defined.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-03-generalization-ladder.pdf">
@@ -125,7 +125,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>The paper asks a hard but simple question: when chemistry changes, does the model still help? In ZEL031 / THP1, it beat nearest-neighbor retrieval when key chemical building blocks were held out. In ZEL024 / HEK293, it mainly filled gaps inside a very dense library. The hardest cross-library scaffold shift is not solved yet; it is now clearly defined.</p>
+      <p>The question is simple to ask and hard to test fairly: when the chemistry changes, does the model still help? In ZEL031 / THP1 it beat nearest-neighbor retrieval even when whole chemical building blocks were held out. In ZEL024 / HEK293 it mostly filled gaps inside a very dense library. Cross-library scaffold transfer is the hardest case and we have not solved it yet, only nailed down what the prospective experiment looks like.</p>
     </div>
   </div>
 </section>
@@ -134,8 +134,8 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>Investors hear a lot of claims that models can predict chemistry. The missing question is usually what kind of new chemistry. A new combination of familiar parts is not the same as a molecule built from parts the model has never seen. A new scaffold family is harder still.</p>
-      <p>This paper makes that distinction explicit. Every rung of the ladder has a simple nearest-neighbor baseline: what if we just copied the most similar measured molecule? A model only earns credit when it beats that baseline.</p>
+      <p>Investors hear a lot of claims that ML can predict chemistry. The follow-up question is usually missing: what kind of new chemistry. A new combination of familiar parts is one thing. A molecule built from parts the model has never seen is harder. A new scaffold family is harder still.</p>
+      <p>The ladder makes that distinction explicit. At every rung, the model is compared against a nearest-neighbor baseline that just copies the closest measured compound. A model only earns credit when it beats that baseline.</p>
     </div>
   </div>
 </section>
@@ -144,8 +144,8 @@
   <div class="wrap two-col">
     <div class="col-label">What we did</div>
     <div class="col-body">
-      <p>We built five tests. The easiest holds out new combinations of familiar building blocks. Harder rungs hold out individual building blocks, then multiple building-block positions, then whole chemical neighborhoods. The hardest asks whether a model trained on one library family can transfer to another in the same cell line.</p>
-      <p>At every rung, the model is compared with a nearest-neighbor baseline that copies the measured response of the closest training compound. That baseline is the guardrail against accidental hype.</p>
+      <p>We built five tests. The easiest holds out new combinations of familiar building blocks. The next ones hold out individual building blocks, then multiple building-block positions, then whole chemical neighborhoods. The hardest asks whether a model trained on one library family can transfer to another in the same cell line.</p>
+      <p>The nearest-neighbor baseline runs at every rung and copies the measured response of the closest training compound. It is the simplest reasonable thing the model has to beat.</p>
     </div>
   </div>
 </section>
@@ -163,31 +163,31 @@
       <div class="finding">
         <div class="fnum">FINDING 01</div>
         <h4>One system shows prediction beyond close-copy lookup.</h4>
-        <p>In ZEL031 / THP1, the model still helped when the held-out compounds used building-block identities withheld during training. It beat the nearest-neighbor baseline on most test compounds, which is the cleanest extrapolation result in the pilot.</p>
+        <p>In ZEL031 / THP1 the model still helped when held-out compounds used building-block identities the model had never seen. It beat nearest-neighbor retrieval on the majority of test compounds, which is the cleanest extrapolation result in the pilot.</p>
         <div class="stat-callout"><span class="v">+0.168</span><span class="k">Model advantage over lookup</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 02</div>
-        <h4>Simpler holdouts tell the same story.</h4>
-        <p>When one building-block position was held out at a time, the same system continued to beat retrieval. That consistency makes the stricter result more credible.</p>
+        <h4>Simpler holdouts agree with the harder one.</h4>
+        <p>Holding out one building-block position at a time, the same system kept beating retrieval. The harder multi-axis result is more credible because the simpler holdouts behave the same way.</p>
         <div class="stat-callout"><span class="v">89 - 91%</span><span class="k">Compounds where model beat lookup</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 03</div>
-        <h4>A dense library gives a different, still useful answer.</h4>
-        <p>ZEL024 / HEK293 is so densely sampled that many held-out compounds still have very close analogs in the training set. That makes it excellent for filling gaps inside an explored design space, but it should not be marketed as the same kind of extrapolation.</p>
+        <h4>A dense library gives a different but useful answer.</h4>
+        <p>ZEL024 / HEK293 is sampled so densely that many held-out compounds still have very close analogs in the training set. The model is excellent at filling gaps inside that explored design space. We should not call that the same thing as extrapolation onto novel chemistry.</p>
         <div class="stat-callout"><span class="v">13,769 / 13,944</span><span class="k">Observed tuples - saturated grid</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 04</div>
         <h4>Holding out chemical neighborhoods is supportive.</h4>
-        <p>When entire chemical neighborhoods were held out within a library, the model still beat retrieval in the main systems. That supports the idea that the model is learning signal beyond local analog copying.</p>
+        <p>When whole chemical neighborhoods inside a library were held out, the model still beat retrieval in the main systems. So the signal is not coming from local analog copying.</p>
         <div class="stat-callout"><span class="v">+0.236</span><span class="k">Neighborhood-holdout gain</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 05</div>
         <h4>The hardest scaffold-hop question is not solved yet.</h4>
-        <p>Cross-library scaffold-family transfer was weak retrospectively. That is not a failure of the story; it is a useful boundary. The paper defines a clean prospective chip run that can answer this hardest question directly.</p>
+        <p>Cross-library scaffold-family transfer was weak in the retrospective tests. We treat that as a boundary to investigate, not a failure of the story. The paper specifies a clean prospective chip run that will settle this directly.</p>
         <div class="stat-callout"><span class="v">~1,000 wells</span><span class="k">Prospective scaffold-hop test</span></div>
       </div>
     </div>
@@ -197,8 +197,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">What this enables</div>
-    <h2 style="margin-top:12px;max-width:26ch;">Trust comes from knowing the boundary.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A chemistry-to-phenotype model is valuable only if it helps when the next chemistry is different. This ladder shows where the current pilot already helps, where it is mainly doing useful gap-filling, and where the next experiment must be run. That makes the platform story more credible, not less: the benchmark tells the next chip exactly what to prove.</p>
+    <h2 style="margin-top:12px;max-width:26ch;">A model is only as useful as its boundary.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A chemistry-to-phenotype model only earns its keep when the next chemistry is genuinely different. The ladder marks where the current pilot already helps, where it is mainly filling gaps inside a known space, and where the next experiment has to settle the question. The benchmark will keep telling the next chip what it actually has to prove.</p>
   </div>
 </section>
 

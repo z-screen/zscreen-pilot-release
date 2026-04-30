@@ -37,7 +37,7 @@
     </div>
     <div class="pnum">ABOUT</div>
     <h1>The platform behind these preprints.</h1>
-    <p class="paper-lede">Z-Screen is a way to make many new molecules and immediately ask living cells what those molecules did. Instead of moving compounds through plates, robots, follow-up assays, and separate sequencing workflows, the chip keeps the molecule, the image, and the RNA readout tied together in one tiny well. The five preprints show what that can already do at pilot scale.</p>
+    <p class="paper-lede">Z-Screen makes new molecules and immediately asks living cells what each one did. There is no separate plate-prep, robotics line, or downstream sequencing workflow: the chip keeps the molecule, the image, and the RNA readout tied together in a single microwell. The five preprints show what that already produces at pilot scale.</p>
   </div>
 </header>
 
@@ -45,10 +45,10 @@
   <div class="wrap two-col">
     <div class="col-label">What Z-Screen does</div>
     <div class="col-body">
-      <p><strong style="font-weight:600;">A chip, not a robotics line.</strong> A Z-Screen chip contains tens of thousands of microwells. Each well holds a small group of cells and one bead carrying one compound. Once the chip is loaded, the experiment happens in place.</p>
-      <p><strong style="font-weight:600;">Two readouts from the same well.</strong> First the chip images the cells. Then it reads the RNA from that same well. The image tells you what changed. The RNA helps explain which biological programs moved. Paper 01 tests whether those two views work better together than alone.</p>
-      <p><strong style="font-weight:600;">Chemistry with memory.</strong> Z-Screen compounds are built from known chemical building blocks. That means a hit is not just one isolated molecule; it can be traced back to the pieces that created the response. Papers 02 and 03 use that structure to predict new combinations and test whether the model is learning rather than copying.</p>
-      <p><strong style="font-weight:600;">Scale by repeating the unit.</strong> The chip is the throughput unit. More campaigns can be run by running more chips, without turning every program into a custom robotics buildout. That is why the pilot matters: the early signal came from a small slice of the platform's intended capacity.</p>
+      <p><strong style="font-weight:600;">A chip, not a robotics line.</strong> A Z-Screen chip holds tens of thousands of microwells. Each well contains a small group of cells and one bead carrying one compound. Once the chip is loaded, everything happens in place.</p>
+      <p><strong style="font-weight:600;">Two readouts from the same well.</strong> The chip images the cells, then reads their RNA. The image shows what changed. The RNA points to which biological programs moved. Paper 01 tests whether those two views work better together than apart.</p>
+      <p><strong style="font-weight:600;">Chemistry with memory.</strong> Each Z-Screen compound is assembled from known chemical building blocks. Every hit can be traced back to the pieces that produced the response, so the screen accumulates a record of which chemistry drives which biology. Papers 02 and 03 use that record to predict new combinations and to check whether the model is really learning.</p>
+      <p><strong style="font-weight:600;">Scale by adding chips.</strong> The chip is the throughput unit. Bigger campaigns mean more chips, not a custom robotics buildout for every program. The pilot used a thin slice of that capacity, which is why the same loop should yield more, not the same, when the campaign sizes grow.</p>
     </div>
   </div>
 </section>
@@ -58,10 +58,10 @@
     <div class="section-title-row">
       <div>
         <div class="eyebrow">Platform comparison</div>
-        <h2 style="margin-top:12px;max-width:24ch;">What sits in the same conversation, and how Z-Screen is different.</h2>
+        <h2 style="margin-top:12px;max-width:24ch;">What sits in the same conversation, and where Z-Screen differs.</h2>
       </div>
       <div class="section-aside">
-        <p>Other platforms are strong on one axis: very large imaging screens, deep single-cell sequencing atlases, or compound-reference catalogs. Z-Screen is different because it keeps three things together: the molecule's recipe, the image of the cell response, and the RNA state from the same well.</p>
+        <p>Most adjacent platforms are strong on one axis: very large imaging screens, deep single-cell perturbation atlases, or compound-reference catalogs. The thing Z-Screen does that none of these do is keep the molecule's recipe, the image, and the RNA state attached to the same microwell.</p>
       </div>
     </div>
 
@@ -69,22 +69,22 @@
       <div class="finding">
         <div class="fnum">IMAGING ONLY</div>
         <h4>Cell Painting / Recursion / Insitro / JUMP</h4>
-        <p>These platforms can see morphology at enormous scale. The usual follow-up question is what the morphology means biologically. Z-Screen keeps the image, then adds an RNA readout from the same well.</p>
+        <p>These platforms see morphology at enormous scale. The follow-up question is usually what the morphology actually means biologically. Z-Screen keeps the image and adds a paired RNA readout from the same well.</p>
       </div>
       <div class="finding">
         <div class="fnum">SINGLE-CELL PERTURB</div>
         <h4>Perturb-seq / Tahoe-100M / scPerturb</h4>
-        <p>These atlases are deep references for how cells respond to perturbations. Z-Screen's difference is chemistry resolution: each measured response is attached to the building blocks that made the compound.</p>
+        <p>These atlases are deep references for how cells respond to genetic perturbations. The thing Z-Screen adds is chemistry resolution: each measured response is tied to the building blocks that made the compound.</p>
       </div>
       <div class="finding">
         <div class="fnum">CONNECTIVITY MAP / LINCS L1000</div>
         <h4>Compound &harr; gene-program search</h4>
-        <p>LINCS made compound-to-gene-program search useful for the field. Z-Screen adds a design layer: because the compounds come from a known combinatorial recipe, the response can be connected back to chemical choices.</p>
+        <p>LINCS made compound-to-gene-program search useful for the whole field. Z-Screen extends that idea backward into design: because every compound has a known combinatorial recipe, a response can be traced to specific chemical choices.</p>
       </div>
       <div class="finding">
         <div class="fnum">DEL / BELKA</div>
         <h4>DNA-encoded library ML</h4>
-        <p>DEL datasets ask whether a molecule binds a target. Z-Screen asks what the molecule does to a living cell. Paper 03 uses the DEL literature's hard lesson about generalization: separate real learning from close-analog lookup.</p>
+        <p>DEL datasets ask whether a molecule binds a target. Z-Screen asks what the molecule does to a living cell. Paper 03 takes the DEL community's hard-won lesson about generalization seriously and separates real prediction from close-analog lookup.</p>
       </div>
     </div>
   </div>
@@ -94,8 +94,8 @@
   <div class="wrap two-col">
     <div class="col-label">What Zafrens does with it</div>
     <div class="col-body">
-      <p>Zafrens uses Z-Screen as a discovery engine across modalities, including small molecules, peptides, macrocycles, PROTACs, nucleic-acid delivery, cell therapies, ADC optimization, and patient-cell models. The common thread is the same: make or present many candidates, read the cell response, and let the next experiment become more informed than the last.</p>
-      <p>The preprints are not a detached academic exercise. They describe the measurement and modeling layer underneath active Zafrens programs, and they show why Z-Screen can also be useful as a data-generation engine for partners.</p>
+      <p>Zafrens uses Z-Screen as a discovery engine across modalities, including small molecules, peptides, macrocycles, PROTACs, nucleic-acid delivery, cell therapies, ADC optimization, and patient-cell models. The common pattern is the same in all of them: make or present many candidates, read the cell response, and let each experiment inform the next one.</p>
+      <p>These preprints describe the measurement and modeling layer that sits underneath those active programs. They are also a fair test of whether Z-Screen can serve as a data-generation engine for outside partners.</p>
     </div>
   </div>
 </section>
@@ -103,8 +103,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">Why this release</div>
-    <h2 style="margin-top:12px;max-width:26ch;">A pilot is the right time to show the operating thesis.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A platform story should not live only in a deck. These five preprints put the early evidence in writing, with one public dataset and reproducible analysis code. The pilot is small by design, and each paper answers one foundational question:</p>
+    <h2 style="margin-top:12px;max-width:26ch;">Pilot stage is the honest time to show the thesis.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A platform story should not live only inside a deck. These five preprints put early evidence in writing, backed by one public dataset and reproducible analysis code. The pilot is small on purpose, and each paper answers one underlying question:</p>
     <ul style="margin-top:24px;font-size:17px;line-height:1.75;color:rgba(11,18,32,0.78);max-width:62ch;list-style:none;padding-left:0;">
       <li style="padding-left:24px;text-indent:-24px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">01</span>Can we measure what a compound does and read why, from the same well, at scale?</li>
       <li style="padding-left:24px;text-indent:-24px;margin-top:10px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">02</span>Does combinatorial chemistry yield a learnable design map, not a static catalog?</li>
@@ -112,7 +112,7 @@
       <li style="padding-left:24px;text-indent:-24px;margin-top:10px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">04</span>Does the response transfer across cell types we never directly assayed?</li>
       <li style="padding-left:24px;text-indent:-24px;margin-top:10px;"><span style="font-family:var(--zf-font-mono);font-size:11px;letter-spacing:0.16em;color:var(--zf-steel);margin-right:14px;text-transform:uppercase;">05</span>Can an unknown hit point to a testable mechanism hypothesis?</li>
     </ul>
-    <p style="margin-top:32px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Across the release, the answer is yes with the right boundaries. Some results are ready to scale; others define the next decisive experiment. That is the point of publishing the pilot: the signal is visible, the caveats are explicit, and the next step is no longer vague.</p>
+    <p style="margin-top:32px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Across the five papers the answer is yes, with boundaries. Some results are ready to scale. Others define the next decisive experiment. Publishing the pilot now puts the signal, the caveats, and the next step on the same page.</p>
   </div>
 </section>
 
@@ -120,7 +120,7 @@
   <div class="wrap-narrow">
     <div class="eyebrow">Pilot release - April 2026</div>
     <h2 style="margin-top:12px;max-width:24ch;">Read the preprints. Talk to the team.</h2>
-    <p class="lede" style="margin-top:24px;max-width:60ch;">The papers are public and each stands on its own. Read them in order for the full platform story, or start with Paper 05 if you care most about connecting chemistry to genetic mechanism. The dataset and reproduction scripts are deposited on Zenodo with a citable DOI.</p>
+    <p class="lede" style="margin-top:24px;max-width:60ch;">The papers are public and each stands on its own. Read them in order for the full platform story, or start with Paper 05 if you mainly care about connecting chemistry to genetic mechanism. The dataset and reproduction scripts are on Zenodo with a citable DOI.</p>
 
     <div class="downloads" style="margin-top:48px;">
       <a class="dl" href="index.html">

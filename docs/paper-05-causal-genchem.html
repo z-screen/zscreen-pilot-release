@@ -35,8 +35,8 @@
       <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 05
     </div>
     <div class="pnum">PAPER 05 - Causal Reasoning</div>
-    <h1>From anonymous hit to testable mechanism hypothesis.</h1>
-    <p class="paper-lede">Phenotypic screens can find interesting compounds before anyone knows what they do. The painful part comes next: figuring out the biology. This paper compares each compound's RNA fingerprint with public CRISPR fingerprints, turning a hit into a ranked list of genetic programs it resembles. The result is not automatic target proof; it is a much faster starting point for mechanism work.</p>
+    <h1>Turning an anonymous phenotypic hit into a testable mechanism hypothesis.</h1>
+    <p class="paper-lede">Phenotypic screens find interesting compounds before anyone knows what they do. The painful part comes next: figuring out the biology. This paper matches each compound's RNA fingerprint against public CRISPR fingerprints, so a hit lands as a ranked list of genetic programs it most resembles. That does not prove a target. It does change mechanism work from a blank page to a calibrated starting point.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-05-causal-reasoning.pdf">
@@ -116,7 +116,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>Every compound produces an RNA fingerprint. Public CRISPR atlases provide fingerprints for what happens when genes are perturbed. Paper 05 puts those two dictionaries in the same search frame. In the headline scan, 1,276 chemical tuples received calibrated CRISPR-like hypotheses. Known controls behaved sensibly, and two unrelated paths converged on V-ATPase biology.</p>
+      <p>Each compound produces an RNA fingerprint. Each gene perturbation in a public CRISPR atlas produces an RNA fingerprint too. Paper 05 puts those two dictionaries in the same search frame. The headline scan returned calibrated CRISPR-like hypotheses for 1,276 chemical tuples. Known controls behaved as they should, and two unrelated chemistries in different cell lines both pointed to V-ATPase biology.</p>
     </div>
   </div>
 </section>
@@ -125,8 +125,8 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>Phenotypic discovery is powerful because it can find compounds from function, even when the target is unknown. But that strength creates the next bottleneck: after a hit appears, teams can spend months asking what the compound is doing.</p>
-      <p>CRISPR atlases are like dictionaries of cell states. Each entry says what the cell looks like when a gene is removed or activated. If a compound creates a similar RNA state, that genetic entry becomes a mechanism hypothesis. Z-Screen makes this especially useful because the hypothesis is attached to a specific combinatorial molecule and its building-block recipe.</p>
+      <p>Phenotypic discovery is powerful because it can find compounds from function alone, even when the target is unknown. The cost of that strength is the next bottleneck: once a hit appears, teams can spend months figuring out what the compound is actually doing.</p>
+      <p>A CRISPR atlas is essentially a dictionary of cell states. Each entry describes what the cell looks like when a gene is knocked out or activated. If a compound produces a similar RNA state, that entry is a candidate mechanism. Z-Screen makes the search practical because the hypothesis lands attached to a specific combinatorial molecule and its building-block recipe.</p>
     </div>
   </div>
 </section>
@@ -135,9 +135,9 @@
   <div class="wrap two-col">
     <div class="col-label">What we did</div>
     <div class="col-body">
-      <p>We converted Z-Screen compound responses and public CRISPR perturbations into comparable ranked gene signatures. Then we asked which CRISPR state each compound most resembled.</p>
-      <p>The headline scan compared 8,599 ZEL024 / HEK293 chemistry tuples with 8,603 Replogle K562 CRISPR knockout signatures, then calibrated the top matches against matched random gene sets. Additional checks used Norman CRISPR-activation doubles and matched THP1 CRISPR controls.</p>
-      <p>The questions were practical: does full-molecule resolution matter, do known controls recover known biology, does the leaderboard avoid being dominated by generic hubs, do unannotated compounds produce plausible hypotheses, and does the chemistry follow the logic of genetic combinations?</p>
+      <p>We converted Z-Screen compound responses and public CRISPR perturbations into comparable ranked gene signatures, then asked which CRISPR state each compound most resembled.</p>
+      <p>The headline scan compared 8,599 ZEL024 / HEK293 chemistry tuples against 8,603 Replogle K562 CRISPR knockout signatures, with the top matches calibrated against matched random gene sets. Additional checks used Norman CRISPR-activation doubles and matched THP1 CRISPR controls.</p>
+      <p>The underlying questions were practical. Does full-molecule resolution actually matter. Do known controls recover known biology. Is the leaderboard dominated by a few generic hubs. Do unannotated compounds produce plausible hypotheses. Does the chemistry follow the logic of genetic combinations.</p>
     </div>
   </div>
 </section>
@@ -155,55 +155,55 @@
       <div class="finding">
         <div class="fnum">FINDING 01</div>
         <h4>The headline scan produces a broad calibrated hypothesis table.</h4>
-        <p>The ZEL024 / HEK293 scan linked 1,276 distinct chemical tuples to 1,714 distinct CRISPR programs at the calibrated threshold. The matches concentrated in interpretable biology, including DNA replication, mitochondrial function, trafficking, and RNA surveillance.</p>
+        <p>The ZEL024 / HEK293 scan linked 1,276 distinct chemical tuples to 1,714 distinct CRISPR programs at the calibrated threshold. The matches concentrated on interpretable biology: DNA replication, mitochondrial function, trafficking, and RNA surveillance.</p>
         <div class="stat-callout"><span class="v">1,276 / 1,714</span><span class="k">Chemistries / CRISPR programs</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 02</div>
         <h4>A known BRD4 degrader points back to BRD4.</h4>
-        <p>MZ1 is designed to degrade BRD4. Against a matched THP1 CRISPR panel, BRD4 returned as the top calibrated match, with neighboring programs that fit BRD4 biology.</p>
+        <p>MZ1 is designed to degrade BRD4. Against a matched THP1 CRISPR panel, BRD4 came back as the top calibrated match, with neighboring programs consistent with BRD4 biology.</p>
         <div class="stat-callout"><span class="v">BRD4</span><span class="k">Top matched-cell hit for MZ1</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 03</div>
-        <h4>BAY-293 reveals biology beyond its primary annotation.</h4>
-        <p>BAY-293 is known as an SOS1 inhibitor, but its RNA state pointed to a coherent V-ATPase and vesicle-trafficking neighborhood. That is the kind of secondary biology a phenotypic platform should be able to surface.</p>
+        <h4>BAY-293 surfaces biology beyond its primary annotation.</h4>
+        <p>BAY-293 is annotated as an SOS1 inhibitor. Its Z-Screen RNA state pointed to a coherent V-ATPase and vesicle-trafficking neighborhood. Surfacing this kind of secondary biology is one of the things a phenotypic platform should be doing.</p>
         <div class="stat-callout"><span class="v">V-ATPase</span><span class="k">BAY-293 discovery signal</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 04</div>
         <h4>Chemical signatures follow genetic-combination logic.</h4>
-        <p>The Norman CRISPR atlas contains paired gene perturbations. Z-Screen tuple scores tracked the expected relationship between doubles and their two singles, and the pattern reproduced in a second library across three cell lines. That argues the map is reading structured biology, not just noise.</p>
+        <p>The Norman atlas contains paired gene perturbations. Z-Screen tuple scores tracked the expected relationship between each double and its two singles, and the pattern repeated in a second library across three cell lines. The map is reading structured biology, not noise.</p>
         <div class="stat-callout"><span class="v">12 / 12</span><span class="k">ZEL028-2 panels reproduce - 90.8 to 100% of Norman doubles significant</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 05</div>
         <h4>Generic CRISPR hubs are flagged, not hidden.</h4>
-        <p>Some CRISPR perturbations match many states because they are broadly responsive. After removing the 50 most recurrent programs, the table still contained broad chemistry and CRISPR diversity, so the headline was not driven by a few generic hubs.</p>
+        <p>Some CRISPR perturbations match many states because they are broadly responsive. After removing the 50 most recurrent programs, the table still showed broad chemistry and CRISPR diversity. The headline is not being carried by a handful of generic hubs.</p>
         <div class="stat-callout"><span class="v">1,236 / 1,664</span><span class="k">After removing common hubs</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 06</div>
-        <h4>Known targets recover when biology makes them visible.</h4>
-        <p>Documented targets were enriched in genome-wide rankings, but not universally recovered. The misses are informative: a drug can act through a target without producing a knockout-like RNA state in that cell context.</p>
+        <h4>Known targets recover when the biology makes them visible.</h4>
+        <p>Documented targets were enriched in genome-wide rankings, but not universally recovered. The misses are informative: a drug can act through a target without producing a knockout-like RNA state in that particular cell context.</p>
         <div class="stat-callout"><span class="v">12 / 29</span><span class="k">Documented targets in top 15%</span></div>
       </div>
       <div class="finding">
         <div class="fnum">FINDING 07</div>
         <h4>A second library produces a stricter shortlist.</h4>
-        <p>ZEL028-2 had shallower per-tuple coverage, so the analysis used independent chemistry subsets as supporting evidence. Two non-hub candidates passed the strictest corroborated tier: HEK293 ATP6V1A and A549 FKBP9, with a broader follow-up queue behind them.</p>
+        <p>ZEL028-2 had shallower per-tuple coverage, so the analysis leaned on independent chemistry subsets as supporting evidence. Two non-hub candidates cleared the strictest corroborated tier (HEK293 ATP6V1A and A549 FKBP9), with a broader follow-up queue behind them.</p>
         <div class="stat-callout"><span class="v">2 + 11</span><span class="k">Strict shortlist + broader queue</span></div>
       </div>
       <div class="finding" style="grid-column: 1 / -1;">
         <div class="fnum">FINDING 08</div>
         <h4>Two unrelated paths converge on V-ATPase biology.</h4>
-        <p>This is the strongest internal validation signal. BAY-293 in A549 pointed to V-ATPase and trafficking biology. Separately, an unrelated ZEL028-2 tuple in HEK293 surfaced ATP6V1A with subset support. Different chemistry, different cell context, same biological neighborhood.</p>
+        <p>This is the strongest internal validation signal. BAY-293 in A549 pointed to V-ATPase and trafficking biology. Separately, an unrelated ZEL028-2 tuple in HEK293 surfaced ATP6V1A with independent subset support. Different chemistry, different cell context, same biological neighborhood.</p>
         <div class="stat-callout"><span class="v">2 PATHS</span><span class="k">BAY-293 / A549 + ZEL028-2 / HEK293 - one V-ATPase mechanism</span></div>
       </div>
       <div class="finding" style="grid-column: 1 / -1;">
         <div class="fnum">FINDING 09</div>
         <h4>The scan works again in a second chemical grammar.</h4>
-        <p>ZEL028-2 reproduced several biology themes from the headline library across three cell lines, including RNA-processing and mitochondrial-translation programs. Because tuple coverage was shallower, these results are treated as a ranked chemistry-resolved leaderboard rather than finished mechanism calls.</p>
+        <p>ZEL028-2 reproduced several themes from the headline library across three cell lines, including RNA-processing and mitochondrial-translation programs. Tuple coverage was shallower here, so we treat these as a ranked chemistry-resolved leaderboard, not finished mechanism calls.</p>
         <div class="stat-callout"><span class="v">943 / 285</span><span class="k">Second-library chemistry / programs</span></div>
       </div>
     </div>
@@ -213,8 +213,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">What this enables</div>
-    <h2 style="margin-top:12px;max-width:26ch;">A search engine from genetic state to chemistry.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">For a team starting from functional genomics, the long-term promise is direct: query a desired genetic state and return chemistry that pushes cells toward a similar RNA program. For a team starting from a phenotypic hit, the promise runs the other way: ask which genetic perturbations the hit most resembles. The pilot does not make target validation disappear, but it can move mechanism work from a blank page to a ranked, calibrated, chemistry-resolved hypothesis list.</p>
+    <h2 style="margin-top:12px;max-width:26ch;">A two-way search between genetic state and chemistry.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">A team starting from functional genomics can query a desired genetic state and ask for chemistry that pushes cells toward the same RNA program. A team starting from a phenotypic hit can ask the opposite question: which gene perturbations does this hit most resemble. The pilot does not replace target validation. It does turn the first day of mechanism work into a calibrated, chemistry-resolved hypothesis list instead of a blank page.</p>
   </div>
 </section>
 
