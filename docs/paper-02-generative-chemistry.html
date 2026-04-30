@@ -35,7 +35,7 @@
     </div>
     <div class="pnum">PAPER 02 - Generative Chemistry</div>
     <h1>A screen that learns from every molecule it tests.</h1>
-    <p class="paper-lede">Most screens end as a spreadsheet of hits and misses. Z-Screen leaves behind a map between chemical building blocks and the cell states they produce. In the best-sampled pilot libraries that map predicted RNA responses for held-out compounds, and where the same compounds appeared in LINCS L1000 the signatures pointed in the same direction.</p>
+    <p class="paper-lede">Most screens end as a spreadsheet of hits and misses. Z-Screen leaves behind a map between chemical building blocks and the cell states they produce. In the best-sampled pilot libraries that map predicted RNA responses for held-out compounds, and novel molecules assembled from unrelated sub-structures match the biology of FDA-approved compounds.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-02-generative-chemistry.pdf">
@@ -124,7 +124,7 @@
   <div class="wrap two-col">
     <div class="col-label">Why it matters</div>
     <div class="col-body">
-      <p>A normal screen tells you which wells looked interesting. It often cannot tell you why a chemical series worked, which pieces of the molecule mattered, or what to make next.</p>
+      <p>A normal screen measures which wells looked interesting. It often cannot tell why a chemical series worked, which pieces of the molecule mattered, or what to make next.</p>
       <p>Z-Screen keeps the chemistry recipe attached to every RNA response. With that linkage, the system can learn which building blocks tend to push cells toward which states, and then use that learning to prioritize compounds that have not been measured yet. The data accumulates rather than expires.</p>
     </div>
   </div>
@@ -135,7 +135,7 @@
     <div class="col-label">What we did</div>
     <div class="col-body">
       <p>We analyzed 615,793 RNA profiles across 12 combinatorial libraries and 4 cell lines. Every profile was linked to the compound's building-block identity, so the model could learn from chemical structure instead of treating each compound as an isolated label.</p>
-      <p>The analysis worked through six questions in order. Is the RNA signal reproducible. Do building blocks predict held-out compound responses. Does the full chemical structure add information beyond building-block identity. Do new tuples land near known reference drugs. Do chemical programs recur across cell lines. Does imaging add a secondary signal.</p>
+      <p>The analysis worked through six questions in order. Is the RNA signal reproducible. Do building blocks predict held-out compound responses. Does the full chemical structure add information beyond building-block identity. Can new tuples land near known reference drugs. Do chemical programs recur across cell lines. Does imaging add an unbiased secondary signal.</p>
       <p>We also compared overlapping control compounds with LINCS L1000, the largest public transcriptional reference. That check asks the basic sanity question: is Z-Screen seeing biology the rest of the field would recognize.</p>
     </div>
   </div>
@@ -194,8 +194,8 @@
 <section style="background:var(--zf-bone);">
   <div class="wrap-narrow">
     <div class="eyebrow">What this enables</div>
-    <h2 style="margin-top:12px;max-width:26ch;">The design map is what compounds across campaigns.</h2>
-    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Once a screen has learned a relationship between chemistry and cell state, each campaign feeds the next. Paper 03 stress-tests that map on harder chemistry. Paper 04 uses it to project responses across cell types. Paper 05 connects it to CRISPR atlases. What carries forward between campaigns is the relationship itself, not a single ranked list of hits.</p>
+    <h2 style="margin-top:12px;max-width:26ch;">A chemistry-biology design map that compounds across campaigns.</h2>
+    <p style="margin-top:24px;font-size:18px;line-height:1.65;color:rgba(11,18,32,0.78);max-width:62ch;">Once a screen has learned a relationship between chemistry and cell state, each campaign feeds the next. Paper 03 stress-tests that map on harder chemistry. Paper 04 uses it to project responses across cell types. Paper 05 connects it to CRISPR atlases. What carries forward between campaigns is the compounding map of chemical-biology itself, not a single ranked list of hits.</p>
   </div>
 </section>
 
