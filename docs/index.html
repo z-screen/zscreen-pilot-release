@@ -40,8 +40,8 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6 4 4 6-8M14 7h6v6"/></svg>
         See the scale thesis
       </a>
-      <a class="btn-secondary" href="pdfs/zscreen-pilot-release-bundle.pdf">
-        Download the preprints &rarr;
+      <a class="btn-secondary" href="#preprints">
+        Preview the preprints &rarr;
       </a>
     </div>
 
@@ -96,24 +96,26 @@
 </section>
 
 
-<section class="papers">
+<section class="papers" id="preprints">
   <div class="wrap">
     <div class="section-title-row">
       <div>
         <div class="eyebrow">The five preprints</div>
-        <h2 style="margin-top:12px;max-width:22ch;">Five questions an investor can scan quickly.</h2>
+        <h2 style="margin-top:12px;max-width:22ch;">Five results from one connected dataset.</h2>
       </div>
       <div class="section-aside" style="align-self:flex-start;padding-top:46px;">
-        <p>The paper pages keep the scientific caveats. The cards below are the investor read: what was tested, what worked, and what additional scale should unlock next.</p>
+        <p>The cards below are a fast read on what the pilot already observed: paired readouts, learnable chemistry, honest generalization tests, cross-cell transfer, and CRISPR-linked mechanism hypotheses. Click any card for details.</p>
       </div>
     </div>
+
+    <div class="click-hint">Select a paper card to open the detail page.</div>
 
     <div class="paper-grid">
     <a class="paper-card" href="paper-01-activeseq.html">
       <div class="card-body">
         <div class="card-num">PAPER 01 - ActiveSeq</div>
-        <div class="card-title">Can the chip read image and RNA from the same well?</div>
-        <div class="card-summary">Yes. In a 35-compound control panel, both readouts recovered compound signal and their combination improved held-out classification. The investment read: richer imaging channels can make each future profile more decision-rich.</div>
+        <div class="card-title">Image and RNA from the same microwell.</div>
+        <div class="card-summary">ActiveSeq linked microscopy and RNA in the same well. Across a 35-compound control panel, both readouts recovered compound signal, and the combined readout classified held-out wells better than either modality alone.</div>
         <div class="card-cta">Open the evidence</div>
       </div>
     </a>
@@ -121,8 +123,8 @@
     <a class="paper-card" href="paper-02-generative-chemistry.html">
       <div class="card-body">
         <div class="card-num">PAPER 02 - Generative Chemistry</div>
-        <div class="card-title">Does the screen become a design map?</div>
-        <div class="card-summary">In the strongest systems, building-block models predicted held-out RNA states and reduced error versus simple baselines. The investment read: more chemistry and deeper replication should make the map more useful with each campaign.</div>
+        <div class="card-title">The screen learns which chemistry moves biology.</div>
+        <div class="card-summary">Because each profile stays tied to the compound recipe, Z-Screen can learn from chemical building blocks rather than treating hits as isolated events. In the strongest systems, that grammar predicted held-out RNA states.</div>
         <div class="card-cta">Open the evidence</div>
       </div>
     </a>
@@ -130,8 +132,8 @@
     <a class="paper-card" href="paper-03-generalization-ladder.html">
       <div class="card-body">
         <div class="card-num">PAPER 03 - Generalization Ladder</div>
-        <div class="card-title">Is the model learning or copying close analogs?</div>
-        <div class="card-summary">The answer is usefully mixed. ZEL031 / THP1 supports held-building-block extrapolation, ZEL024 / HEK293 supports dense-grid completion, and cross-library scaffold transfer remains the next prospective test.</div>
+        <div class="card-title">Generalization becomes measurable.</div>
+        <div class="card-summary">The ladder separates dense-grid completion from harder chemistry tests. ZEL031 / THP1 showed held-building-block extrapolation beyond nearest-neighbor lookup, while ZEL024 / HEK293 showed high-value completion inside a dense design.</div>
         <div class="card-cta">Open the evidence</div>
       </div>
     </a>
@@ -139,8 +141,8 @@
     <a class="paper-card" href="paper-04-cross-cell-transfer.html">
       <div class="card-body">
         <div class="card-num">PAPER 04 - Cross-Cell Transfer</div>
-        <div class="card-title">Can one cell context guide the next?</div>
-        <div class="card-summary">Learned maps improved target-cell RNA response prediction in paired systems, with strongest transfer at chemistry-resolved program level. The investment read: a larger landmark atlas can guide where to spend the next measurement.</div>
+        <div class="card-title">Chemical-response programs transfer across cell types.</div>
+        <div class="card-summary">Paired cell-line data showed that learned maps recover target-cell RNA response better than direct reuse. The strongest signal appeared at the chemistry-resolved program level, where shared building-block programs transferred strongly.</div>
         <div class="card-cta">Open the evidence</div>
       </div>
     </a>
@@ -148,8 +150,8 @@
     <a class="paper-card" href="paper-05-causal-genchem.html">
       <div class="card-body">
         <div class="card-num">PAPER 05 - Mechanism Map</div>
-        <div class="card-title">Can unknown hits enter mechanism work faster?</div>
-        <div class="card-summary">Compound RNA signatures can be searched against CRISPR perturbation states to nominate calibrated mechanism axes for validation. The investment read: scaled profiling turns target deconvolution from a blank page into a ranked queue.</div>
+        <div class="card-title">Unknown hits get mechanism hypotheses attached.</div>
+        <div class="card-summary">Compound RNA signatures were searched against public CRISPR perturbation states, producing calibrated, chemistry-addressable hypotheses. The headline scan linked 1,276 chemical tuples to 1,714 CRISPR programs.</div>
         <div class="card-cta">Open the evidence</div>
       </div>
     </a>
