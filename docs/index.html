@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Z-Screen Pilot Release - Zafrens</title>
-<meta name="description" content="Five preprints from a Z-Screen pilot: making new molecules, reading cell responses, and matching hits to genetic programs.">
+<title>Z-Screen Investor Briefing - Zafrens</title>
+<meta name="description" content="Investor-facing overview of the Z-Screen pilot: chip-scale combinatorial chemistry, paired cell-state readouts, and the platform path unlocked by additional investment.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/zafrens-brand.css?v=1777800000000">
@@ -24,25 +24,76 @@
       <a href="paper-02-generative-chemistry.html">02 Generative Chem</a>
       <a href="paper-03-generalization-ladder.html">03 Generalization</a>
       <a href="paper-04-cross-cell-transfer.html">04 Cross-Cell</a>
-      <a href="paper-05-causal-genchem.html">05 Causal Reasoning</a>
+      <a href="paper-05-causal-genchem.html">05 Mechanism Map</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Z-Screen - Pilot Release - April 2026</div>
-    <h1>A 'small' pilot, and what the data already reveals.</h1>
-    <p class="lede">Z-Screen profiles combinatorial chemical libraries in 50,000-well chips by imaging and mRNA sequencing. The five preprints discussed here walk through learnings from a pilot dataset: the robustness of miniaturized multimodal readouts; the ability of large chemical libraries to probe, learn and predict cellular resonses; how far the predictions hold when the chemistry is changed; whether responses transfer across cell types; and whether drug mechanism-of-action can be inferred by comparing to CRISPR data. While a pilot, this data still represents the largest collection of small-molecule transcriptomics ever released, with imaging complementing mRNA insights for many molecules. Our motivation is to demonstrate the step-change in drug disovery that is already evident in this data, and invite attention to the breakthroughs possible by scaling to millions and 10's of millions of molecules</p>
+    <div class="eyebrow">Z-Screen - Investor Briefing - April 2026</div>
+    <h1>Turn new chemistry into searchable biology.</h1>
+    <p class="lede">Z-Screen makes combinatorial molecules, profiles their cell-state effects, and keeps every response tied to the recipe that produced it. The pilot is already one of the largest public combinatorial chemistry transcriptomic datasets. More investment can scale the loop to million-compound campaigns, richer cell models, and faster mechanism triage.</p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="#investment">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6 4 4 6-8M14 7h6v6"/></svg>
+        See the scale thesis
+      </a>
+      <a class="btn-secondary" href="pdfs/zscreen-pilot-release-bundle.pdf">
+        Download the preprints &rarr;
+      </a>
+    </div>
 
     <div class="stat-strip" style="margin-top:32px;">
-      <div class="stat"><span class="stat-num">615,793</span><span class="stat-key">mRNA-seq profiles from the pilot</span></div>
-      <div class="stat"><span class="stat-num">142,187</span><span class="stat-key">New compounds made and profiled</span></div>
-      <div class="stat"><span class="stat-num">1,276</span><span class="stat-key">Compounds linked to CRISPR-like biology</span></div>
-      <div class="stat"><span class="stat-num">5</span><span class="stat-key">Preprints from one connected dataset</span></div>
+      <div class="stat"><span class="stat-num">615,793</span><span class="stat-key">RNA profiles in the pilot</span></div>
+      <div class="stat"><span class="stat-num">142,187</span><span class="stat-key">Hashed compounds with chemistry embeddings</span></div>
+      <div class="stat"><span class="stat-num">12 / 4</span><span class="stat-key">Libraries / cell lines</span></div>
+      <div class="stat"><span class="stat-num">1,276</span><span class="stat-key">Calibrated CRISPR-state hypothesis tuples</span></div>
     </div>
   </div>
 </header>
+
+<section>
+  <div class="wrap">
+    <div class="section-title-row">
+      <div>
+        <div class="eyebrow">Why investors should care</div>
+        <h2 style="margin-top:12px;max-width:24ch;">The pilot shows a compounding discovery loop.</h2>
+      </div>
+      <div class="section-aside" style="align-self:flex-start;padding-top:46px;">
+        <p>The current release is not a finished atlas. It is evidence that the unit of scale works: make chemistry, read cell state, learn the map, and feed the next campaign.</p>
+      </div>
+    </div>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="fnum">PLATFORM UNIT</div>
+        <h4>A 50,000-well chip replaces a slower screening workflow.</h4>
+        <p>The chip is the throughput unit. More campaigns can mean more chips, more libraries, and more cell contexts rather than a bespoke automation build for every program.</p>
+        <div class="stat-callout"><span class="v">50K</span><span class="k">Wells per chip</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">DATA ASSET</div>
+        <h4>Every molecule teaches the model what chemistry did.</h4>
+        <p>Because each RNA profile remains attached to building-block provenance, the dataset becomes a reusable chemistry-to-biology map rather than a one-time hit list.</p>
+        <div class="stat-callout"><span class="v">12</span><span class="k">Combinatorial libraries</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">DECISION SPEED</div>
+        <h4>Hits arrive with ranked follow-up hypotheses.</h4>
+        <p>CRISPR-state matching does not prove target engagement. It does turn an unknown phenotypic hit into a prioritized, chemistry-addressable validation queue.</p>
+        <div class="stat-callout"><span class="v">1,714</span><span class="k">Distinct CRISPR programs linked in the headline scan</span></div>
+      </div>
+      <div class="finding">
+        <div class="fnum">OPTION VALUE</div>
+        <h4>The same engine can serve many therapeutic programs.</h4>
+        <p>The platform story is broader than one disease area: combinatorial small molecules today, with a path toward richer image channels, more cell models, and partner-specific discovery maps.</p>
+        <div class="stat-callout"><span class="v">4</span><span class="k">Cell lines in the public pilot</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <section class="papers">
@@ -50,10 +101,10 @@
     <div class="section-title-row">
       <div>
         <div class="eyebrow">The five preprints</div>
-        <h2 style="margin-top:12px;max-width:22ch;">Five preprints, one discovery question each.</h2>
+        <h2 style="margin-top:12px;max-width:22ch;">Five questions an investor can scan quickly.</h2>
       </div>
       <div class="section-aside" style="align-self:flex-start;padding-top:46px;">
-        <p>The papers track the questions a discovery team has to answer in order. Can we measure what a molecule did. Can we learn from that measurement. Does the learning survive new chemistry. Does it transfer across cell types. Can it point toward a mechanism.</p>
+        <p>The paper pages keep the scientific caveats. The cards below are the investor read: what was tested, what worked, and what additional scale should unlock next.</p>
       </div>
     </div>
 
@@ -61,45 +112,45 @@
     <a class="paper-card" href="paper-01-activeseq.html">
       <div class="card-body">
         <div class="card-num">PAPER 01 - ActiveSeq</div>
-        <div class="card-title">Image and RNA from the same microwell.</div>
-        <div class="card-summary">Each well is imaged and sequenced, so a hit comes with both a picture of the cells and an RNA fingerprint that helps explain the response. On the 35-compound control panel, image plus RNA classified compounds better than either readout on its own.</div>
-        <div class="card-cta">Read the non-technical summary</div>
+        <div class="card-title">Can the chip read image and RNA from the same well?</div>
+        <div class="card-summary">Yes. In a 35-compound control panel, both readouts recovered compound signal and their combination improved held-out classification. The investment read: richer imaging channels can make each future profile more decision-rich.</div>
+        <div class="card-cta">Open the evidence</div>
       </div>
     </a>
 
     <a class="paper-card" href="paper-02-generative-chemistry.html">
       <div class="card-body">
         <div class="card-num">PAPER 02 - Generative Chemistry</div>
-        <div class="card-title">The screen learns which chemistry moves which biology.</div>
-        <div class="card-summary">Every Z-Screen compound is made from known building blocks. With that recipe attached to each RNA readout, the model can learn which pieces drive which cell programs. In the best-sampled libraries it predicted the RNA response of compounds it had never been shown.</div>
-        <div class="card-cta">Read the non-technical summary</div>
+        <div class="card-title">Does the screen become a design map?</div>
+        <div class="card-summary">In the strongest systems, building-block models predicted held-out RNA states and reduced error versus simple baselines. The investment read: more chemistry and deeper replication should make the map more useful with each campaign.</div>
+        <div class="card-cta">Open the evidence</div>
       </div>
     </a>
 
     <a class="paper-card" href="paper-03-generalization-ladder.html">
       <div class="card-body">
         <div class="card-num">PAPER 03 - Generalization Ladder</div>
-        <div class="card-title">Is the model learning, or copying close cousins?</div>
-        <div class="card-summary">Five tests of increasing difficulty separate real prediction from near-neighbor lookup. In ZEL031/THP1 the model still helped when whole chemical pieces were held out. In ZEL024/HEK293 it mostly filled gaps inside an already dense grid. The hardest scaffold-hop test is open and now precisely defined.</div>
-        <div class="card-cta">Read the non-technical summary</div>
+        <div class="card-title">Is the model learning or copying close analogs?</div>
+        <div class="card-summary">The answer is usefully mixed. ZEL031 / THP1 supports held-building-block extrapolation, ZEL024 / HEK293 supports dense-grid completion, and cross-library scaffold transfer remains the next prospective test.</div>
+        <div class="card-cta">Open the evidence</div>
       </div>
     </a>
 
     <a class="paper-card" href="paper-04-cross-cell-transfer.html">
       <div class="card-body">
         <div class="card-num">PAPER 04 - Cross-Cell Transfer</div>
-        <div class="card-title">Measure in one cell type, predict in a calibrated pair.</div>
-        <div class="card-summary">Running every compound in every cell type is infeasible. With paired data across two cell lines, Z-Screen learns how a chemical program in one cell line looks in another and uses that to predict drug activity at scale.</div>
-        <div class="card-cta">Read the non-technical summary</div>
+        <div class="card-title">Can one cell context guide the next?</div>
+        <div class="card-summary">Learned maps improved target-cell RNA response prediction in paired systems, with strongest transfer at chemistry-resolved program level. The investment read: a larger landmark atlas can guide where to spend the next measurement.</div>
+        <div class="card-cta">Open the evidence</div>
       </div>
     </a>
 
     <a class="paper-card" href="paper-05-causal-genchem.html">
       <div class="card-body">
-        <div class="card-num">PAPER 05 - Causal Reasoning</div>
-        <div class="card-title">Each hit lands with a mechanism hypothesis attached.</div>
-        <div class="card-summary">Every compound has an RNA fingerprint, and so does every gene perturbation in a public CRISPR atlas. Searching one against the other turns an anonymous phenotypic hit into a ranked list of candidate mechanisms. A striking example: two unrelated chemistries in different cell lines both pointed to identical biology. Is it patent-busting if the compounds don't look alike?</div>
-        <div class="card-cta">Read the non-technical summary</div>
+        <div class="card-num">PAPER 05 - Mechanism Map</div>
+        <div class="card-title">Can unknown hits enter mechanism work faster?</div>
+        <div class="card-summary">Compound RNA signatures can be searched against CRISPR perturbation states to nominate calibrated mechanism axes for validation. The investment read: scaled profiling turns target deconvolution from a blank page into a ranked queue.</div>
+        <div class="card-cta">Open the evidence</div>
       </div>
     </a>
     </div>
@@ -107,29 +158,38 @@
 </section>
 
 
-<section class="scope">
+<section class="scope" id="investment">
   <div class="wrap">
-    <div class="eyebrow" style="color:#7eb9e0">Pilot scope</div>
-    <h2 style="margin-top:14px;max-width:22ch;">This is sample data.</h2>
-    <p class="lede" style="margin-top:24px;max-width:60ch;">The pilot used a thin slice of what the chip can run. Even so, this limited campaign already produced reproducible cell responses, usable predictions on held-out chemistry, cross-cell transfer when there is sufficient training data, and CRISPR-linked mechanism hypotheses. With the infrastructure now in place, we ask - what if this can be scaled 1000-fold?</p>
+    <div class="eyebrow" style="color:#7eb9e0">Additional investment</div>
+    <h2 style="margin-top:14px;max-width:24ch;">What scale could unlock next.</h2>
+    <p class="lede" style="margin-top:24px;max-width:64ch;">The pilot supports the platform thesis, but it was not designed to saturate the opportunity. Additional investment should be aimed at the bottlenecks the papers identify: larger chemistry coverage, richer paired readouts, prospective scaffold-hop tests, and matched-cell validation for mechanism hypotheses.</p>
 
     <div class="scope-grid">
       <div class="scope-cell">
-        <div class="scope-num">Today</div>
-        <div class="scope-key">Pilot dataset across 12 libraries and 4 cell lines</div>
-      </div>
-      <div class="scope-cell">
         <div class="scope-num">1M+</div>
-        <div class="scope-key">Compounds per campaign - platform target</div>
+        <div class="scope-key">Compounds per campaign as a platform target</div>
       </div>
       <div class="scope-cell">
-        <div class="scope-num">Multimodal</div>
-        <div class="scope-key">Image plus RNA from the same microwell</div>
+        <div class="scope-num">More cells</div>
+        <div class="scope-key">Disease models, patient cells, and paired landmarks</div>
       </div>
       <div class="scope-cell">
-        <div class="scope-num">Reusable</div>
-        <div class="scope-key">Every new profile can improve the map</div>
+        <div class="scope-num">Better images</div>
+        <div class="scope-key">Target-aware optical channels tied to RNA</div>
       </div>
+      <div class="scope-cell">
+        <div class="scope-num">Validation</div>
+        <div class="scope-key">Resynthesis, matched CRISPR, and target engagement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow">
+    <div class="tldr">
+      <div class="label">Scientific guardrails</div>
+      <p>Z-Screen is not presented as larger than Tahoe-100M by cell count. Prediction, phenomimicry, and mechanism are kept separate. CRISPR matches are state-level hypotheses until validated. Cross-library scaffold transfer remains a prospective frontier, not a solved claim. That restraint makes the upside story more credible, not less.</p>
     </div>
   </div>
 </section>
@@ -137,8 +197,8 @@
 <section id="access">
   <div class="wrap-narrow">
     <div class="eyebrow">Pilot release - April 2026</div>
-    <h2 style="margin-top:12px;max-width:24ch;">Feedback welcome.</h2>
-    <p class="lede" style="margin-top:24px;max-width:60ch;">These are draft manuscripts circulated for feedbach ahead of a BiorXiv submission. The full dataset and analysis scripts are available on Zenodo for independent evaluation and expansion upon our analysis.</p>
+    <h2 style="margin-top:12px;max-width:24ch;">Read the evidence. Talk to the team.</h2>
+    <p class="lede" style="margin-top:24px;max-width:60ch;">These draft manuscripts are circulated for feedback ahead of a bioRxiv submission. The full public dataset and analysis scripts are available on Zenodo for independent evaluation.</p>
 
     <div class="downloads" style="margin-top:48px;">
       <a class="dl" href="pdfs/zscreen-pilot-release-bundle.pdf">

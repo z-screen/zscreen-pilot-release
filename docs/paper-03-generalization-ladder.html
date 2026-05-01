@@ -23,7 +23,7 @@
       <a href="paper-02-generative-chemistry.html">02 Generative Chem</a>
       <a href="paper-03-generalization-ladder.html" class="active">03 Generalization</a>
       <a href="paper-04-cross-cell-transfer.html">04 Cross-Cell</a>
-      <a href="paper-05-causal-genchem.html">05 Causal Reasoning</a>
+      <a href="paper-05-causal-genchem.html">05 Mechanism Map</a>
     </div>
   </div>
 </nav>
@@ -35,7 +35,7 @@
     </div>
     <div class="pnum">PAPER 03 - Generalization Ladder</div>
     <h1>How do we know a generative model is not just copying close cousins?</h1>
-    <p class="paper-lede">Drug-discovery ML can look impressive when the test molecules sit close to the training set. This paper sets up a ladder of progressively harder tests so we can separate real prediction from near-neighbor lookup. The honest answer is mixed, but better than published models on the BELKA dataset we compare to. One pilot system does show extrapolation to held-out chemistry. Another mostly fills gaps inside a dense library. The hardest scaffold-hop test is open and now precisely defined. <strong>The pithy summary: a ~30,000-compound model trained on mRNAseq beats a ~133M-compound model trained on binding.</strong></p>
+    <p class="paper-lede">Drug-discovery ML can look impressive when the test molecules sit close to the training set. This paper sets up a ladder of progressively harder tests so we can separate real prediction from near-neighbor lookup. The honest answer is mixed and useful: one pilot system shows held-building-block extrapolation, another mostly fills gaps inside a dense library, and the hardest scaffold-hop test is now precisely defined.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-03-generalization-ladder.pdf">
@@ -124,7 +124,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>The question is simple to ask and hard to test fairly: when the chemistry changes, does the model still help? In ZEL031 / THP1 it beat nearest-neighbor retrieval even when whole chemical building blocks were held out. In ZEL024 / HEK293 it mostly filled gaps inside a very dense library. Cross-library scaffold transfer is the hardest case and we have not solved it yet. (Paper 05 validates that one can indeed find diverse chemistries - experimentally - that do identical biology. Can we predict it? Not yet, but clearly we are collecting the data. If anyone can train such a model, it would be Z-Screen).</p>
+    <p>The question is simple to ask and hard to test fairly: when the chemistry changes, does the model still help? In ZEL031 / THP1 it beat nearest-neighbor retrieval even when whole chemical building blocks were held out. In ZEL024 / HEK293 it mostly filled gaps inside a very dense library. Cross-library scaffold transfer is the hardest case and is not solved yet; the value of the pilot is that it defines the prospective experiment needed to test it cleanly.</p>
     </div>
   </div>
 </section>

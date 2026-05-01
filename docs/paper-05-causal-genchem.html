@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paper 05 - Causal Reasoning - Z-Screen Pilot Release</title>
+<title>Paper 05 - Mechanism Map - Z-Screen Pilot Release</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/zafrens-brand.css?v=1777800000000">
@@ -23,7 +23,7 @@
       <a href="paper-02-generative-chemistry.html">02 Generative Chem</a>
       <a href="paper-03-generalization-ladder.html">03 Generalization</a>
       <a href="paper-04-cross-cell-transfer.html">04 Cross-Cell</a>
-      <a href="paper-05-causal-genchem.html" class="active">05 Causal Reasoning</a>
+      <a href="paper-05-causal-genchem.html" class="active">05 Mechanism Map</a>
     </div>
   </div>
 </nav>
@@ -33,9 +33,9 @@
     <div class="crumb">
       <a href="index.html">Z-Screen Pilot Release</a><span class="sep">/</span> Preprints <span class="sep">/</span> Paper 05
     </div>
-    <div class="pnum">PAPER 05 - Causal Reasoning</div>
+    <div class="pnum">PAPER 05 - Mechanism Map</div>
     <h1>Small molecules can be searched against combinatorial CRISPR biology.</h1>
-    <p class="paper-lede">Phenotypic screens find interesting compounds before anyone knows what they do. A small molecule can influence several targets or pathways at once. These layered effects allow drugging of complex biology but the follow-up becomes challenging wihtout an understanding of mechanisms. Paper 05 compares each small-molecule transcriptome fingerprint with public CRISPR states, including paired CRISPR edits, so the causal mechanism behind complex pharmacology becomes evident.</p>
+    <p class="paper-lede">Phenotypic screens find interesting compounds before anyone knows what they do. A small molecule can influence several targets or pathways at once. These layered effects allow drugging of complex biology, but follow-up becomes challenging without a ranked view of possible mechanism axes. Paper 05 compares small-molecule transcriptome fingerprints with public CRISPR states, including paired CRISPR edits, to generate calibrated mechanism hypotheses for validation.</p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="pdfs/zscreen-paper-05-causal-reasoning.pdf">
@@ -75,7 +75,7 @@
             <rect x="0" y="0" width="663" height="22" fill="#f4a261"/>
             <text x="-8" y="16" font-family="JetBrains Mono, monospace" font-size="11" fill="#fbfaf7" fill-opacity="0.85" text-anchor="end">ZEL028-2 / HEK293 tuple &rarr; ATP6V1A</text>
             <text x="675" y="16" font-family="JetBrains Mono, monospace" font-size="12" fill="#f4a261">strong match</text>
-            <text x="-8" y="32" font-family="JetBrains Mono, monospace" font-size="9" fill="#f4a261" fill-opacity="0.85" text-anchor="end">INDEPENDENT V-ATPase REDISCOVERY</text>
+          <text x="-8" y="32" font-family="JetBrains Mono, monospace" font-size="9" fill="#f4a261" fill-opacity="0.85" text-anchor="end">INDEPENDENT V-ATPase STATE SIGNAL</text>
           </g>
 
           <!-- Hit 3: BAY-293 -> ZW10 / V-ATPase (DISCOVERY) -->
@@ -103,7 +103,7 @@
           </g>
 
           <text x="0" y="308" font-family="JetBrains Mono, monospace" font-size="9" fill="#fbfaf7" fill-opacity="0.45">HEADLINE SCAN: 1,276 CHEMISTRIES LINKED TO 1,714 DISTINCT CRISPR PROGRAMS</text>
-          <text x="0" y="324" font-family="JetBrains Mono, monospace" font-size="9" fill="#f4a261" fill-opacity="0.85">ORANGE: TWO INDEPENDENT V-ATPase HITS - BAY-293 IN A549, ZEL028-2 TUPLE IN HEK293 - DIFFERENT LIBRARIES, SAME BIOLOGY</text>
+          <text x="0" y="324" font-family="JetBrains Mono, monospace" font-size="9" fill="#f4a261" fill-opacity="0.85">ORANGE: TWO INDEPENDENT V-ATPase STATE SIGNALS - BAY-293 IN A549, ZEL028-2 TUPLE IN HEK293</text>
         </g>
       </svg>
       <div class="figcaption">Hero figure - Compound RNA fingerprints can be searched against CRISPR perturbation states to produce calibrated mechanism hypotheses.</div>
@@ -115,7 +115,7 @@
   <div class="wrap-narrow">
     <div class="tldr">
       <div class="label">TL;DR</div>
-      <p>Each compound produces an RNA fingerprint. Each gene perturbation in a public CRISPR atlas produces an RNA fingerprint too. Paper 05 puts those two dictionaries in the same search frame. The headline scan returned calibrated CRISPR-like hypotheses for 1,276 chemical tuples. Known controls behaved as they should, and two unrelated chemistries in different cell lines both pointed to V-ATPase biology.</p>
+    <p>Each compound produces an RNA fingerprint. Each gene perturbation in a public CRISPR atlas produces an RNA fingerprint too. Paper 05 puts those two dictionaries in the same search frame. The headline scan returned calibrated CRISPR-like hypotheses for 1,276 chemical tuples. Known controls behaved as they should, and two independent observations pointed to a shared V-ATPase/trafficking state hypothesis.</p>
     </div>
   </div>
 </section>
@@ -125,7 +125,7 @@
     <div class="col-label">Why it matters</div>
     <div class="col-body">
       <p>Phenotypic discovery is powerful because it can find compounds from function alone, even when the target is unknown. The cost of that strength is the next bottleneck: once a hit appears, teams can spend months figuring out what the compound is actually doing.</p>
-      <p>A CRISPR atlas is essentially a dictionary of cell states. Each entry describes what the cell looks like when a gene is knocked out or activated. If a compound produces a similar RNA state, that entry is a candidate mechanism. Z-Screen makes the search practical because the hypothesis lands attached to a specific combinatorial molecule and its building-block recipe.</p>
+      <p>A CRISPR atlas is essentially a dictionary of cell states. Each entry describes what the cell looks like when a gene is knocked out or activated. If a compound produces a similar RNA state, that entry is a candidate mechanism axis. Z-Screen makes the search practical because the hypothesis lands attached to a specific combinatorial molecule and its building-block recipe.</p>
     </div>
   </div>
 </section>
@@ -197,7 +197,7 @@
         <div class="fnum">FINDING 08</div>
         <h4>Two unrelated paths converge on V-ATPase biology.</h4>
         <p>This is the strongest internal validation signal. BAY-293 in A549 pointed to V-ATPase and trafficking biology. Separately, an unrelated ZEL028-2 tuple in HEK293 surfaced ATP6V1A with independent subset support. Different chemistry, different cell context, same biological neighborhood.</p>
-        <div class="stat-callout"><span class="v">2 PATHS</span><span class="k">BAY-293 / A549 + ZEL028-2 / HEK293 - one V-ATPase mechanism</span></div>
+        <div class="stat-callout"><span class="v">2 PATHS</span><span class="k">BAY-293 / A549 + ZEL028-2 / HEK293 - one V-ATPase state hypothesis</span></div>
       </div>
       <div class="finding" style="grid-column: 1 / -1;">
         <div class="fnum">FINDING 09</div>
@@ -236,7 +236,7 @@
         <div class="dl-meta">20K calibrated match pairs</div>
         <div class="dl-cta">Open the deposit</div>
       </a>
-      <a class="dl" href="mailto:z-screen@zafrens.com?subject=Paper%2005%20-%20Causal%20Reasoning%20-%20feedback">
+      <a class="dl" href="mailto:z-screen@zafrens.com?subject=Paper%2005%20-%20Mechanism%20Map%20-%20feedback">
         <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l9 7 9-7M3 6v12h18V6"/></svg></div>
         <div class="dl-title">Talk to the team</div>
         <div class="dl-meta">Feedback - questions</div>
